@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cobo OTC 运营后台 - Settlement Network</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Oxanium:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; background: #EDEEF3; color: #1C1C1C; font-size: 14px; min-height: 100vh; }
+
+/* ── Layout ── */
+.layout { display: flex; min-height: 100vh; }
+
+/* Top bar */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; height: 48px;
+  background: #fff; border-bottom: 1px solid #EDEEF3;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; z-index: 100;
+}
+.topbar-left { display: flex; align-items: center; gap: 12px; }
+.topbar-app-icon {
+  width: 28px; height: 28px; background: #26C165; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; color: #fff; font-weight: 700;
+}
+.topbar-app-name { font-size: 15px; font-weight: 600; color: #1C1C1C; }
+.topbar-org {
+  display: flex; align-items: center; gap: 8px;
+  padding: 4px 12px; border: 1px solid #EDEEF3; border-radius: 6px;
+  font-size: 13px; color: #1C1C1C; cursor: pointer;
+}
+.topbar-org-badge { font-size: 10px; padding: 1px 6px; border-radius: 4px; background: #FA8C16; color: #fff; font-weight: 600; }
+.topbar-org-dot { width: 7px; height: 7px; border-radius: 50%; background: #26C165; }
+.topbar-right { display: flex; align-items: center; gap: 16px; }
+.topbar-icon { font-size: 18px; color: #73798B; cursor: pointer; }
+.topbar-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #1F32D6; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px; background: #fff;
+  border-right: 1px solid #EDEEF3;
+  padding: 64px 0 0; flex-shrink: 0;
+  display: flex; flex-direction: column;
+}
+.sidebar-item {
+  display: flex; align-items: center;
+  padding: 12px 24px; font-size: 14px; font-weight: 500;
+  color: #73798B; cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.1s;
+}
+.sidebar-item:hover { background: #F8F9FC; color: #1C1C1C; }
+.sidebar-item.active { background: #EFF8FF; color: #1F32D6; border-left-color: #1F32D6; font-weight: 600; }
+
+.sidebar-divider { height: 1px; background: #EDEEF3; margin: 8px 0; }
+
+.sidebar-section-label {
+  font-size: 11px; font-weight: 600; color: #B9BCC5;
+  padding: 8px 24px 4px; letter-spacing: 0.06em;
+}
+
+.new-badge {
+  margin-left: auto; font-size: 9px; padding: 2px 6px;
+  border-radius: 3px; background: #1F32D6; color: #fff; font-weight: 600;
+}
+
+/* Main */
+.main { flex: 1; padding: 72px 32px 32px; overflow-y: auto; }
+.page { display: none; }
+.page.active { display: block; }
+
+/* Page header */
+.page-header { margin-bottom: 24px; }
+.page-title { font-size: 20px; font-weight: 600; color: #1C1C1C; margin-bottom: 4px; }
+.page-subtitle { font-size: 13px; color: #73798B; }
+
+/* Table card */
+.table-card { background: #fff; border-radius: 10px; overflow: hidden; }
+.table-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; border-bottom: 1px solid #EDEEF3;
+}
+.toolbar-left { display: flex; align-items: center; gap: 12px; }
+.toolbar-right { display: flex; align-items: center; gap: 8px; }
+
+.search-combo {
+  display: flex; align-items: center;
+  border: 1px solid #EDEEF3; border-radius: 6px;
+  overflow: hidden; background: #fff;
+}
+.search-combo-select {
+  padding: 0 12px; height: 36px; border: none; border-right: 1px solid #EDEEF3;
+  font-family: 'Poppins', sans-serif; font-size: 13px; color: #73798B;
+  background: #F8F9FC; outline: none; cursor: pointer;
+}
+.search-combo-input {
+  padding: 0 12px; height: 36px; width: 240px; border: none;
+  font-family: 'Poppins', sans-serif; font-size: 14px; color: #1C1C1C; outline: none;
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 0 16px; height: 36px; border-radius: 6px;
+  font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600;
+  cursor: pointer; border: none; transition: background 0.15s;
+}
+.btn-primary { background: #1F32D6; color: #fff; }
+.btn-primary:hover { background: #131E80; }
+.btn-secondary { background: transparent; color: #1F32D6; border: 1px solid #1F32D6; }
+.btn-secondary:hover { background: #F8F9FC; }
+.btn-tertiary { background: #EDEEF3; color: #1C1C1C; }
+.btn-danger { background: #E74E5A; color: #fff; }
+.btn-sm { height: 28px; padding: 0 12px; font-size: 12px; }
+
+table { width: 100%; border-collapse: collapse; }
+thead tr { background: #F8F9FC; }
+th { padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 600; color: #73798B; border-bottom: 1px solid #EDEEF3; white-space: nowrap; }
+td { padding: 14px 16px; border-bottom: 1px solid #F8F9FC; font-size: 14px; color: #1C1C1C; vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #F8F9FC; cursor: pointer; }
+
+.amount-cell { font-family: 'Oxanium', sans-serif; font-size: 14px; font-weight: 600; }
+.id-cell { font-size: 13px; font-weight: 500; color: #1C1C1C; }
+.id-cell-sub { font-size: 11px; color: #73798B; margin-top: 2px; }
+.time-cell { font-size: 12px; color: #73798B; }
+
+/* Badges */
+.badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.badge .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.badge-awaiting-contract { background: #F4F2FB; color: #6941C6; }
+.badge-awaiting-contract .dot { background: #6941C6; }
+.badge-pending-confirm { background: #EFF8FF; color: #175CD3; }
+.badge-pending-confirm .dot { background: #175CD3; }
+.badge-pending-dvp { background: #EDF4F8; color: #026AA2; }
+.badge-pending-dvp .dot { background: #026AA2; }
+.badge-completed { background: #E4F5EB; color: #067647; }
+.badge-completed .dot { background: #067647; }
+.badge-terminated { background: #F1F1F5; color: #363F72; }
+.badge-terminated .dot { background: #363F72; }
+
+.pair-tag { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 4px; background: #EDF4F8; color: #026AA2; font-size: 12px; font-weight: 600; }
+.action-icon { font-size: 16px; color: #73798B; cursor: pointer; margin-right: 8px; }
+.action-icon:hover { color: #1F32D6; }
+
+/* Alert tag */
+.alert-tag { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 4px; background: #FEE4E2; color: #E74E5A; font-size: 11px; font-weight: 600; }
+
+/* ── Detail page ── */
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #73798B; margin-bottom: 24px; }
+.breadcrumb a { color: #1F32D6; text-decoration: none; cursor: pointer; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb .sep { color: #B9BCC5; }
+.breadcrumb .current { color: #1C1C1C; font-weight: 500; }
+
+.detail-header { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 16px; }
+.detail-title-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.detail-room-id { font-size: 18px; font-weight: 600; color: #1C1C1C; }
+.ops-role-chip { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 4px; background: #F4F2FB; color: #6941C6; font-size: 12px; font-weight: 600; }
+.detail-meta-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 16px; padding-top: 20px; border-top: 1px solid #EDEEF3; }
+.meta-item label { font-size: 12px; font-weight: 500; color: #73798B; display: block; margin-bottom: 4px; }
+.meta-item .val { font-size: 14px; font-weight: 500; color: #1C1C1C; }
+.meta-item .val.num { font-family: 'Oxanium', sans-serif; font-weight: 600; }
+.meta-item .val.fee { font-family: 'Oxanium', sans-serif; font-weight: 600; color: #1F32D6; }
+
+.demo-switcher { display: flex; align-items: center; gap: 8px; background: #fff; padding: 6px 12px; border-radius: 6px; border: 1px solid #EDEEF3; }
+.demo-switcher label { font-size: 11px; color: #73798B; font-weight: 500; white-space: nowrap; }
+.demo-switcher select { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 500; border: none; outline: none; color: #1C1C1C; background: transparent; cursor: pointer; }
+
+.section-card { background: #fff; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+.section-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid #EDEEF3; }
+.section-title { font-size: 16px; font-weight: 600; color: #1C1C1C; }
+.section-body { padding: 24px; }
+
+.kv-list { display: flex; flex-direction: column; }
+.kv-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #F8F9FC; }
+.kv-row:last-child { border-bottom: none; }
+.kv-label { font-size: 14px; color: #73798B; min-width: 200px; }
+.kv-value { font-size: 14px; font-weight: 500; color: #1C1C1C; text-align: right; display: flex; align-items: center; gap: 6px; }
+.kv-value.num { font-family: 'Oxanium', sans-serif; font-weight: 600; }
+.kv-value.fee { font-family: 'Oxanium', sans-serif; font-weight: 600; color: #1F32D6; }
+.copy-btn { width: 20px; height: 20px; background: #EDEEF3; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; font-size: 10px; color: #73798B; border: none; }
+
+/* Two column detail layout */
+.detail-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+/* Approval cards */
+.approval-card { background: #F8F9FC; border-radius: 6px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.approval-left { display: flex; align-items: center; gap: 12px; }
+.approval-avatar { width: 36px; height: 36px; border-radius: 50%; background: #EDEEF3; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.approval-name { font-size: 14px; font-weight: 500; color: #1C1C1C; }
+.approval-org { font-size: 12px; color: #73798B; margin-top: 2px; }
+.approval-right { text-align: right; }
+.approval-label { font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px; justify-content: flex-end; }
+.status-approved { color: #26C165; }
+.status-pending { color: #FA8C16; }
+.approval-time { font-size: 11px; color: #73798B; margin-top: 2px; }
+
+.tag { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+
+/* Ops action panel */
+.ops-action-panel {
+  background: #fff; border: 2px solid #1F32D6;
+  border-radius: 10px; padding: 20px 24px; margin-bottom: 16px;
+}
+.ops-action-title { font-size: 14px; font-weight: 600; color: #1F32D6; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.ops-action-desc { font-size: 13px; color: #73798B; margin-bottom: 16px; line-height: 1.6; }
+.ops-action-row { display: flex; align-items: center; gap: 12px; }
+.ops-action-input { flex: 1; padding: 0 12px; height: 36px; border: 1px solid #EDEEF3; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 14px; outline: none; }
+.ops-action-input:focus { border-color: #1F32D6; }
+
+/* Audit log */
+.audit-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #F8F9FC; }
+.audit-row:last-child { border-bottom: none; }
+.audit-dot { width: 8px; height: 8px; border-radius: 50%; background: #26C165; margin-top: 6px; flex-shrink: 0; }
+.audit-dot.warn { background: #FA8C16; }
+.audit-dot.error { background: #E74E5A; }
+.audit-content { flex: 1; }
+.audit-action { font-size: 13px; font-weight: 500; color: #1C1C1C; }
+.audit-meta { font-size: 12px; color: #73798B; margin-top: 2px; }
+
+/* Contract tabs */
+.contract-tab-bar { display: flex; border-bottom: 1px solid #EDEEF3; padding: 0 24px; }
+.contract-tab { padding: 12px 0; margin-right: 24px; font-size: 14px; font-weight: 500; color: #73798B; cursor: pointer; border-bottom: 2px solid transparent; }
+.contract-tab.active { color: #1F32D6; border-bottom-color: #1F32D6; font-weight: 600; }
+
+/* Result boxes */
+.result-box { border-radius: 6px; padding: 16px; display: flex; align-items: flex-start; gap: 12px; }
+.result-box.completed { background: #E4F5EB; }
+.result-box.terminated { background: #F1F1F5; }
+.result-box .rb-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.result-box.completed .rb-title { color: #067647; }
+.result-box.terminated .rb-title { color: #363F72; }
+.result-box .rb-desc { font-size: 12px; color: #73798B; }
+
+/* SN Member management */
+.member-type-tab { display: flex; gap: 8px; margin-bottom: 20px; }
+.member-type-btn { padding: 6px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid #EDEEF3; background: #fff; color: #73798B; }
+.member-type-btn.active { background: #1F32D6; color: #fff; border-color: #1F32D6; }
+
+.member-card { background: #fff; border-radius: 10px; margin-bottom: 12px; border: 1px solid #EDEEF3; overflow: hidden; }
+.member-card-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid #EDEEF3; cursor: pointer; }
+.member-card-header:hover { background: #F8F9FC; }
+.member-card-title { font-size: 14px; font-weight: 600; color: #1C1C1C; display: flex; align-items: center; gap: 10px; }
+.member-card-meta { font-size: 12px; color: #73798B; margin-top: 2px; }
+.member-card-body { padding: 16px 20px; background: #F8F9FC; }
+.member-info-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.member-info-item label { font-size: 11px; font-weight: 600; color: #73798B; display: block; margin-bottom: 4px; letter-spacing: 0.04em; }
+.member-info-item .val { font-size: 13px; font-weight: 500; color: #1C1C1C; display: flex; align-items: center; gap: 6px; }
+.tg-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 4px; background: #EDF4F8; color: #026AA2; font-size: 12px; font-weight: 600; }
+.kyb-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 4px; background: #E4F5EB; color: #067647; font-size: 12px; font-weight: 600; }
+
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 9999; }
+.modal-overlay.hidden { display: none; }
+.modal { background: #fff; border-radius: 10px; width: 480px; padding: 32px; position: relative; }
+.modal-title { font-size: 20px; font-weight: 600; color: #1C1C1C; margin-bottom: 4px; }
+.modal-subtitle { font-size: 13px; color: #73798B; margin-bottom: 24px; }
+.modal-close { position: absolute; top: 20px; right: 20px; width: 28px; height: 28px; background: none; border: none; cursor: pointer; font-size: 18px; color: #73798B; border-radius: 4px; }
+.modal-close:hover { background: #F8F9FC; }
+.form-group { margin-bottom: 16px; }
+.form-label { display: block; font-size: 12px; font-weight: 600; color: #1C1C1C; margin-bottom: 6px; }
+.form-label .req { color: #E74E5A; }
+.form-input { width: 100%; height: 36px; padding: 0 12px; border: 1px solid #EDEEF3; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 14px; color: #1C1C1C; outline: none; }
+.form-input:focus { border-color: #1F32D6; }
+.form-select { width: 100%; height: 36px; padding: 0 12px; border: 1px solid #EDEEF3; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 14px; color: #1C1C1C; outline: none; background: #fff; }
+.modal-footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px; }
+
+/* Terminate confirm */
+.danger-box { background: #FEE4E2; border: 1px solid #FECDCA; border-radius: 6px; padding: 12px 16px; margin-bottom: 16px; font-size: 13px; color: #E74E5A; }
+
+.org-option {
+  padding: 10px 14px; cursor: pointer; border-bottom: 1px solid #F8F9FC;
+}
+.org-option:last-child { border-bottom: none; }
+.org-option:hover { background: #F8F9FC; }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-app-icon">C</div>
+    <div class="topbar-app-name">Cobo OTC 运营后台</div>
+    <div style="width:1px;height:20px;background:#EDEEF3;margin:0 4px"></div>
+    <div class="topbar-org">
+      <div class="topbar-org-dot"></div>
+      otc_operate_sandbox_13620
+      <span class="topbar-org-badge">Sandbox</span>
+      ▾
+    </div>
+  </div>
+  <div class="topbar-right">
+    <span class="topbar-icon">🔔</span>
+    <span class="topbar-icon">?</span>
+    <span class="topbar-icon">⋮</span>
+    <div class="topbar-avatar">Y</div>
+  </div>
+</div>
+
+<div class="layout">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-item" onclick="showPage('orders')">订单</div>
+    <div class="sidebar-item">出金收款银行审核</div>
+    <div class="sidebar-item">报价管理</div>
+    <div class="sidebar-item">交易管理</div>
+    <div class="sidebar-item">合约管理</div>
+    <div class="sidebar-item">VA 账户</div>
+    <div class="sidebar-item">KGI 白名单</div>
+    <div class="sidebar-item">运营通知</div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-label">Settlement Network</div>
+    <div class="sidebar-item active" onclick="showPage('sn-rooms')">
+      Settlement Rooms
+      <span class="new-badge">NEW</span>
+    </div>
+    <div class="sidebar-item" onclick="showPage('sn-members')">
+      SN 成员管理
+      <span class="new-badge">NEW</span>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- ══ SETTLEMENT ROOMS LIST ══ -->
+    <div id="page-sn-rooms" class="page active">
+      <div class="page-header">
+        <div class="page-title">Settlement Rooms</div>
+        <div class="page-subtitle">所有 SN 结算房间，含待审批事项</div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-toolbar">
+          <div class="toolbar-left">
+            <div class="search-combo">
+              <select class="search-combo-select">
+                <option>Room ID</option>
+                <option>Client</option>
+                <option>LP</option>
+              </select>
+              <input class="search-combo-input" placeholder="搜索...">
+            </div>
+            <button class="btn btn-tertiary btn-sm">过滤器 ▼</button>
+            <button class="btn btn-tertiary btn-sm">排序 ↕</button>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Room ID</th>
+              <th>Client</th>
+              <th>LP</th>
+              <th>法币金额</th>
+              <th>稳定币金额</th>
+              <th>Cobo Fee</th>
+              <th>状态</th>
+              
+              <th>最近活动</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr onclick="showRoomDetail('pending_dvp')">
+              <td><div class="id-cell">SR-20260513-0042</div></td>
+              <td><div class="id-cell">Acme Capital Ltd.<div class="id-cell-sub">ACM-HK-001</div></div></td>
+              <td><div class="id-cell">anthony_org_test3<div class="id-cell-sub">LP-SG-001</div></div></td>
+              <td><div class="amount-cell">1,000,000 USD</div></td>
+              <td><div class="amount-cell">999,500 USDT</div></td>
+              <td><div class="amount-cell" style="color:#1F32D6">500 USD</div></td>
+              <td><span class="badge badge-pending-dvp"><span class="dot"></span>Pending DVP</span></td>
+              <td><div class="time-cell">2026-05-13 14:20</div></td>
+              <td><span class="action-icon">👁</span></td>
+            </tr>
+            <tr onclick="showRoomDetail('pending_confirmation')">
+              <td><div class="id-cell">SR-20260512-0039</div></td>
+              <td><div class="id-cell">Cumberland DRW<div class="id-cell-sub">CUM-HK-007</div></div></td>
+              <td><div class="id-cell">b2c2_lp_sg<div class="id-cell-sub">LP-SG-003</div></div></td>
+              <td><div class="amount-cell">500,000 USD</div></td>
+              <td><div class="amount-cell">499,750 USDC</div></td>
+              <td><div class="amount-cell" style="color:#1F32D6">250 USD</div></td>
+              <td><span class="badge badge-pending-confirm"><span class="dot"></span>Pending Confirmation</span></td>
+              <td><div class="time-cell">2026-05-12 09:10</div></td>
+              <td><span class="action-icon">👁</span></td>
+            </tr>
+            <tr onclick="showRoomDetail('completed')">
+              <td><div class="id-cell">SR-20260510-0031</div></td>
+              <td><div class="id-cell">Acme Capital Ltd.<div class="id-cell-sub">ACM-HK-001</div></div></td>
+              <td><div class="id-cell">anthony_org_test3<div class="id-cell-sub">LP-SG-001</div></div></td>
+              <td><div class="amount-cell">800,000 USD</div></td>
+              <td><div class="amount-cell">799,600 USDT</div></td>
+              <td><div class="amount-cell" style="color:#1F32D6">400 USD</div></td>
+              <td><span class="badge badge-completed"><span class="dot"></span>Completed</span></td>
+              <td><div class="time-cell">2026-05-10 18:32</div></td>
+              <td><span class="action-icon">👁</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ ROOM DETAIL ══ -->
+    <div id="page-room-detail" class="page">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+        <div class="breadcrumb">
+          <a onclick="showPage('sn-rooms')">Settlement Rooms</a>
+          <span class="sep">/</span>
+          <span class="current">SR-20260513-0042</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="demo-switcher">
+            <label>演示状态:</label>
+            <select onchange="switchOpsState(this.value)">
+              <option value="awaiting_contract">Awaiting Contract</option>
+              <option value="pending_confirmation">Pending Confirmation</option>
+              <option value="pending_dvp" selected>Pending DVP</option>
+              <option value="completed">Completed</option>
+              <option value="terminated">Terminated</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <div class="detail-header">
+        <div class="detail-title-row">
+          <div class="detail-room-id">SR-20260513-0042</div>
+          <div id="ops-status-badge" class="badge badge-pending-dvp">
+            <span class="dot"></span>
+            <span id="ops-status-text">Pending DVP</span>
+          </div>
+          <div class="ops-role-chip">🔧 Cobo 运营视角</div>
+
+        </div>
+        <div class="detail-meta-grid">
+          <div class="meta-item">
+            <label>Client</label>
+            <div class="val">Acme Capital Ltd.</div>
+          </div>
+          <div class="meta-item">
+            <label>LP</label>
+            <div class="val">anthony_org_test3</div>
+          </div>
+          <div class="meta-item">
+            <label>法币金额</label>
+            <div class="val num">1,000,000 USD</div>
+          </div>
+          <div class="meta-item">
+            <label>稳定币金额</label>
+            <div class="val num">999,500 USDT</div>
+          </div>
+          <div class="meta-item">
+            <label>Settlement Service Fee</label>
+            <div class="val fee">500 USD（0.05%）</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ops action panel (dynamic) -->
+      <div id="ops-action-panel">
+        <!-- filled by JS -->
+      </div>
+
+      <!-- Quote record -->
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">💬 询报价记录</div>
+        </div>
+        <div class="section-body">
+          <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:12px;letter-spacing:0.04em">CONFIRMED CARD 条款</div>
+          <div class="kv-list">
+            <div class="kv-row">
+              <span class="kv-label">法币金额</span>
+              <span class="kv-value num">1,000,000 USD</span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-label">稳定币金额</span>
+              <span class="kv-value num">999,500 USDT</span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-label">汇率</span>
+              <span class="kv-value num">1 USD = 0.9995 USDT</span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-label">结算窗口</span>
+              <span class="kv-value">2026-05-14 18:00</span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-label">Settlement Service Fee</span>
+              <span class="kv-value fee">500 USD（0.05%）</span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-label">询价确认时间</span>
+              <span class="kv-value">2026-05-13 10:28:00</span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-label">来源 TG 群</span>
+              <span class="kv-value" style="color:#1F32D6;cursor:pointer">View Telegram Group →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contract info -->
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">📋 合同信息</div>
+          <div id="ops-contract-chip" style="padding:3px 10px;border-radius:4px;font-size:12px;font-weight:600;background:#E4F5EB;color:#067647">● 已生效</div>
+        </div>
+        <div class="section-body">
+          <div class="kv-list">
+            <div class="kv-row">
+              <span class="kv-label">合同 ID</span>
+              <span class="kv-value">f6976085-fdf2 <button class="copy-btn">⎘</button></span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-label">汇率</span>
+              <span class="kv-value num">1 USD = 0.9995 USDT</span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-label">LP 利差</span>
+              <span class="kv-value num">0.05%（约 500 USD）</span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-label">Settlement Service Fee</span>
+              <span class="kv-value fee">500 USD（0.05%）</span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-label">合同有效期</span>
+              <span class="kv-value">2026-05-14 18:00:00 <span style="color:#FA8C16;margin-left:8px">⏱ 剩余 4 小时 32 分钟</span></span>
+            </div>
+          </div>
+        </div>
+        <!-- Guard approval -->
+        <div style="padding: 0 24px 20px">
+          <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:10px">Guard 审批</div>
+          <div class="approval-card">
+            <div class="approval-left">
+              <div class="approval-avatar">👤</div>
+              <div>
+                <div class="approval-name">Client</div>
+                <div class="approval-org">Acme Capital Ltd.</div>
+              </div>
+            </div>
+            <div class="approval-right">
+              <div class="approval-label status-approved">✓ 已通过</div>
+              <div class="approval-time">2026-05-13 10:45</div>
+            </div>
+          </div>
+          <div class="approval-card">
+            <div class="approval-left">
+              <div class="approval-avatar">🏢</div>
+              <div>
+                <div class="approval-name">LP</div>
+                <div class="approval-org">anthony_org_test3</div>
+              </div>
+            </div>
+            <div class="approval-right">
+              <div class="approval-label status-approved">✓ 已通过</div>
+              <div class="approval-time">2026-05-13 11:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audit log -->
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">📝 审批操作记录</div>
+        </div>
+        <div class="section-body">
+          <div class="audit-row">
+            <div class="audit-dot"></div>
+            <div class="audit-content">
+              <div class="audit-action">Room 创建</div>
+              <div class="audit-meta">系统自动 · 2026-05-13 10:28:00</div>
+            </div>
+          </div>
+          <div class="audit-row">
+            <div class="audit-dot"></div>
+            <div class="audit-content">
+              <div class="audit-action">Settlement Contract 创建</div>
+              <div class="audit-meta">LP: anthony_org_test3 · 2026-05-13 10:30:00</div>
+            </div>
+          </div>
+          <div class="audit-row">
+            <div class="audit-dot"></div>
+            <div class="audit-content">
+              <div class="audit-action">Guard 审批通过（Client）</div>
+              <div class="audit-meta">Acme Capital Ltd. · 2026-05-13 10:45:00</div>
+            </div>
+          </div>
+          <div class="audit-row">
+            <div class="audit-dot"></div>
+            <div class="audit-content">
+              <div class="audit-action">Guard 审批通过（LP）</div>
+              <div class="audit-meta">anthony_org_test3 · 2026-05-13 11:00:00</div>
+            </div>
+          </div>
+          <div class="audit-row">
+            <div class="audit-dot"></div>
+            <div class="audit-content">
+              <div class="audit-action">合同生效，系统开始轮询账户余额</div>
+              <div class="audit-meta">系统自动 · 2026-05-13 11:00:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SN MEMBER MANAGEMENT ══ -->
+    <div id="page-sn-members" class="page">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+        <div>
+          <div class="page-title">SN 成员管理</div>
+          <div class="page-subtitle">管理 Settlement Network 成员的 Org 信息、角色对应关系及 TG 账号</div>
+        </div>
+        <button class="btn btn-primary" onclick="openAddMemberModal()">＋ 新增成员</button>
+      </div>
+
+      <div class="member-type-tab">
+        <button class="member-type-btn active" onclick="switchMemberTab(this,'all')">全部成员</button>
+        <button class="member-type-btn" onclick="switchMemberTab(this,'client')">Client</button>
+        <button class="member-type-btn" onclick="switchMemberTab(this,'lp')">LP</button>
+      </div>
+
+      <!-- Member cards -->
+      <div id="member-list">
+
+        <div class="member-card" data-type="client">
+          <div class="member-card-header" onclick="toggleMember(this)">
+            <div>
+              <div class="member-card-title">
+                Acme Capital Ltd.
+                <span class="tag" style="background:#EFF8FF;color:#175CD3;font-size:11px">Client</span>
+                <span class="kyb-badge">✓ KYB 通过</span>
+              </div>
+              <div class="member-card-meta">ACM-HK-001 · 加入时间：2026-04-01</div>
+            </div>
+            <span style="color:#73798B">▾</span>
+          </div>
+          <div class="member-card-body">
+            <div class="member-info-grid">
+              <div class="member-info-item">
+                <label>ORG ID</label>
+                <div class="val">52e10b15-6091-4211 <button class="copy-btn">⎘</button></div>
+              </div>
+              <div class="member-info-item">
+                <label>法人实体名称</label>
+                <div class="val">Acme Capital Ltd.</div>
+              </div>
+              <div class="member-info-item">
+                <label>TG 账号</label>
+                <div class="val"><span class="tg-badge">@acme_capital_ops</span></div>
+              </div>
+              <div class="member-info-item">
+                <label>TG Chat ID</label>
+                <div class="val">1234567890 <button class="copy-btn">⎘</button></div>
+              </div>
+              <div class="member-info-item">
+                <label>SN Master Agreement</label>
+                <div class="val"><span class="kyb-badge">✓ 已签署</span></div>
+              </div>
+              <div class="member-info-item">
+                <label>Settlement Code</label>
+                <div class="val">ACM-HK-001 <button class="copy-btn">⎘</button></div>
+              </div>
+              <div class="member-info-item">
+                <label>Cobo Fee Rate</label>
+                <div class="val"><span style="font-weight:600;color:#1F32D6">3 bps</span></div>
+              </div>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <button class="btn btn-secondary btn-sm" onclick="openEditModal('Acme Capital Ltd.','client','52e10b15-6091-4211','@acme_capital_ops','1234567890','ACM-HK-001',3)">编辑</button>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="member-card" data-type="lp">
+          <div class="member-card-header" onclick="toggleMember(this)">
+            <div>
+              <div class="member-card-title">
+                anthony_org_test3
+                <span class="tag" style="background:#E4F5EB;color:#067647;font-size:11px">LP</span>
+                <span class="kyb-badge">✓ KYB 通过</span>
+              </div>
+              <div class="member-card-meta">LP-SG-001 · 加入时间：2026-03-15</div>
+            </div>
+            <span style="color:#73798B">▾</span>
+          </div>
+          <div class="member-card-body">
+            <div class="member-info-grid">
+              <div class="member-info-item">
+                <label>ORG ID</label>
+                <div class="val">5990f8c6-6fae-4091 <button class="copy-btn">⎘</button></div>
+              </div>
+              <div class="member-info-item">
+                <label>法人实体名称</label>
+                <div class="val">anthony_org_test3_增量用户</div>
+              </div>
+              <div class="member-info-item">
+                <label>TG 账号</label>
+                <div class="val"><span class="tg-badge">@anthony_lp_ops</span></div>
+              </div>
+              <div class="member-info-item">
+                <label>TG Chat ID</label>
+                <div class="val">9876543210 <button class="copy-btn">⎘</button></div>
+              </div>
+              <div class="member-info-item">
+                <label>SN Master Agreement</label>
+                <div class="val"><span class="kyb-badge">✓ 已签署</span></div>
+              </div>
+              <div class="member-info-item">
+                <label>Settlement Code</label>
+                <div class="val">LP-SG-001 <button class="copy-btn">⎘</button></div>
+              </div>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <button class="btn btn-secondary btn-sm" onclick="openEditModal('anthony_org_test3','lp','5990f8c6-6fae-4091','@anthony_lp_ops','9876543210','LP-SG-001')">编辑</button>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="member-card" data-type="client">
+          <div class="member-card-header" onclick="toggleMember(this)">
+            <div>
+              <div class="member-card-title">
+                B2C2 Ltd
+                <span class="tag" style="background:#EFF8FF;color:#175CD3;font-size:11px">Client</span>
+                <span class="kyb-badge">✓ KYB 通过</span>
+              </div>
+              <div class="member-card-meta">B2C2-SG-003 · 加入时间：2026-04-10</div>
+            </div>
+            <span style="color:#73798B">▾</span>
+          </div>
+          <div class="member-card-body" style="display:none">
+            <div class="member-info-grid">
+              <div class="member-info-item">
+                <label>ORG ID</label>
+                <div class="val">a1b2c3d4-e5f6-7890 <button class="copy-btn">⎘</button></div>
+              </div>
+              <div class="member-info-item">
+                <label>法人实体名称</label>
+                <div class="val">B2C2 Ltd</div>
+              </div>
+              <div class="member-info-item">
+                <label>TG 账号</label>
+                <div class="val"><span class="tg-badge">@b2c2_settlement</span></div>
+              </div>
+              <div class="member-info-item">
+                <label>TG Chat ID</label>
+                <div class="val">1122334455 <button class="copy-btn">⎘</button></div>
+              </div>
+              <div class="member-info-item">
+                <label>SN Master Agreement</label>
+                <div class="val"><span class="kyb-badge">✓ 已签署</span></div>
+              </div>
+              <div class="member-info-item">
+                <label>Settlement Code</label>
+                <div class="val">B2C2-SG-003 <button class="copy-btn">⎘</button></div>
+              </div>
+              <div class="member-info-item">
+                <label>Cobo Fee Rate</label>
+                <div class="val"><span style="font-weight:600;color:#1F32D6">5 bps</span></div>
+              </div>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <button class="btn btn-secondary btn-sm" onclick="openEditModal('B2C2 Ltd','client','a1b2c3d4-e5f6-7890','@b2c2_settlement','1122334455','B2C2-SG-003',5)">编辑</button>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <!-- Add member modal -->
+<div id="addMemberModal" class="modal-overlay hidden">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('addMemberModal')">✕</button>
+    <div class="modal-title">新增 SN 成员</div>
+    <div class="modal-subtitle">请填写成员信息并确认 KYB 状态</div>
+    <div class="form-group">
+      <div class="form-label">角色 <span class="req">*</span></div>
+      <div style="display:flex;gap:12px;margin-top:4px">
+        <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer">
+          <input type="checkbox" id="role-client" style="width:16px;height:16px;cursor:pointer"> Client
+        </label>
+        <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer">
+          <input type="checkbox" id="role-lp" style="width:16px;height:16px;cursor:pointer"> LP
+        </label>
+      </div>
+      <div style="font-size:11px;color:#73798B;margin-top:6px">可同时勾选，支持双重身份</div>
+    </div>
+    <div class="form-group" style="position:relative">
+      <div class="form-label">法人实体名称 / Org ID <span class="req">*</span></div>
+      <input class="form-input" id="add-org-search" placeholder="搜索法人实体名称" autocomplete="off"
+        oninput="filterOrgDropdown(this.value)" onfocus="showOrgDropdown()" style="padding-right:36px">
+      <span style="position:absolute;right:12px;top:34px;color:#73798B;font-size:14px;pointer-events:none">▾</span>
+      <div id="add-org-dropdown" style="display:none;position:absolute;top:62px;left:0;right:0;background:#fff;border:1px solid #EDEEF3;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.08);z-index:100;max-height:200px;overflow-y:auto">
+        <div class="org-option" onclick="selectOrg('Acme Capital Ltd.','52e10b15-6091-4211-b880-6b9e50157993')">
+          <div style="font-size:14px;font-weight:500;color:#1C1C1C">Acme Capital Ltd.</div>
+          <div style="font-size:11px;color:#73798B">52e10b15-6091-4211-b880-6b9e50157993</div>
+        </div>
+        <div class="org-option" onclick="selectOrg('anthony_org_test3_增量用户','5990f8c6-6fae-4091-8624-6a03bd6a57d9')">
+          <div style="font-size:14px;font-weight:500;color:#1C1C1C">anthony_org_test3_增量用户</div>
+          <div style="font-size:11px;color:#73798B">5990f8c6-6fae-4091-8624-6a03bd6a57d9</div>
+        </div>
+        <div class="org-option" onclick="selectOrg('B2C2 Ltd','a1b2c3d4-e5f6-7890-abcd-ef1234567890')">
+          <div style="font-size:14px;font-weight:500;color:#1C1C1C">B2C2 Ltd</div>
+          <div style="font-size:11px;color:#73798B">a1b2c3d4-e5f6-7890-abcd-ef1234567890</div>
+        </div>
+        <div class="org-option" onclick="selectOrg('Cumberland DRW','b2c3d4e5-f6a7-8901-bcde-f12345678901')">
+          <div style="font-size:14px;font-weight:500;color:#1C1C1C">Cumberland DRW</div>
+          <div style="font-size:11px;color:#73798B">b2c3d4e5-f6a7-8901-bcde-f12345678901</div>
+        </div>
+      </div>
+      <div id="add-org-selected" style="display:none;margin-top:6px;padding:8px 12px;background:#F8F9FC;border-radius:6px;font-size:12px;color:#73798B">
+        Org ID：<span id="add-org-id-display" style="font-weight:500;color:#1C1C1C"></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label">TG 账号</div>
+      <input class="form-input" placeholder="@username">
+    </div>
+
+    <div class="form-group" id="add-fee-rate-group" style="display:none">
+      <div class="form-label">
+        Cobo Settlement Service Fee Rate
+        <span style="font-size:11px;font-weight:400;color:#73798B;margin-left:4px">（仅 Client 适用）</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <input id="add-fee-rate" class="form-input" type="number" min="0" step="0.1" value="3"
+          style="width:100px;text-align:right">
+        <span style="font-size:14px;color:#1C1C1C;white-space:nowrap">bps</span>
+      </div>
+      <div style="font-size:11px;color:#73798B;margin-top:4px">写入 Master Agreement，后续可在编辑成员中修改</div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-tertiary" onclick="closeModal('addMemberModal')">取消</button>
+      <button class="btn btn-primary">确认新增</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Page navigation
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+  if (page === 'sn-rooms') document.querySelectorAll('.sidebar-item')[8].classList.add('active');
+  if (page === 'sn-members') document.querySelectorAll('.sidebar-item')[9].classList.add('active');
+}
+
+function showRoomDetail(state) {
+  showPage('room-detail');
+  document.querySelector('#page-room-detail select').value = state;
+  switchOpsState(state);
+}
+
+// State config
+const opsStates = {
+  awaiting_contract:          { cls: 'badge-awaiting-contract',  txt: 'Awaiting Contract',   alertTxt: null },
+  pending_confirmation:       { cls: 'badge-pending-confirm',    txt: 'Pending Confirmation', alertTxt: null },
+  pending_dvp:                { cls: 'badge-pending-dvp',        txt: 'Pending DVP',          alertTxt: null },
+  completed:                  { cls: 'badge-completed',          txt: 'Completed',            alertTxt: null },
+  terminated:                 { cls: 'badge-terminated',         txt: 'Terminated',           alertTxt: null },
+};
+
+function switchOpsState(val) {
+  const cfg = opsStates[val];
+  const badge = document.getElementById('ops-status-badge');
+  badge.className = 'badge ' + cfg.cls;
+  document.getElementById('ops-status-text').textContent = cfg.txt;
+  // Render action panel
+  const panel = document.getElementById('ops-action-panel');
+  if (val === 'pending_dvp') {
+    panel.innerHTML = '<div style="background:#EDF4F8;border-radius:6px;padding:16px;margin-bottom:16px;font-size:13px;color:#026AA2"><strong>⏱ 系统轮询中</strong><br>合同已生效，系统正在轮询双方账户余额。余额充足时将自动执行 DVP。</div>';
+  } else if (val === 'completed') {
+    panel.innerHTML = `<div class="result-box completed" style="margin-bottom:16px"><div style="font-size:20px">✅</div><div><div class="rb-title">结算完成</div><div class="rb-desc">DVP 执行完成 · 2026-05-13 18:42:07</div></div></div>`;
+  } else if (val === 'terminated') {
+    panel.innerHTML = '<div class="result-box terminated" style="margin-bottom:16px"><div style="font-size:20px">⚠️</div><div><div class="rb-title">Room 已终止</div><div class="rb-desc">合同有效期内未能执行 DVP</div></div></div>';
+  } else {
+    panel.innerHTML = '';
+  }
+}
+
+// Terminate
+
+
+
+// Add member
+function openAddMemberModal() { document.getElementById('addMemberModal').classList.remove('hidden'); }
+function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+
+// Member card toggle
+function toggleMember(header) {
+  const body = header.nextElementSibling;
+  body.style.display = body.style.display === 'none' ? '' : 'none';
+}
+
+// Member type tab
+function switchMemberTab(el, type) {
+  document.querySelectorAll('.member-type-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.member-card').forEach(card => {
+    if (type === 'all') {
+      card.style.display = '';
+    } else {
+      card.style.display = card.dataset.type === type ? '' : 'none';
+    }
+  });
+}
+
+// List tab
+function switchListTab(el, tab) {
+  document.querySelectorAll('#page-sn-rooms .tab-item').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Init
+switchOpsState('pending_dvp');
+
+function openEditModal(name, role, orgId, tg, tgId, code, feeRate) {
+  document.getElementById('edit-name').value = name;
+  const isClient = role === 'client' || role === 'both';
+  document.getElementById('edit-role-client').checked = isClient;
+  document.getElementById('edit-role-lp').checked = role === 'lp' || role === 'both';
+  document.getElementById('edit-org-id').value = orgId;
+  document.getElementById('edit-tg').value = tg;
+  document.getElementById('edit-tg-status').value = tgId ? '✓ 已绑定' : '未绑定（等待成员发送 /start）';
+  document.getElementById('edit-code').value = code;
+  // Fee rate: show only for Client, default 3 bps
+  const feeGroup = document.getElementById('edit-fee-rate-group');
+  feeGroup.style.display = isClient ? '' : 'none';
+  document.getElementById('edit-fee-rate').value = (feeRate !== undefined) ? feeRate : 3;
+  document.getElementById('editMemberModal').classList.remove('hidden');
+}
+
+// Toggle fee rate field in Add modal based on Client checkbox
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('role-client').addEventListener('change', function() {
+    document.getElementById('add-fee-rate-group').style.display = this.checked ? '' : 'none';
+  });
+  // Toggle fee rate field in Edit modal
+  document.getElementById('edit-role-client').addEventListener('change', function() {
+    document.getElementById('edit-fee-rate-group').style.display = this.checked ? '' : 'none';
+    if (this.checked && !document.getElementById('edit-fee-rate').value) {
+      document.getElementById('edit-fee-rate').value = 3;
+    }
+  });
+});
+
+
+function showOrgDropdown() {
+  document.getElementById('add-org-dropdown').style.display = '';
+}
+function filterOrgDropdown(val) {
+  const opts = document.querySelectorAll('.org-option');
+  opts.forEach(opt => {
+    const name = opt.querySelector('div').textContent.toLowerCase();
+    opt.style.display = name.includes(val.toLowerCase()) ? '' : 'none';
+  });
+  document.getElementById('add-org-dropdown').style.display = '';
+  document.getElementById('add-org-selected').style.display = 'none';
+}
+function selectOrg(name, orgId) {
+  document.getElementById('add-org-search').value = name;
+  document.getElementById('add-org-id-display').textContent = orgId;
+  document.getElementById('add-org-selected').style.display = '';
+  document.getElementById('add-org-dropdown').style.display = 'none';
+}
+document.addEventListener('click', function(e) {
+  const wrap = document.getElementById('add-org-search');
+  if (wrap && !wrap.contains(e.target)) {
+    const dd = document.getElementById('add-org-dropdown');
+    if (dd) dd.style.display = 'none';
+  }
+});
+</script>
+
+<!-- Edit member modal -->
+<div id="editMemberModal" class="modal-overlay hidden">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('editMemberModal')">✕</button>
+    <div class="modal-title">编辑成员信息</div>
+    <div class="modal-subtitle">修改后点击保存，Settlement Code 不可修改</div>
+    <div class="form-group">
+      <div class="form-label">角色</div>
+      <div style="display:flex;gap:12px;margin-top:4px">
+        <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer">
+          <input type="checkbox" id="edit-role-client" style="width:16px;height:16px"> Client
+        </label>
+        <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer">
+          <input type="checkbox" id="edit-role-lp" style="width:16px;height:16px"> LP
+        </label>
+      </div>
+      <div style="font-size:11px;color:#73798B;margin-top:6px">可同时勾选，支持双重身份</div>
+    </div>
+    <div class="form-group">
+      <div class="form-label">法人实体名称 <span class="req">*</span></div>
+      <input id="edit-name" class="form-input" placeholder="法人实体名称">
+    </div>
+    <div class="form-group">
+      <div class="form-label">Org ID</div>
+      <input id="edit-org-id" class="form-input" disabled style="background:#F8F9FC;color:#73798B">
+    </div>
+    <div class="form-group">
+      <div class="form-label">TG 账号</div>
+      <input id="edit-tg" class="form-input" placeholder="@username">
+    </div>
+    <div class="form-group">
+      <div class="form-label">TG Bot 绑定状态</div>
+      <input id="edit-tg-status" class="form-input" disabled style="background:#F8F9FC;color:#067647">
+    </div>
+    <div class="form-group">
+      <div class="form-label">Settlement Code</div>
+      <input id="edit-code" class="form-input" disabled style="background:#F8F9FC;color:#73798B">
+      <div style="font-size:11px;color:#B9BCC5;margin-top:4px">Settlement Code 由系统分配，不可修改</div>
+    </div>
+    <div class="form-group" id="edit-fee-rate-group" style="display:none">
+      <div class="form-label">
+        Cobo Settlement Service Fee Rate
+        <span style="font-size:11px;font-weight:400;color:#73798B;margin-left:4px">（仅 Client 适用）</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <input id="edit-fee-rate" class="form-input" type="number" min="0" step="0.1" value="3"
+          style="width:100px;text-align:right">
+        <span style="font-size:14px;color:#1C1C1C;white-space:nowrap">bps</span>
+      </div>
+      <div style="font-size:11px;color:#73798B;margin-top:4px">修改后将同步更新 Master Agreement</div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-tertiary" onclick="closeModal('editMemberModal')">取消</button>
+      <button class="btn btn-primary" onclick="closeModal('editMemberModal')">保存修改</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
