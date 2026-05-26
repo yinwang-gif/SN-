@@ -529,69 +529,69 @@ body{font-family:'Poppins',sans-serif;background:#F5F6FA;color:#1C1C1C;font-size
                   </div>
                   <div class="notice-banner">
                     <span class="notice-banner__icon"><i class="ti ti-alert-triangle"></i></span>
-                    <p class="notice-banner__text"><strong>合规说明：</strong>Cobo 不对以下成员的报价、服务质量或商业适配性作任何推荐或背书。所有成员均已完成 KYB 并签署 SN Master Agreement。在发起询价前，你须已与目标成员建立独立的商业关系。</p>
+                    <p class="notice-banner__text" data-i18n="portal.compliance"><strong>合规说明：</strong>Cobo 不对以下成员的报价、服务质量或商业适配性作任何推荐或背书。所有成员均已完成 KYB 并签署 SN Master Agreement。在发起询价前，你须已与目标成员建立独立的商业关系。</p>
                   </div>
                   <div class="toolbar">
                     <div class="search-wrap">
                       <span class="search-wrap__icon"><i class="ti ti-search"></i></span>
-                      <input class="input-search" placeholder="按成员名称或编号搜索">
+                      <input class="input-search" placeholder="按成员名称或编号搜索" data-i18n-placeholder="portal.search">
                     </div>
                   </div>
                   <!-- 最近联系 -->
-                  <div style="font-size:12px;font-weight:600;color:#73798B;letter-spacing:.04em;margin:4px 0 8px;padding-left:2px">最近联系</div>
+                  <div style="font-size:12px;font-weight:600;color:#73798B;letter-spacing:.04em;margin:4px 0 8px;padding-left:2px" data-i18n="portal.recent">最近联系</div>
                   <div class="table-card" style="margin-bottom:20px">
                     <table class="tbl">
                       <colgroup><col style="width:220px"><col style="width:130px"><col style="width:120px"><col></colgroup>
-                      <thead><tr><th>成员名称</th><th>编号</th><th>最近询价</th><th>操作</th></tr></thead>
+                      <thead><tr><th data-i18n="portal.th.name">成员名称</th><th data-i18n="portal.th.code">编号</th><th data-i18n="portal.th.recent">最近询价</th><th data-i18n="portal.th.actions">操作</th></tr></thead>
                       <tbody>
                         <tr onclick="pOpenModal('Wintermute Trading Ltd','WT','WM-HK-001')">
                           <td><div class="cell-primary">Wintermute Trading Ltd</div><div class="cell-secondary">LEI-9845002MXPQ · Hong Kong</div></td>
                           <td><span class="cell-code">WM-HK-001</span></td>
                           <td><span class="cell-secondary">2026-04-30</span></td>
-                          <td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('Wintermute Trading Ltd','WT','WM-HK-001')">发起询价 →</button></td>
+                          <td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('Wintermute Trading Ltd','WT','WM-HK-001')" data-i18n="portal.inquiry">发起询价 →</button></td>
                         </tr>
                         <tr onclick="pOpenModal('B2C2 Ltd','B2','B2C2-SG-003')">
                           <td><div class="cell-primary">B2C2 Ltd</div><div class="cell-secondary">LEI-7823001ABCD · Singapore</div></td>
                           <td><span class="cell-code">B2C2-SG-003</span></td>
                           <td><span class="cell-secondary">2026-04-15</span></td>
-                          <td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('B2C2 Ltd','B2','B2C2-SG-003')">发起询价 →</button></td>
+                          <td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('B2C2 Ltd','B2','B2C2-SG-003')" data-i18n="portal.inquiry">发起询价 →</button></td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                   <!-- 全部成员 -->
-                  <div style="font-size:12px;font-weight:600;color:#73798B;letter-spacing:.04em;margin:0 0 8px;padding-left:2px">全部成员</div>
+                  <div style="font-size:12px;font-weight:600;color:#73798B;letter-spacing:.04em;margin:0 0 8px;padding-left:2px" data-i18n="portal.all">全部成员</div>
                   <div class="table-card">
                     <table class="tbl">
                       <colgroup><col style="width:220px"><col style="width:130px"><col style="width:200px"><col></colgroup>
-                      <thead><tr><th>成员名称</th><th>编号</th><th>支持币对</th><th>操作</th></tr></thead>
+                      <thead><tr><th data-i18n="portal.th.name">成员名称</th><th data-i18n="portal.th.code">编号</th><th data-i18n="portal.th.pairs">支持币对</th><th data-i18n="portal.th.actions">操作</th></tr></thead>
                       <tbody>
-                        <tr onclick="pOpenModal('Wintermute Trading Ltd','WT','WM-HK-001')"><td><div class="cell-primary">Wintermute Trading Ltd</div><div class="cell-secondary">LEI-9845002MXPQ · Hong Kong</div></td><td><span class="cell-code">WM-HK-001</span></td><td><div class="tags-wrap"><span class="tag tag--blue">USD / USDT</span><span class="tag tag--blue">USD / USDC</span></div></td><td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('Wintermute Trading Ltd','WT','WM-HK-001')">发起询价 →</button></td></tr>
-                        <tr onclick="pOpenModal('B2C2 Ltd','B2','B2C2-SG-003')"><td><div class="cell-primary">B2C2 Ltd</div><div class="cell-secondary">LEI-7823001ABCD · Singapore</div></td><td><span class="cell-code">B2C2-SG-003</span></td><td><div class="tags-wrap"><span class="tag tag--blue">USD / USDT</span><span class="tag tag--blue">USD / USDC</span></div></td><td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('B2C2 Ltd','B2','B2C2-SG-003')">发起询价 →</button></td></tr>
-                        <tr onclick="pOpenModal('Cumberland DRW','CD','CUM-HK-007')"><td><div class="cell-primary">Cumberland DRW</div><div class="cell-secondary">LEI-3312005EFGH · Hong Kong</div></td><td><span class="cell-code">CUM-HK-007</span></td><td><div class="tags-wrap"><span class="tag tag--blue">USD / USDT</span><span class="tag tag--blue">USD / USDC</span></div></td><td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('Cumberland DRW','CD','CUM-HK-007')">发起询价 →</button></td></tr>
-                        <tr onclick="pOpenModal('Galaxy Digital Trading','GD','GAL-SG-012')"><td><div class="cell-primary">Galaxy Digital Trading</div><div class="cell-secondary">LEI-5510008IJKL · Singapore</div></td><td><span class="cell-code">GAL-SG-012</span></td><td><div class="tags-wrap"><span class="tag tag--blue">USD / USDT</span><span class="tag tag--blue">USD / USDC</span></div></td><td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('Galaxy Digital Trading','GD','GAL-SG-012')">发起询价 →</button></td></tr>
-                        <tr onclick="pOpenModal('Flow Traders BV','FT','FLW-HK-004')"><td><div class="cell-primary">Flow Traders BV</div><div class="cell-secondary">LEI-7241003MNOP · Hong Kong</div></td><td><span class="cell-code">FLW-HK-004</span></td><td><div class="tags-wrap"><span class="tag tag--blue">USD / USDT</span><span class="tag tag--blue">USD / USDC</span></div></td><td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('Flow Traders BV','FT','FLW-HK-004')">发起询价 →</button></td></tr>
+                        <tr onclick="pOpenModal('Wintermute Trading Ltd','WT','WM-HK-001')"><td><div class="cell-primary">Wintermute Trading Ltd</div><div class="cell-secondary">LEI-9845002MXPQ · Hong Kong</div></td><td><span class="cell-code">WM-HK-001</span></td><td><div class="tags-wrap"><span class="tag tag--blue">USD / USDT</span><span class="tag tag--blue">USD / USDC</span></div></td><td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('Wintermute Trading Ltd','WT','WM-HK-001')" data-i18n="portal.inquiry">发起询价 →</button></td></tr>
+                        <tr onclick="pOpenModal('B2C2 Ltd','B2','B2C2-SG-003')"><td><div class="cell-primary">B2C2 Ltd</div><div class="cell-secondary">LEI-7823001ABCD · Singapore</div></td><td><span class="cell-code">B2C2-SG-003</span></td><td><div class="tags-wrap"><span class="tag tag--blue">USD / USDT</span><span class="tag tag--blue">USD / USDC</span></div></td><td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('B2C2 Ltd','B2','B2C2-SG-003')" data-i18n="portal.inquiry">发起询价 →</button></td></tr>
+                        <tr onclick="pOpenModal('Cumberland DRW','CD','CUM-HK-007')"><td><div class="cell-primary">Cumberland DRW</div><div class="cell-secondary">LEI-3312005EFGH · Hong Kong</div></td><td><span class="cell-code">CUM-HK-007</span></td><td><div class="tags-wrap"><span class="tag tag--blue">USD / USDT</span><span class="tag tag--blue">USD / USDC</span></div></td><td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('Cumberland DRW','CD','CUM-HK-007')" data-i18n="portal.inquiry">发起询价 →</button></td></tr>
+                        <tr onclick="pOpenModal('Galaxy Digital Trading','GD','GAL-SG-012')"><td><div class="cell-primary">Galaxy Digital Trading</div><div class="cell-secondary">LEI-5510008IJKL · Singapore</div></td><td><span class="cell-code">GAL-SG-012</span></td><td><div class="tags-wrap"><span class="tag tag--blue">USD / USDT</span><span class="tag tag--blue">USD / USDC</span></div></td><td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('Galaxy Digital Trading','GD','GAL-SG-012')" data-i18n="portal.inquiry">发起询价 →</button></td></tr>
+                        <tr onclick="pOpenModal('Flow Traders BV','FT','FLW-HK-004')"><td><div class="cell-primary">Flow Traders BV</div><div class="cell-secondary">LEI-7241003MNOP · Hong Kong</div></td><td><span class="cell-code">FLW-HK-004</span></td><td><div class="tags-wrap"><span class="tag tag--blue">USD / USDT</span><span class="tag tag--blue">USD / USDC</span></div></td><td><button class="btn--ghost" onclick="event.stopPropagation();pOpenModal('Flow Traders BV','FT','FLW-HK-004')" data-i18n="portal.inquiry">发起询价 →</button></td></tr>
                       </tbody>
                     </table>
                   </div>
-                  <div class="pagination"><span class="pagination__total">共 24 条记录</span><div class="pagination__pages"><button class="page-btn">‹</button><button class="page-btn is-active">1</button><button class="page-btn">2</button><button class="page-btn">3</button><button class="page-btn">›</button></div></div>
+                  <div class="pagination"><span class="pagination__total" data-i18n="portal.th.total">共 24 条记录</span><div class="pagination__pages"><button class="page-btn">‹</button><button class="page-btn is-active">1</button><button class="page-btn">2</button><button class="page-btn">3</button><button class="page-btn">›</button></div></div>
                 </div>
                 <!-- Rooms page -->
                 <div id="p-page-rooms" style="display:none">
                   <div class="page-header"><h1 class="page-header__title">Settlement Rooms</h1></div>
-                  <div class="notice-banner"><span class="notice-banner__icon"><i class="ti ti-alert-triangle"></i></span><p class="notice-banner__text"><strong>合规说明：</strong>Settlement Room 由 TG 询价完成后通过 Cobo Bot 发起创建。交易对手方须由你在平台外独立识别，Cobo 不提供撮合、介绍或推荐服务。</p></div>
+                  <div class="notice-banner"><span class="notice-banner__icon"><i class="ti ti-alert-triangle"></i></span><p class="notice-banner__text" data-i18n="portal.rooms.compliance"><strong>合规说明：</strong>Settlement Room 由 TG 询价完成后通过 Cobo Bot 发起创建。交易对手方须由你在平台外独立识别，Cobo 不提供撮合、介绍或推荐服务。</p></div>
                   <div class="table-card">
                     <table class="tbl">
                       <colgroup><col style="width:150px"><col style="width:190px"><col style="width:130px"><col style="width:110px"><col style="width:130px"><col></colgroup>
-                      <thead><tr><th>Room ID</th><th>交易对手方</th><th>最近活动</th><th>币对</th><th>状态</th><th>操作</th></tr></thead>
+                      <thead><tr><th>Room ID</th><th data-i18n="portal.th.counterparty">交易对手方</th><th data-i18n="portal.th.recent_activity">最近活动</th><th>币对</th><th>状态</th><th data-i18n="portal.th.actions">操作</th></tr></thead>
                       <tbody>
-                        <tr><td><span class="room-id-cell">SN-RM-20260430</span></td><td><div class="cell-primary">Wintermute Trading Ltd</div><div class="cell-secondary">WM-HK-001</div></td><td class="cell-secondary">2026-04-30 10:22</td><td><span class="tag tag--blue">USD / USDT</span></td><td><span class="tag tag--green">Active</span></td><td><button class="btn--ghost">进入 →</button></td></tr>
-                        <tr><td><span class="room-id-cell">SN-RM-20260428</span></td><td><div class="cell-primary">B2C2 Ltd</div><div class="cell-secondary">B2C2-SG-003</div></td><td class="cell-secondary">2026-04-28 15:41</td><td><span class="tag tag--blue">USD / USDC</span></td><td><span class="tag tag--orange">Pending Invite</span></td><td><button class="btn--ghost">查看 →</button></td></tr>
+                        <tr><td><span class="room-id-cell">SN-RM-20260430</span></td><td><div class="cell-primary">Wintermute Trading Ltd</div><div class="cell-secondary">WM-HK-001</div></td><td class="cell-secondary">2026-04-30 10:22</td><td><span class="tag tag--blue">USD / USDT</span></td><td><span class="tag tag--green">Active</span></td><td><button class="btn--ghost" data-i18n="portal.enter">进入 →</button></td></tr>
+                        <tr><td><span class="room-id-cell">SN-RM-20260428</span></td><td><div class="cell-primary">B2C2 Ltd</div><div class="cell-secondary">B2C2-SG-003</div></td><td class="cell-secondary">2026-04-28 15:41</td><td><span class="tag tag--blue">USD / USDC</span></td><td><span class="tag tag--orange">Pending Invite</span></td><td><button class="btn--ghost" data-i18n="portal.view">查看 →</button></td></tr>
                         <tr><td><span class="room-id-cell">SN-RM-20260415</span></td><td><div class="cell-primary">Cumberland DRW</div><div class="cell-secondary">CUM-HK-007</div></td><td class="cell-secondary">2026-04-15 09:05</td><td><span class="tag tag--blue">USD / USDT</span></td><td><span class="tag tag--grey">Closed</span></td><td><span style="color:#B9BCC5">—</span></td></tr>
                       </tbody>
                     </table>
                   </div>
-                  <div class="footer-note"><i class="ti ti-info-circle"></i>Settlement Room 由客户主动创建，仅限一对一双边结算，不可广播。</div>
+                  <div class="footer-note"><i class="ti ti-info-circle"></i><span data-i18n="portal.rooms_note">Settlement Room 由客户主动创建，仅限一对一双边结算，不可广播。</span></div>
                 </div>
               </div>
             </div>
@@ -600,19 +600,19 @@ body{font-family:'Poppins',sans-serif;background:#F5F6FA;color:#1C1C1C;font-size
         <!-- Modal -->
         <div class="modal-overlay" id="p-modal" onclick="if(event.target===this)pCloseModal()">
           <div class="modal">
-            <div class="modal__header"><h2 class="modal__title">发起 TG 询价</h2><button class="modal__close" onclick="pCloseModal()">✕</button></div>
+            <div class="modal__header"><h2 class="modal__title" data-i18n="portal.modal.title">发起 TG 询价</h2><button class="modal__close" onclick="pCloseModal()">✕</button></div>
             <div class="modal__body">
-              <div class="cp-card"><div class="cp-card__avatar" id="p-modal-av">WT</div><div><div class="cp-card__name" id="p-modal-name">Wintermute Trading Ltd</div><div class="cp-card__code" id="p-modal-code">编号：WM-HK-001</div><div class="cp-card__badges"><span class="tag tag--green">✓ KYB 已验证</span><span class="tag tag--green">✓ NPA 已签署</span></div></div></div>
-              <div class="modal-info-row"><span style="font-size:14px;flex-shrink:0">✈</span><span>点击确认后，将在 Telegram 为你与 <strong id="p-modal-name2">Wintermute Trading Ltd</strong> 创建一对一询价群组。</span></div>
-              <div class="modal-info-row"><span style="font-size:14px;flex-shrink:0">🤖</span><span>Cobo Bot 将作为<strong>观察员</strong>自动加入群组，结构化记录双方商定的条款，不介入定价。</span></div>
-              <div class="modal-info-row"><span style="font-size:14px;flex-shrink:0"><i class="ti ti-info-circle"></i></span><span>询价完成后，Settlement Room 将由 Cobo Bot 在群内发起创建。</span></div>
-              <div class="modal-warn">Cobo 不对该成员的报价或服务质量作任何推荐或背书。询价群组由你主动发起，Cobo 不参与双方的商业谈判。</div>
+              <div class="cp-card"><div class="cp-card__avatar" id="p-modal-av">WT</div><div><div class="cp-card__name" id="p-modal-name">Wintermute Trading Ltd</div><div class="cp-card__code" id="p-modal-code">编号：WM-HK-001</div><div class="cp-card__badges"><span class="tag tag--green" data-i18n="portal.modal.kyb">✓ KYB 已验证</span><span class="tag tag--green" data-i18n="portal.modal.npa">✓ NPA 已签署</span></div></div></div>
+              <div class="modal-info-row"><span style="font-size:14px;flex-shrink:0">✈</span><span data-i18n="portal.modal.info1">点击确认后，将在 Telegram 为你与 <strong id="p-modal-name2">Wintermute Trading Ltd</strong> 创建一对一询价群组。</span></div>
+              <div class="modal-info-row"><span style="font-size:14px;flex-shrink:0">🤖</span><span data-i18n="portal.modal.info2">Cobo Bot 将作为<strong>观察员</strong>自动加入群组，结构化记录双方商定的条款，不介入定价。</span></div>
+              <div class="modal-info-row"><span style="font-size:14px;flex-shrink:0"><i class="ti ti-info-circle"></i></span><span data-i18n="portal.modal.info3">询价完成后，Settlement Room 将由 Cobo Bot 在群内发起创建。</span></div>
+              <div class="modal-warn" data-i18n="portal.modal.warn">Cobo 不对该成员的报价或服务质量作任何推荐或背书。询价群组由你主动发起，Cobo 不参与双方的商业谈判。</div>
             </div>
-            <div class="modal__footer"><button class="btn--tertiary" onclick="pCloseModal()">取消</button><button class="btn--primary" onclick="pCloseModal();alert('正在跳转至 Telegram…\nCobo Bot 将自动加入询价群组。')">前往 Telegram →</button></div>
+            <div class="modal__footer"><button class="btn--tertiary" onclick="pCloseModal()" data-i18n="portal.modal.cancel">取消</button><button class="btn--primary" onclick="pCloseModal();alert('正在跳转至 Telegram…\nCobo Bot 将自动加入询价群组。')" data-i18n="portal.modal.confirm">前往 Telegram →</button></div>
           </div>
         </div>
       </div>
-      <div class="portal-note"><i class="ti ti-info-circle"></i>可点击左侧「Network Members」/「Settlement Rooms」切换页面，点击表格行或「发起询价」体验弹窗</div>
+      <div class="portal-note"><i class="ti ti-info-circle"></i><span data-i18n="portal.note">可点击左侧「Network Members」/「Settlement Rooms」切换页面，点击表格行或「发起询价」体验弹窗</span></div>
     </div>
   </div>
 
@@ -630,8 +630,8 @@ body{font-family:'Poppins',sans-serif;background:#F5F6FA;color:#1C1C1C;font-size
       <div class="tg-wrap-outer">
         <!-- Role bar -->
         <div style="display:flex;background:#374151;border-radius:8px;padding:4px;width:100%;max-width:420px">
-          <button style="flex:1;padding:8px;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;background:#2b5278;color:#fff;font-family:'Poppins',sans-serif" id="trole-client" onclick="tSetRole('client',this)">Client 视角</button>
-          <button style="flex:1;padding:8px;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:#f9fafb;font-family:'Poppins',sans-serif" id="trole-lp" onclick="tSetRole('lp',this)">LP 视角</button>
+          <button style="flex:1;padding:8px;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;background:#2b5278;color:#fff;font-family:'Poppins',sans-serif" id="trole-client" onclick="tSetRole('client',this)" data-i18n="tg.client_view">Client 视角</button>
+          <button style="flex:1;padding:8px;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:#f9fafb;font-family:'Poppins',sans-serif" id="trole-lp" onclick="tSetRole('lp',this)" data-i18n="tg.lp_view">LP 视角</button>
         </div>
         <!-- TG phone -->
         <div style="width:100%;max-width:420px;background:#17212b;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.5)">
@@ -650,20 +650,20 @@ body{font-family:'Poppins',sans-serif;background:#F5F6FA;color:#1C1C1C;font-size
         </div>
         <!-- Controls -->
         <div style="width:100%;max-width:420px;background:#374151;border-radius:10px;padding:10px;display:flex;gap:6px;flex-wrap:wrap">
-          <div style="width:100%;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:.06em;padding-bottom:4px;border-bottom:1px solid #4b5563">路径 A — 正常接受</div>
-          <button class="tctrl-btn" id="tbtnA1" onclick="tDoA(1)">① Client 填需求</button>
+          <div style="width:100%;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:.06em;padding-bottom:4px;border-bottom:1px solid #4b5563" data-i18n="tg.path_a">路径 A — 正常接受</div>
+          <button class="tctrl-btn" id="tbtnA1" onclick="tDoA(1)" data-i18n="tg.btn_a1">① Client 填需求</button>
           <button class="tctrl-btn" id="tbtnA2" onclick="tDoA(2)" disabled>② Request Card</button>
-          <button class="tctrl-btn" id="tbtnA3" onclick="tDoA(3)" disabled>③ LP 填报价</button>
+          <button class="tctrl-btn" id="tbtnA3" onclick="tDoA(3)" disabled data-i18n="tg.btn_a3">③ LP 填报价</button>
           <button class="tctrl-btn" id="tbtnA4" onclick="tDoA(4)" disabled>④ Quote Card</button>
           <button class="tctrl-btn" id="tbtnA5" onclick="tDoA(5)" disabled>⑤ Confirmed</button>
-          <div style="width:100%;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:.06em;padding:8px 0 4px;border-bottom:1px solid #4b5563">路径 B — 拒绝 → 重新报价</div>
-          <button class="tctrl-btn" id="tbtnB1" onclick="tDoB(1)" disabled style="background:#7f1d1d;border-color:#991b1b">⑤ 拒绝报价</button>
-          <button class="tctrl-btn" id="tbtnB2" onclick="tDoB(2)" disabled>⑥ LP 重新填</button>
-          <button class="tctrl-btn" id="tbtnB3" onclick="tDoB(3)" disabled>⑦ 新 Quote</button>
+          <div style="width:100%;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:.06em;padding:8px 0 4px;border-bottom:1px solid #4b5563" data-i18n="tg.path_b">路径 B — 拒绝 → 重新报价</div>
+          <button class="tctrl-btn" id="tbtnB1" onclick="tDoB(1)" disabled style="background:#7f1d1d;border-color:#991b1b" data-i18n="tg.btn_b_reject">⑤ 拒绝报价</button>
+          <button class="tctrl-btn" id="tbtnB2" onclick="tDoB(2)" disabled data-i18n="tg.btn_b2">⑥ LP 重新填</button>
+          <button class="tctrl-btn" id="tbtnB3" onclick="tDoB(3)" disabled data-i18n="tg.btn_b3">⑦ 新 Quote</button>
           <button class="tctrl-btn" id="tbtnB4" onclick="tDoB(4)" disabled>⑧ Confirmed</button>
-          <div style="width:100%;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:.06em;padding:8px 0 4px;border-bottom:1px solid #4b5563">路径 C — 24h 超时失效</div>
-          <button class="tctrl-btn" id="tbtnC1" onclick="tDoC()" disabled style="background:#7f1d1d;border-color:#991b1b">⑤ 超时失效</button>
-          <div style="width:100%;font-size:11px;font-weight:500;color:#f3f4f6;text-align:center;padding-top:6px;border-top:1px solid #4b5563;margin-top:4px" id="t-hint">先点「① Client 填需求」开始</div>
+          <div style="width:100%;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:.06em;padding:8px 0 4px;border-bottom:1px solid #4b5563" data-i18n="tg.path_c">路径 C — 24h 超时失效</div>
+          <button class="tctrl-btn" id="tbtnC1" onclick="tDoC()" disabled style="background:#7f1d1d;border-color:#991b1b" data-i18n="tg.btn_c_expire">⑤ 超时失效</button>
+          <div style="width:100%;font-size:11px;font-weight:500;color:#f3f4f6;text-align:center;padding-top:6px;border-top:1px solid #4b5563;margin-top:4px" id="t-hint" data-i18n="tg.hint_init">先点「① Client 填需求」开始</div>
         </div>
       </div>
     </div>
@@ -685,6 +685,225 @@ body{font-family:'Poppins',sans-serif;background:#F5F6FA;color:#1C1C1C;font-size
 
 <script>
 
+/* ── i18n ── */
+const T = {
+  zh: {
+    'portal.compliance': '<strong>合规说明：</strong>Cobo 不对以下成员的报价、服务质量或商业适配性作任何推荐或背书。所有成员均已完成 KYB 并签署 SN Master Agreement。在发起询价前，你须已与目标成员建立独立的商业关系。',
+    'portal.search': '按成员名称或编号搜索',
+    'portal.recent': '最近联系',
+    'portal.all': '全部成员',
+    'portal.th.name': '成员名称',
+    'portal.th.code': '编号',
+    'portal.th.recent': '最近询价',
+    'portal.th.actions': '操作',
+    'portal.th.pairs': '支持币对',
+    'portal.th.total': '共 24 条记录',
+    'portal.inquiry': '发起询价 →',
+    'portal.rooms.compliance': '<strong>合规说明：</strong>Settlement Room 由 TG 询价完成后通过 Cobo Bot 发起创建。交易对手方须由你在平台外独立识别，Cobo 不提供撮合、介绍或推荐服务。',
+    'portal.th.counterparty': '交易对手方',
+    'portal.th.recent_activity': '最近活动',
+    'portal.enter': '进入 →',
+    'portal.view': '查看 →',
+    'portal.rooms_note': 'Settlement Room 由客户主动创建，仅限一对一双边结算，不可广播。',
+    'portal.modal.title': '发起 TG 询价',
+    'portal.modal.code': '编号：',
+    'portal.modal.kyb': '✓ KYB 已验证',
+    'portal.modal.npa': '✓ NPA 已签署',
+    'portal.modal.info1': '点击确认后，将在 Telegram 为你与 <strong id="p-modal-name2">Wintermute Trading Ltd</strong> 创建一对一询价群组。',
+    'portal.modal.info2': 'Cobo Bot 将作为<strong>观察员</strong>自动加入群组，结构化记录双方商定的条款，不介入定价。',
+    'portal.modal.info3': '询价完成后，Settlement Room 将由 Cobo Bot 在群内发起创建。',
+    'portal.modal.warn': 'Cobo 不对该成员的报价或服务质量作任何推荐或背书。询价群组由你主动发起，Cobo 不参与双方的商业谈判。',
+    'portal.modal.cancel': '取消',
+    'portal.modal.confirm': '前往 Telegram →',
+    'portal.note': '可点击左侧「Network Members」/「Settlement Rooms」切换页面，点击表格行或「发起询价」体验弹窗',
+    'tg.client_view': 'Client 视角',
+    'tg.lp_view': 'LP 视角',
+    'tg.path_a': '路径 A — 正常接受',
+    'tg.path_b': '路径 B — 拒绝 → 重新报价',
+    'tg.path_c': '路径 C — 24h 超时失效',
+    'tg.btn_a1': '① Client 填需求',
+    'tg.btn_a3': '③ LP 填报价',
+    'tg.btn_b_reject': '⑤ 拒绝报价',
+    'tg.btn_b2': '⑥ LP 重新填',
+    'tg.btn_b3': '⑦ 新 Quote',
+    'tg.btn_c_expire': '⑤ 超时失效',
+    'tg.hint_init': '先点「① Client 填需求」开始',
+    'card.fiat': '法币金额 (USD)',
+    'card.fiat_label': '法币金额',
+    'card.stable': '稳定币',
+    'card.window': '结算窗口',
+    'card.validity': '有效期',
+    'card.note': '备注',
+    'card.expire': '报价有效期',
+    'card.submit': '提交需求 →',
+    'card.rate_label': '汇率 (1 USD = ? USDT)',
+    'card.usdt_qty': 'USDT 数量',
+    'card.submit_quote': '提交报价 →',
+    'card.from': '发起方',
+    'card.direction': '方向',
+    'card.remark': '月度资金调拨，请尽快报价',
+    'card.req_footer': 'LP 请在 Mini App 填写报价',
+    'card.rate': '汇率',
+    'card.net_usdt': '实收 USDT',
+    'card.confirm_hint': '如接受请回复「确认」/「confirm」；如拒绝请回复「拒绝」',
+    'card.pay_usdt': '应付 USDT',
+    'card.recv_fiat': '应收法币',
+    'card.wait_client': '等待 Client 确认',
+    'card.usdt_qty2': 'USDT 数量',
+    'card.confirmed': '✓ 已确认',
+    'card.portal_link': '前往 Portal 创建合同 →',
+    'card.awaiting_contract': 'Awaiting contract creation in Portal',
+    'card.room_ready': 'Settlement Room 已就绪，LP 请点击下方链接创建合同',
+    'card.reject_label': '拒绝方',
+    'card.status': '当前状态',
+    'card.re_quote_hint': 'LP 请重新在 Mini App 填写报价',
+    'card.expired_time': '失效时间',
+    'card.expired_reason': '原因',
+    'card.expired_cause': '超过 24 小时未确认',
+    'card.re_quote_ok': 'LP 可重新报价',
+    'tg.hint_a1': 'Client 填写需求 → 点「② Request Card」',
+    'tg.hint_a2': 'Bot 推 Request Card → 点「③ LP 填报价」',
+    'tg.hint_a3': 'LP 填写报价 → 点「④ Quote Card」',
+    'tg.hint_a4': 'Bot 推 Quote Card → 路径A点「⑤」，路径B点拒绝，路径C点超时',
+    'tg.hint_a5': '条款确认，Settlement Room 已就绪',
+    'tg.hint_b1': 'Client 拒绝 → 点「⑥ LP 重新填」',
+    'tg.hint_b2': 'LP 重新填写报价 → 点「⑦ 新 Quote」',
+    'tg.hint_b3': 'Bot 推新 Quote Card → 点「⑧ Confirmed」',
+    'tg.hint_b4': '条款确认，Settlement Room 已就绪',
+    'tg.hint_c': '24h 超时，LP 可重新报价',
+    'mini.req_title': 'Settlement Request · Mini App',
+    'mini.quote_title': '报价填写 · Mini App',
+    'tg.client_filling': '（在 Mini App 填写结算需求）',
+    'tg.lp_filling': '（在 Mini App 填写报价）',
+    'tg.lp_refilling': '（重新在 Mini App 填写报价）',
+    'tg.client_confirm': '确认',
+    'tg.client_reject': '拒绝',
+  },
+  en: {
+    'portal.compliance': '<strong>Compliance Notice:</strong> Cobo makes no recommendations or endorsements regarding any member\'s quotes, service quality, or commercial suitability. All members have completed KYB and signed the SN Master Agreement. Before initiating an inquiry, you must have already established an independent business relationship with the target member.',
+    'portal.search': 'Search by member name or code',
+    'portal.recent': 'Recent Contacts',
+    'portal.all': 'All Members',
+    'portal.th.name': 'Member Name',
+    'portal.th.code': 'Code',
+    'portal.th.recent': 'Last Inquiry',
+    'portal.th.actions': 'Actions',
+    'portal.th.pairs': 'Supported Pairs',
+    'portal.th.total': '24 records total',
+    'portal.inquiry': 'Start Inquiry →',
+    'portal.rooms.compliance': '<strong>Compliance Notice:</strong> Settlement Rooms are created via Cobo Bot after TG inquiry is confirmed. Counterparties must be independently identified by you outside the platform. Cobo does not provide matching, introduction, or referral services.',
+    'portal.th.counterparty': 'Counterparty',
+    'portal.th.recent_activity': 'Last Activity',
+    'portal.enter': 'Enter →',
+    'portal.view': 'View →',
+    'portal.rooms_note': 'Settlement Rooms are created by clients and limited to one-on-one bilateral settlement; broadcasting is not supported.',
+    'portal.modal.title': 'Start TG Inquiry',
+    'portal.modal.code': 'Code: ',
+    'portal.modal.kyb': '✓ KYB Verified',
+    'portal.modal.npa': '✓ NPA Signed',
+    'portal.modal.info1': 'After confirmation, a one-on-one inquiry group will be created in Telegram between you and <strong id="p-modal-name2">Wintermute Trading Ltd</strong>.',
+    'portal.modal.info2': 'Cobo Bot will join as an <strong>observer</strong>, structurally recording terms agreed by both parties without intervening in pricing.',
+    'portal.modal.info3': 'After inquiry is completed, Cobo Bot will initiate the creation of a Settlement Room within the group.',
+    'portal.modal.warn': 'Cobo makes no recommendations or endorsements regarding this member\'s quotes or service quality. The inquiry group is initiated by you, and Cobo does not participate in commercial negotiations.',
+    'portal.modal.cancel': 'Cancel',
+    'portal.modal.confirm': 'Go to Telegram →',
+    'portal.note': 'Click "Network Members" / "Settlement Rooms" in the left sidebar to switch pages; click table rows or "Start Inquiry" to experience the modal',
+    'tg.client_view': 'Client View',
+    'tg.lp_view': 'LP View',
+    'tg.path_a': 'Path A — Normal Accept',
+    'tg.path_b': 'Path B — Reject → Re-quote',
+    'tg.path_c': 'Path C — 24h Timeout',
+    'tg.btn_a1': '① Client Fills Request',
+    'tg.btn_a3': '③ LP Fills Quote',
+    'tg.btn_b_reject': '⑤ Reject Quote',
+    'tg.btn_b2': '⑥ LP Re-fills',
+    'tg.btn_b3': '⑦ New Quote',
+    'tg.btn_c_expire': '⑤ Expire',
+    'tg.hint_init': 'Start by clicking "① Client Fills Request"',
+    'card.fiat': 'Fiat Amount (USD)',
+    'card.fiat_label': 'Fiat Amount',
+    'card.stable': 'Stablecoin',
+    'card.window': 'Settlement Window',
+    'card.validity': 'Validity',
+    'card.note': 'Notes',
+    'card.expire': 'Quote Expiry',
+    'card.submit': 'Submit Request →',
+    'card.rate_label': 'Rate (1 USD = ? USDT)',
+    'card.usdt_qty': 'USDT Amount',
+    'card.submit_quote': 'Submit Quote →',
+    'card.from': 'Initiator',
+    'card.direction': 'Direction',
+    'card.remark': 'Monthly fund transfer, please quote ASAP',
+    'card.req_footer': 'LP please fill in quote in Mini App',
+    'card.rate': 'Exchange Rate',
+    'card.net_usdt': 'Net USDT Received',
+    'card.confirm_hint': 'Reply "confirm" to accept or "reject" to decline',
+    'card.pay_usdt': 'USDT to Pay',
+    'card.recv_fiat': 'Fiat to Receive',
+    'card.wait_client': 'Awaiting Client confirmation',
+    'card.usdt_qty2': 'USDT Amount',
+    'card.confirmed': '✓ Confirmed',
+    'card.portal_link': 'Go to Portal to create contract →',
+    'card.awaiting_contract': 'Awaiting contract creation in Portal',
+    'card.room_ready': 'Settlement Room is ready. LP please click the link below to create a contract.',
+    'card.reject_label': 'Rejected by',
+    'card.status': 'Current Status',
+    'card.re_quote_hint': 'LP please re-submit quote in Mini App',
+    'card.expired_time': 'Expired At',
+    'card.expired_reason': 'Reason',
+    'card.expired_cause': 'No response within 24 hours',
+    'card.re_quote_ok': 'LP may re-submit quote',
+    'tg.hint_a1': 'Client fills request → click "② Request Card"',
+    'tg.hint_a2': 'Bot sends Request Card → click "③ LP fills quote"',
+    'tg.hint_a3': 'LP fills quote → click "④ Quote Card"',
+    'tg.hint_a4': 'Bot sends Quote Card → Path A click "⑤", Path B click reject, Path C click expire',
+    'tg.hint_a5': 'Terms confirmed, Settlement Room is ready',
+    'tg.hint_b1': 'Client rejects → click "⑥ LP re-fills"',
+    'tg.hint_b2': 'LP re-fills quote → click "⑦ New Quote"',
+    'tg.hint_b3': 'Bot sends new Quote Card → click "⑧ Confirmed"',
+    'tg.hint_b4': 'Terms confirmed, Settlement Room is ready',
+    'tg.hint_c': '24h timeout, LP may re-submit quote',
+    'mini.req_title': 'Settlement Request · Mini App',
+    'mini.quote_title': 'Quote Submission · Mini App',
+    'tg.client_filling': '(Filling in settlement request in Mini App)',
+    'tg.lp_filling': '(Filling in quote in Mini App)',
+    'tg.lp_refilling': '(Re-filling quote in Mini App)',
+    'tg.client_confirm': 'confirm',
+    'tg.client_reject': 'reject',
+  }
+};
+
+let currentLang = localStorage.getItem('sn_lang') || 'zh';
+const HTML_KEYS_TG = new Set(['portal.compliance','portal.rooms.compliance','portal.modal.info1','portal.modal.info2']);
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('sn_lang', lang);
+  const t = T[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      if (HTML_KEYS_TG.has(key)) { el.innerHTML = t[key]; }
+      else { el.textContent = t[key]; }
+    }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+  // Rebuild TG chat with new lang
+  if (typeof tRebuild === 'function') tRebuild();
+}
+
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'lang') { setLang(e.data.lang); }
+});
+
+(function() {
+  const saved = localStorage.getItem('sn_lang');
+  if (saved && saved !== 'zh') setLang(saved);
+})();
+
 /* ── Portal JS ── */
 function pShowPage(page,navEl){
   document.getElementById('p-page-members').style.display=page==='members'?'block':'none';
@@ -697,7 +916,7 @@ function pOpenModal(name,initials,code){
   document.getElementById('p-modal-av').textContent=initials;
   document.getElementById('p-modal-name').textContent=name;
   document.getElementById('p-modal-name2').textContent=name;
-  document.getElementById('p-modal-code').textContent='编号：'+code;
+  document.getElementById('p-modal-code').textContent=T[currentLang]['portal.modal.code']+code;
   document.getElementById('p-modal').classList.add('is-open');
 }
 function pCloseModal(){document.getElementById('p-modal').classList.remove('is-open');}
@@ -724,40 +943,44 @@ const tScenes=[];const tSIdx={};
 function tDef(k,fn){tSIdx[k]=tScenes.length;tScenes.push(fn)}
 
 tDef('mini_req',()=>{
-  if(tRole==='client') return tMsgBot(miniApp('Settlement Request · Mini App','ti-file-plus',[['法币金额 (USD)','10,000,000'],['稳定币','USDT'],['结算窗口','T+0'],['有效期','24h'],['备注','月度资金调拨，请尽快报价']],'提交需求 →','09:28'),'09:28');
-  return tMsgR('AC','#92400e','Acme Corp','#fb923c','（在 Mini App 填写结算需求）','09:28',false);
+  const t=T[currentLang];
+  if(tRole==='client') return tMsgBot(miniApp(t['mini.req_title'],'ti-file-plus',[[t['card.fiat'],'10,000,000'],[t['card.stable'],'USDT'],[t['card.window'],'T+0'],[t['card.validity'],'24h'],[t['card.note'],t['card.remark']]],t['card.submit'],'09:28'),'09:28');
+  return tMsgR('AC','#92400e','Acme Corp','#fb923c',t['tg.client_filling'],'09:28',false);
 });
 
-tDef('req_card',()=>tMsgBot(tCard('','#1a3a5c','#93c5fd','ti-file-text','Settlement Request','#REQ-001',[['发起方','Acme Corp'],['方向','Fiat → Stablecoin','#fde68a'],['法币金额','USD 10,000,000','mono'],['稳定币','USDT（待报价）'],['结算窗口','T+0','#6ee7b7'],['备注','月度资金调拨，请尽快报价'],['报价有效期',tEXP,'#fca5a5']],'#132030','#f59e0b','LP 请在 Mini App 填写报价'),'09:30'));
+tDef('req_card',()=>{const t=T[currentLang];return tMsgBot(tCard('','#1a3a5c','#93c5fd','ti-file-text','Settlement Request','#REQ-001',[[t['card.from'],'Acme Corp'],[t['card.direction'],'Fiat → Stablecoin','#fde68a'],[t['card.fiat_label'],'USD 10,000,000','mono'],[t['card.stable'],'USDT（待报价）'],[t['card.window'],'T+0','#6ee7b7'],[t['card.note'],t['card.remark']],[t['card.expire'],tEXP,'#fca5a5']],'#132030','#f59e0b',t['card.req_footer']),'09:30')});
 
 tDef('mini_quote',()=>{
-  if(tRole==='lp') return tMsgBot(miniApp('报价填写 · Mini App','ti-tag',[['汇率 (1 USD = ? USDT)','0.9990'],['USDT 数量','9,990,000']],'提交报价 →','09:44'),'09:44');
-  return tMsgR('WM','#065f46','Wintermute · LP','#34d399','（在 Mini App 填写报价）','09:44',false);
+  const t=T[currentLang];
+  if(tRole==='lp') return tMsgBot(miniApp(t['mini.quote_title'],'ti-tag',[[t['card.rate_label'],'0.9990'],[t['card.usdt_qty'],'9,990,000']],t['card.submit_quote'],'09:44'),'09:44');
+  return tMsgR('WM','#065f46','Wintermute · LP','#34d399',t['tg.lp_filling'],'09:44',false);
 });
 
-tDef('quote_card',()=>tMsgBot(tRole==='client'?tCard('','#2d3a10','#bef264','ti-tag','Quote Received','#QUOTE-001',[['法币金额','USD 10,000,000','mono'],['汇率','1 USD = 0.9990 USDT','mono'],['实收 USDT','9,990,000 USDT','#6ee7b7'],['结算窗口','T+0','#6ee7b7']],'#132030','#f59e0b','如接受请回复「确认」/「confirm」；如拒绝请回复「拒绝」'):tCard('','#2d3a10','#bef264','ti-tag','Quote Submitted','#QUOTE-001',[['应付 USDT','9,990,000 USDT','#fde68a'],['汇率','1 USD = 0.9990 USDT','mono'],['应收法币','USD 10,000,000','#6ee7b7'],['结算窗口','T+0','#6ee7b7']],'#132030','#f59e0b','等待 Client 确认'),'09:45'));
+tDef('quote_card',()=>{const t=T[currentLang];return tMsgBot(tRole==='client'?tCard('','#2d3a10','#bef264','ti-tag','Quote Received','#QUOTE-001',[[t['card.fiat_label'],'USD 10,000,000','mono'],[t['card.rate'],'1 USD = 0.9990 USDT','mono'],[t['card.net_usdt'],'9,990,000 USDT','#6ee7b7'],[t['card.window'],'T+0','#6ee7b7']],'#132030','#f59e0b',t['card.confirm_hint']):tCard('','#2d3a10','#bef264','ti-tag','Quote Submitted','#QUOTE-001',[[t['card.pay_usdt'],'9,990,000 USDT','#fde68a'],[t['card.rate'],'1 USD = 0.9990 USDT','mono'],[t['card.recv_fiat'],'USD 10,000,000','#6ee7b7'],[t['card.window'],'T+0','#6ee7b7']],'#132030','#f59e0b',t['card.wait_client']),'09:45')});
 
-tDef('confirm',()=>tRole==='client'?tMsgR('AC','#92400e','','','确认','09:52',true):tMsgR('AC','#92400e','Acme Corp','#fb923c','确认','09:52',false));
+tDef('confirm',()=>{const t=T[currentLang];return tRole==='client'?tMsgR('AC','#92400e','','',t['tg.client_confirm'],'09:52',true):tMsgR('AC','#92400e','Acme Corp','#fb923c',t['tg.client_confirm'],'09:52',false)});
 
-function tConfirmedCard(rate,amt){return tCard('','#0d3320','#6ee7b7','ti-circle-check','Terms Confirmed ✓','SN-20260430-0042',[['法币金额','USD 10,000,000','mono'],['USDT 数量',amt+' USDT','#6ee7b7'],['汇率','1 USD = '+rate+' USDT','mono'],['结算窗口','T+0','#6ee7b7']],'#132030','#3b82f6','Awaiting contract creation in Portal','<div style="border-top:1px solid #2a4a6a;margin:6px 0"></div><div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #162030"><span style="font-size:10px;color:#9ca3af">Acme Corp</span><span style="font-size:11px;color:#6ee7b7;font-weight:500">✓ 已确认</span></div><div style="display:flex;justify-content:space-between;padding:3px 0"><span style="font-size:10px;color:#9ca3af">Wintermute</span><span style="font-size:11px;color:#6ee7b7;font-weight:500">✓ 已确认</span></div><div style="border-top:1px solid #2a4a6a;margin:6px 0"></div><div style="font-size:10px;color:#d1d5db;line-height:1.4;padding-top:2px">Settlement Room 已就绪，LP 请点击下方链接创建合同</div><div style="display:flex;align-items:center;gap:6px;margin-top:6px;padding:7px 10px;background:#0d2030;border:1px solid #1a4060;border-radius:6px;cursor:pointer" onclick="alert(&apos;跳转至 Portal Settlement Room…&apos;)"><i class="ti ti-external-link" style="color:#93c5fd;font-size:12px"></i><span style="font-size:11px;color:#93c5fd;font-weight:600">前往 Portal 创建合同 →</span></div>')}
+function tConfirmedCard(rate,amt){const t=T[currentLang];return tCard('','#0d3320','#6ee7b7','ti-circle-check','Terms Confirmed ✓','SN-20260430-0042',[[t['card.fiat_label'],'USD 10,000,000','mono'],[t['card.usdt_qty2'],amt+' USDT','#6ee7b7'],[t['card.rate'],'1 USD = '+rate+' USDT','mono'],[t['card.window'],'T+0','#6ee7b7']],'#132030','#3b82f6',t['card.awaiting_contract'],'<div style="border-top:1px solid #2a4a6a;margin:6px 0"></div><div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #162030"><span style="font-size:10px;color:#9ca3af">Acme Corp</span><span style="font-size:11px;color:#6ee7b7;font-weight:500">'+t['card.confirmed']+'</span></div><div style="display:flex;justify-content:space-between;padding:3px 0"><span style="font-size:10px;color:#9ca3af">Wintermute</span><span style="font-size:11px;color:#6ee7b7;font-weight:500">'+t['card.confirmed']+'</span></div><div style="border-top:1px solid #2a4a6a;margin:6px 0"></div><div style="font-size:10px;color:#d1d5db;line-height:1.4;padding-top:2px">'+t['card.room_ready']+'</div><div style="display:flex;align-items:center;gap:6px;margin-top:6px;padding:7px 10px;background:#0d2030;border:1px solid #1a4060;border-radius:6px;cursor:pointer" onclick="alert(&apos;跳转至 Portal Settlement Room…&apos;)"><i class="ti ti-external-link" style="color:#93c5fd;font-size:12px"></i><span style="font-size:11px;color:#93c5fd;font-weight:600">'+t['card.portal_link']+'</span></div>')}
 
 tDef('confirmed_a',()=>tMsgBot(tConfirmedCard('0.9990','9,990,000'),'09:53'));
 
 tDef('rejected',()=>{
-  let h=tRole==='client'?tMsgR('AC','#92400e','','','拒绝','09:55',true):tMsgR('AC','#92400e','Acme Corp','#fb923c','拒绝','09:55',false);
-  return h+tMsgBot(`<div style="background:#1e2d3d;border:1px solid #7f1d1d;border-radius:10px;overflow:hidden;margin-top:4px;min-width:270px"><div style="padding:8px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #7f1d1d;background:#1c0a0a"><div style="width:26px;height:26px;border-radius:6px;background:#7f1d1d;display:flex;align-items:center;justify-content:center"><i class="ti ti-x" style="color:#fca5a5;font-size:13px"></i></div><div><div style="font-size:12px;font-weight:700;color:#f9fafb">Quote Rejected</div><div style="font-size:10px;color:#9ca3af;margin-top:1px">#QUOTE-001</div></div></div><div style="padding:8px 12px 10px"><div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #162030"><span style="font-size:10px;color:#9ca3af">拒绝方</span><span style="font-size:11px;color:#fca5a5;font-weight:500">Acme Corp</span></div><div style="display:flex;justify-content:space-between;padding:3px 0"><span style="font-size:10px;color:#9ca3af">当前状态</span><span style="font-size:11px;color:#fde68a;font-weight:500">Awaiting LP quote</span></div><div style="border-top:1px solid #2a4a6a;margin:6px 0"></div><div style="font-size:10px;color:#d1d5db">LP 请重新在 Mini App 填写报价</div></div><div style="padding:6px 12px 8px;background:#1c0a0a;display:flex;align-items:center;gap:6px"><div style="width:6px;height:6px;border-radius:50%;background:#ef4444;flex-shrink:0"></div><span style="font-size:10px;color:#d1d5db">Quote rejected · LP 重新报价中</span></div></div>`,'09:56');
+  const t=T[currentLang];
+  let h=tRole==='client'?tMsgR('AC','#92400e','','',t['tg.client_reject'],'09:55',true):tMsgR('AC','#92400e','Acme Corp','#fb923c',t['tg.client_reject'],'09:55',false);
+  return h+tMsgBot(`<div style="background:#1e2d3d;border:1px solid #7f1d1d;border-radius:10px;overflow:hidden;margin-top:4px;min-width:270px"><div style="padding:8px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #7f1d1d;background:#1c0a0a"><div style="width:26px;height:26px;border-radius:6px;background:#7f1d1d;display:flex;align-items:center;justify-content:center"><i class="ti ti-x" style="color:#fca5a5;font-size:13px"></i></div><div><div style="font-size:12px;font-weight:700;color:#f9fafb">Quote Rejected</div><div style="font-size:10px;color:#9ca3af;margin-top:1px">#QUOTE-001</div></div></div><div style="padding:8px 12px 10px"><div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #162030"><span style="font-size:10px;color:#9ca3af">${t['card.reject_label']}</span><span style="font-size:11px;color:#fca5a5;font-weight:500">Acme Corp</span></div><div style="display:flex;justify-content:space-between;padding:3px 0"><span style="font-size:10px;color:#9ca3af">${t['card.status']}</span><span style="font-size:11px;color:#fde68a;font-weight:500">Awaiting LP quote</span></div><div style="border-top:1px solid #2a4a6a;margin:6px 0"></div><div style="font-size:10px;color:#d1d5db">${t['card.re_quote_hint']}</div></div><div style="padding:6px 12px 8px;background:#1c0a0a;display:flex;align-items:center;gap:6px"><div style="width:6px;height:6px;border-radius:50%;background:#ef4444;flex-shrink:0"></div><span style="font-size:10px;color:#d1d5db">Quote rejected · LP re-quoting</span></div></div>`,'09:56');
 });
 
 tDef('mini_quote2',()=>{
-  if(tRole==='lp') return tMsgBot(miniApp('报价填写 · Mini App','ti-tag',[['汇率 (1 USD = ? USDT)','0.9993'],['USDT 数量','9,993,000']],'提交报价 →','10:05'),'10:05');
-  return tMsgR('WM','#065f46','Wintermute · LP','#34d399','（重新在 Mini App 填写报价）','10:05',false);
+  const t=T[currentLang];
+  if(tRole==='lp') return tMsgBot(miniApp(t['mini.quote_title'],'ti-tag',[[t['card.rate_label'],'0.9993'],[t['card.usdt_qty'],'9,993,000']],t['card.submit_quote'],'10:05'),'10:05');
+  return tMsgR('WM','#065f46','Wintermute · LP','#34d399',t['tg.lp_refilling'],'10:05',false);
 });
 
-tDef('quote_card2',()=>tMsgBot(tRole==='client'?tCard('','#2d3a10','#bef264','ti-tag','Quote Received','#QUOTE-002',[['法币金额','USD 10,000,000','mono'],['汇率','1 USD = 0.9993 USDT','mono'],['实收 USDT','9,993,000 USDT','#6ee7b7'],['结算窗口','T+0','#6ee7b7']],'#132030','#f59e0b','如接受请回复「确认」/「confirm」'):tCard('','#2d3a10','#bef264','ti-tag','Quote Submitted','#QUOTE-002',[['应付 USDT','9,993,000 USDT','#fde68a'],['汇率','1 USD = 0.9993 USDT','mono'],['应收法币','USD 10,000,000','#6ee7b7'],['结算窗口','T+0','#6ee7b7']],'#132030','#f59e0b','等待 Client 确认'),'10:06'));
+tDef('quote_card2',()=>{const t=T[currentLang];return tMsgBot(tRole==='client'?tCard('','#2d3a10','#bef264','ti-tag','Quote Received','#QUOTE-002',[[t['card.fiat_label'],'USD 10,000,000','mono'],[t['card.rate'],'1 USD = 0.9993 USDT','mono'],[t['card.net_usdt'],'9,993,000 USDT','#6ee7b7'],[t['card.window'],'T+0','#6ee7b7']],'#132030','#f59e0b',t['card.confirm_hint']):tCard('','#2d3a10','#bef264','ti-tag','Quote Submitted','#QUOTE-002',[[t['card.pay_usdt'],'9,993,000 USDT','#fde68a'],[t['card.rate'],'1 USD = 0.9993 USDT','mono'],[t['card.recv_fiat'],'USD 10,000,000','#6ee7b7'],[t['card.window'],'T+0','#6ee7b7']],'#132030','#f59e0b',t['card.wait_client']),'10:06')});
 
-tDef('confirm2',()=>tRole==='client'?tMsgR('AC','#92400e','','','确认','10:12',true):tMsgR('AC','#92400e','Acme Corp','#fb923c','确认','10:12',false));
+tDef('confirm2',()=>{const t=T[currentLang];return tRole==='client'?tMsgR('AC','#92400e','','',t['tg.client_confirm'],'10:12',true):tMsgR('AC','#92400e','Acme Corp','#fb923c',t['tg.client_confirm'],'10:12',false)});
 tDef('confirmed_b',()=>tMsgBot(tConfirmedCard('0.9993','9,993,000'),'10:13'));
-tDef('expired',()=>tMsgBot(`<div style="background:#1e2d3d;border:1px solid #78350f;border-radius:10px;overflow:hidden;margin-top:4px;min-width:270px"><div style="padding:8px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #78350f;background:#1c1008"><div style="width:26px;height:26px;border-radius:6px;background:#78350f;display:flex;align-items:center;justify-content:center"><i class="ti ti-clock-off" style="color:#fde68a;font-size:13px"></i></div><div><div style="font-size:12px;font-weight:700;color:#f9fafb">Quote Expired</div><div style="font-size:10px;color:#9ca3af;margin-top:1px">#QUOTE-001</div></div></div><div style="padding:8px 12px 10px"><div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #162030"><span style="font-size:10px;color:#9ca3af">失效时间</span><span style="font-size:11px;color:#f3f4f6;font-weight:500">2026-04-30 11:30</span></div><div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #162030"><span style="font-size:10px;color:#9ca3af">原因</span><span style="font-size:11px;color:#fde68a;font-weight:500">超过 24 小时未确认</span></div><div style="display:flex;justify-content:space-between;padding:3px 0"><span style="font-size:10px;color:#9ca3af">当前状态</span><span style="font-size:11px;color:#fde68a;font-weight:500">Awaiting LP quote</span></div></div><div style="padding:6px 12px 8px;background:#1c1008;display:flex;align-items:center;gap:6px"><div style="width:6px;height:6px;border-radius:50%;background:#f97316;flex-shrink:0"></div><span style="font-size:10px;color:#d1d5db">Quote expired · LP 可重新报价</span></div></div>`,'11:30'));
+tDef('expired',()=>{const t=T[currentLang];return tMsgBot(`<div style="background:#1e2d3d;border:1px solid #78350f;border-radius:10px;overflow:hidden;margin-top:4px;min-width:270px"><div style="padding:8px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #78350f;background:#1c1008"><div style="width:26px;height:26px;border-radius:6px;background:#78350f;display:flex;align-items:center;justify-content:center"><i class="ti ti-clock-off" style="color:#fde68a;font-size:13px"></i></div><div><div style="font-size:12px;font-weight:700;color:#f9fafb">Quote Expired</div><div style="font-size:10px;color:#9ca3af;margin-top:1px">#QUOTE-001</div></div></div><div style="padding:8px 12px 10px"><div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #162030"><span style="font-size:10px;color:#9ca3af">${t['card.expired_time']}</span><span style="font-size:11px;color:#f3f4f6;font-weight:500">2026-04-30 11:30</span></div><div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #162030"><span style="font-size:10px;color:#9ca3af">${t['card.expired_reason']}</span><span style="font-size:11px;color:#fde68a;font-weight:500">${t['card.expired_cause']}</span></div><div style="display:flex;justify-content:space-between;padding:3px 0"><span style="font-size:10px;color:#9ca3af">${t['card.status']}</span><span style="font-size:11px;color:#fde68a;font-weight:500">Awaiting LP quote</span></div></div><div style="padding:6px 12px 8px;background:#1c1008;display:flex;align-items:center;gap:6px"><div style="width:6px;height:6px;border-radius:50%;background:#f97316;flex-shrink:0"></div><span style="font-size:10px;color:#d1d5db">Quote expired · ${t['card.re_quote_ok']}</span></div></div>`,'11:30')});
 
 function tRebuild(){const chat=document.getElementById('tg-chat');chat.innerHTML='<div style="text-align:center;font-size:11px;color:#9ca3af;margin:4px 0">2026-04-30</div>';tRendered.forEach(k=>chat.insertAdjacentHTML('beforeend',tScenes[tSIdx[k]]()));chat.scrollTop=9999}
 function tAdd(k){if(!tRendered.includes(k)){tRendered.push(k);tRebuild()}}
@@ -766,19 +989,21 @@ function tEna(...ids){ids.forEach(id=>{const b=document.getElementById(id);if(b)
 function tHint(t){document.getElementById('t-hint').textContent=t}
 
 function tDoA(n){
-  if(n===1){tAdd('mini_req');tDis('tbtnA1');tEna('tbtnA2');tHint('Client 填写需求 → 点「② Request Card」')}
-  else if(n===2){tAdd('req_card');tDis('tbtnA2');tEna('tbtnA3','tbtnC1');tHint('Bot 推 Request Card → 点「③ LP 填报价」')}
-  else if(n===3){tAdd('mini_quote');tDis('tbtnA3');tDis('tbtnC1');tEna('tbtnA4');tHint('LP 填写报价 → 点「④ Quote Card」')}
-  else if(n===4){tAdd('quote_card');tDis('tbtnA4');tEna('tbtnA5','tbtnB1','tbtnC1');tHint('Bot 推 Quote Card → 路径A点「⑤」，路径B点拒绝，路径C点超时')}
-  else if(n===5){tAdd('confirm');tAdd('confirmed_a');tDis('tbtnA5');tDis('tbtnB1');tDis('tbtnC1');tHint('条款确认，Settlement Room 已就绪')}
+  const t=T[currentLang];
+  if(n===1){tAdd('mini_req');tDis('tbtnA1');tEna('tbtnA2');tHint(t['tg.hint_a1'])}
+  else if(n===2){tAdd('req_card');tDis('tbtnA2');tEna('tbtnA3','tbtnC1');tHint(t['tg.hint_a2'])}
+  else if(n===3){tAdd('mini_quote');tDis('tbtnA3');tDis('tbtnC1');tEna('tbtnA4');tHint(t['tg.hint_a3'])}
+  else if(n===4){tAdd('quote_card');tDis('tbtnA4');tEna('tbtnA5','tbtnB1','tbtnC1');tHint(t['tg.hint_a4'])}
+  else if(n===5){tAdd('confirm');tAdd('confirmed_a');tDis('tbtnA5');tDis('tbtnB1');tDis('tbtnC1');tHint(t['tg.hint_a5'])}
 }
 function tDoB(n){
-  if(n===1){tAdd('rejected');tDis('tbtnB1');tDis('tbtnA5');tDis('tbtnC1');tEna('tbtnB2');tHint('Client 拒绝 → 点「⑥ LP 重新填」')}
-  else if(n===2){tAdd('mini_quote2');tDis('tbtnB2');tEna('tbtnB3');tHint('LP 重新填写报价 → 点「⑦ 新 Quote」')}
-  else if(n===3){tAdd('quote_card2');tDis('tbtnB3');tEna('tbtnB4');tHint('Bot 推新 Quote Card → 点「⑧ Confirmed」')}
-  else if(n===4){tAdd('confirm2');tAdd('confirmed_b');tDis('tbtnB4');tHint('条款确认，Settlement Room 已就绪')}
+  const t=T[currentLang];
+  if(n===1){tAdd('rejected');tDis('tbtnB1');tDis('tbtnA5');tDis('tbtnC1');tEna('tbtnB2');tHint(t['tg.hint_b1'])}
+  else if(n===2){tAdd('mini_quote2');tDis('tbtnB2');tEna('tbtnB3');tHint(t['tg.hint_b2'])}
+  else if(n===3){tAdd('quote_card2');tDis('tbtnB3');tEna('tbtnB4');tHint(t['tg.hint_b3'])}
+  else if(n===4){tAdd('confirm2');tAdd('confirmed_b');tDis('tbtnB4');tHint(t['tg.hint_b4'])}
 }
-function tDoC(){tAdd('expired');tDis('tbtnC1');tDis('tbtnA5');tDis('tbtnB1');tHint('24h 超时，LP 可重新报价')}
+function tDoC(){const t=T[currentLang];tAdd('expired');tDis('tbtnC1');tDis('tbtnA5');tDis('tbtnB1');tHint(t['tg.hint_c'])}
 </script>
 </body>
 </html>

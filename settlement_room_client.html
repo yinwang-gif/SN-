@@ -304,19 +304,19 @@ tr:hover td { background: #F8F9FC; }
       <div class="sidebar-app-name">Payments</div>
     </div>
     <div class="sidebar-section">
-      <div class="sidebar-section-title">资金管理</div>
-      <div class="sidebar-item">[◎] 余额</div>
-      <div class="sidebar-item">[≡] 批量下发</div>
-      <div class="sidebar-item">[→] 转出目的地</div>
-      <div class="sidebar-item">[◷] 活动记录</div>
+      <div class="sidebar-section-title" data-i18n="nav.funds">资金管理</div>
+      <div class="sidebar-item" data-i18n="nav.balance">[◎] 余额</div>
+      <div class="sidebar-item" data-i18n="nav.batch">[≡] 批量下发</div>
+      <div class="sidebar-item" data-i18n="nav.destination">[→] 转出目的地</div>
+      <div class="sidebar-item" data-i18n="nav.activity">[◷] 活动记录</div>
     </div>
     <div class="sidebar-section">
       <div class="sidebar-section-title">
         Settlement Network
         <span class="sidebar-new-badge">NEW</span>
       </div>
-      <div class="sidebar-item" onclick="showPage('network')">[◉] Network Members</div>
-      <div class="sidebar-item active" onclick="showPage('list')">[▣] Settlement Rooms</div>
+      <div class="sidebar-item" onclick="showPage('network')" data-i18n="nav.members">[◉] Network Members</div>
+      <div class="sidebar-item active" onclick="showPage('list')" data-i18n="nav.rooms">[▣] Settlement Rooms</div>
     </div>
   </div>
 
@@ -326,16 +326,12 @@ tr:hover td { background: #F8F9FC; }
     <!-- ══ LIST PAGE ══ -->
     <div id="page-list" class="page active">
       <div class="page-title-row">
-        <div class="page-title">Settlement Rooms</div>
-        <div class="lang-toggle">
-          <button class="lang-btn active">中文</button>
-          <button class="lang-btn">EN</button>
-        </div>
+        <div class="page-title" data-i18n="page.title.list">Settlement Rooms</div>
       </div>
 
       <div class="alert-banner">
         <div class="alert-banner-icon">⚠</div>
-        <div class="alert-banner-text">
+        <div class="alert-banner-text" data-i18n="alert.compliance">
           <strong>合规说明：</strong>Settlement Room 由 TG 询价完成后通过 Cobo Bot 发起创建。交易对手方须由你在平台外独立识别，Cobo 不提供撮合、介绍或推荐服务。
         </div>
       </div>
@@ -356,7 +352,7 @@ tr:hover td { background: #F8F9FC; }
         <div class="table-toolbar">
           <div class="search-wrap">
             <span class="search-icon">🔍</span>
-            <input placeholder="搜索 Room ID 或对手方">
+            <input data-i18n-placeholder="search.placeholder" placeholder="搜索 Room ID 或对手方">
           </div>
         </div>
 
@@ -366,13 +362,13 @@ tr:hover td { background: #F8F9FC; }
             <thead>
               <tr>
                 <th>Room ID</th>
-                <th>交易对手方（LP）</th>
-                <th>法币金额</th>
-                <th>稳定币金额</th>
-                <th>币对</th>
-                <th>状态</th>
-                <th>最近活动</th>
-                <th>操作</th>
+                <th data-i18n="table.counterparty_lp">交易对手方（LP）</th>
+                <th data-i18n="table.fiat_amount">法币金额</th>
+                <th data-i18n="table.stable_amount">稳定币金额</th>
+                <th data-i18n="table.pair">币对</th>
+                <th data-i18n="table.status">状态</th>
+                <th data-i18n="table.recent">最近活动</th>
+                <th data-i18n="table.actions">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -387,7 +383,7 @@ tr:hover td { background: #F8F9FC; }
                 <td><span class="pair-tag">USD / USDT</span></td>
                 <td><span class="badge badge-awaiting-contract"><span class="dot"></span>Awaiting Contract</span></td>
                 <td><div class="time-cell">2026-05-13 10:30</div></td>
-                <td><div class="action-link" onclick="showDetail('awaiting_contract')">进入 →</div></td>
+                <td><div class="action-link" onclick="showDetail('awaiting_contract')" data-i18n="action.enter">进入 →</div></td>
               </tr>
               <tr>
                 <td><div class="room-id">SR-20260512-0039</div></td>
@@ -400,7 +396,7 @@ tr:hover td { background: #F8F9FC; }
                 <td><span class="pair-tag">USD / USDC</span></td>
                 <td><span class="badge badge-pending-confirm"><span class="dot"></span>Pending Confirmation</span></td>
                 <td><div class="time-cell">2026-05-12 15:20</div></td>
-                <td><div class="action-link" onclick="showDetail('pending_confirmation')">进入 →</div></td>
+                <td><div class="action-link" onclick="showDetail('pending_confirmation')" data-i18n="action.enter">进入 →</div></td>
               </tr>
             </tbody>
           </table>
@@ -412,13 +408,13 @@ tr:hover td { background: #F8F9FC; }
             <thead>
               <tr>
                 <th>Room ID</th>
-                <th>交易对手方（LP）</th>
-                <th>法币金额</th>
-                <th>稳定币金额</th>
-                <th>币对</th>
-                <th>状态</th>
-                <th>最近活动</th>
-                <th>操作</th>
+                <th data-i18n="table.counterparty_lp">交易对手方（LP）</th>
+                <th data-i18n="table.fiat_amount">法币金额</th>
+                <th data-i18n="table.stable_amount">稳定币金额</th>
+                <th data-i18n="table.pair">币对</th>
+                <th data-i18n="table.status">状态</th>
+                <th data-i18n="table.recent">最近活动</th>
+                <th data-i18n="table.actions">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -433,7 +429,7 @@ tr:hover td { background: #F8F9FC; }
                 <td><span class="pair-tag">USD / USDT</span></td>
                 <td><span class="badge badge-pending-dvp"><span class="dot"></span>Pending DVP</span></td>
                 <td><div class="time-cell">2026-05-11 09:45</div></td>
-                <td><div class="action-link" onclick="showDetail('pending_dvp')">进入 →</div></td>
+                <td><div class="action-link" onclick="showDetail('pending_dvp')" data-i18n="action.enter">进入 →</div></td>
               </tr>
             </tbody>
           </table>
@@ -445,13 +441,13 @@ tr:hover td { background: #F8F9FC; }
             <thead>
               <tr>
                 <th>Room ID</th>
-                <th>交易对手方（LP）</th>
-                <th>法币金额</th>
-                <th>稳定币金额</th>
-                <th>币对</th>
-                <th>状态</th>
-                <th>最近活动</th>
-                <th>操作</th>
+                <th data-i18n="table.counterparty_lp">交易对手方（LP）</th>
+                <th data-i18n="table.fiat_amount">法币金额</th>
+                <th data-i18n="table.stable_amount">稳定币金额</th>
+                <th data-i18n="table.pair">币对</th>
+                <th data-i18n="table.status">状态</th>
+                <th data-i18n="table.recent">最近活动</th>
+                <th data-i18n="table.actions">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -466,7 +462,7 @@ tr:hover td { background: #F8F9FC; }
                 <td><span class="pair-tag">USD / USDT</span></td>
                 <td><span class="badge badge-completed"><span class="dot"></span>Completed</span></td>
                 <td><div class="time-cell">2026-05-10 18:32</div></td>
-                <td><div class="action-link" onclick="showDetail('completed')">查看 →</div></td>
+                <td><div class="action-link" onclick="showDetail('completed')" data-i18n="action.view">查看 →</div></td>
               </tr>
               <tr>
                 <td><div class="room-id">SR-20260508-0028</div></td>
@@ -479,13 +475,13 @@ tr:hover td { background: #F8F9FC; }
                 <td><span class="pair-tag">USD / USDT</span></td>
                 <td><span class="badge badge-terminated"><span class="dot"></span>Terminated</span></td>
                 <td><div class="time-cell">2026-05-09 10:00</div></td>
-                <td><div class="action-link" onclick="showDetail('terminated')">查看 →</div></td>
+                <td><div class="action-link" onclick="showDetail('terminated')" data-i18n="action.view">查看 →</div></td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="footer-note">ⓘ Settlement Room 由客户主动创建，仅限一对一双边结算，不可广播。</div>
+        <div class="footer-note" data-i18n="footer.note">ⓘ Settlement Room 由客户主动创建，仅限一对一双边结算，不可广播。</div>
       </div>
     </div>
 
@@ -500,7 +496,7 @@ tr:hover td { background: #F8F9FC; }
         </div>
         <div style="display:flex;align-items:center;gap:12px">
           <div class="demo-switcher">
-            <label>演示状态:</label>
+            <label data-i18n="demo.label">演示状态:</label>
             <select onchange="switchState(this.value)">
               <option value="awaiting_contract">Awaiting Contract</option>
               <option value="pending_confirmation">Pending Confirmation</option>
@@ -525,25 +521,25 @@ tr:hover td { background: #F8F9FC; }
               <span class="dot"></span>
               <span id="status-text">Pending DVP</span>
             </div>
-            <div class="role-chip">Client 视角</div>
+            <div class="role-chip" data-i18n="detail.role">Client 视角</div>
           </div>
         </div>
         <div class="detail-meta-grid">
           <div class="meta-item">
-            <label>交易对手方（LP）</label>
+            <label data-i18n="detail.counterparty">交易对手方（LP）</label>
             <div class="val">anthony_org_test3</div>
           </div>
           <div class="meta-item">
-            <label>法币金额 / Fiat</label>
+            <label data-i18n="detail.fiat">法币金额 / Fiat</label>
             <div class="val num">1,000,000 USD</div>
           </div>
           <div class="meta-item">
-            <label>稳定币金额 / Crypto</label>
+            <label data-i18n="detail.stable">稳定币金额 / Crypto</label>
             <div class="val num">999,500 USDT</div>
           </div>
           <div class="meta-item">
-            <label>TG 群 / TG Group</label>
-            <div class="val link">📨 打开群组</div>
+            <label data-i18n="detail.tg">TG 群 / TG Group</label>
+            <div class="val link" data-i18n="detail.tg_open">📨 打开群组</div>
           </div>
         </div>
       </div>
@@ -551,25 +547,25 @@ tr:hover td { background: #F8F9FC; }
       <!-- Quote record -->
       <div class="section-card">
         <div class="section-header">
-          <div class="section-title">💬 询报价记录 / Quote Record</div>
+          <div class="section-title" data-i18n="quote.section">💬 询报价记录 / Quote Record</div>
         </div>
         <div class="section-body">
-          <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:12px;letter-spacing:0.04em">CONFIRMED CARD 条款</div>
+          <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:12px;letter-spacing:0.04em" data-i18n="quote.confirmed_terms">CONFIRMED CARD 条款</div>
           <div class="kv-list">
             <div class="kv-row">
-              <span class="kv-label">法币金额 / Fiat Amount</span>
+              <span class="kv-label" data-i18n="quote.fiat_amount">法币金额 / Fiat Amount</span>
               <span class="kv-value num">1,000,000 USD</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">稳定币金额 / Stablecoin Amount</span>
+              <span class="kv-label" data-i18n="quote.stable_amount">稳定币金额 / Stablecoin Amount</span>
               <span class="kv-value num">999,500 USDT</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">汇率 / Exchange Rate</span>
+              <span class="kv-label" data-i18n="quote.rate">汇率 / Exchange Rate</span>
               <span class="kv-value num">1 USD = 0.9995 USDT</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">结算窗口 / Settlement Window</span>
+              <span class="kv-label" data-i18n="quote.window">结算窗口 / Settlement Window</span>
               <span class="kv-value">2026-05-14 18:00</span>
             </div>
             <div class="kv-row">
@@ -577,11 +573,11 @@ tr:hover td { background: #F8F9FC; }
               <span class="kv-value num">500 USD（0.05%）</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">询价确认时间 / Confirmed At</span>
+              <span class="kv-label" data-i18n="quote.confirmed_at">询价确认时间 / Confirmed At</span>
               <span class="kv-value">2026-05-13 10:28:00</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">来源 TG 群 / Source TG Group</span>
+              <span class="kv-label" data-i18n="quote.tg_group">来源 TG 群 / Source TG Group</span>
               <span class="kv-value" style="color:#1F32D6;cursor:pointer">View Telegram Group →</span>
             </div>
           </div>
@@ -591,7 +587,7 @@ tr:hover td { background: #F8F9FC; }
       <!-- Room Status -->
       <div class="section-card">
         <div class="section-header">
-          <div class="section-title">🏠 Room 状态 / Room Status</div>
+          <div class="section-title" data-i18n="room.section">🏠 Room 状态 / Room Status</div>
         </div>
         <div class="section-body">
 
@@ -600,8 +596,8 @@ tr:hover td { background: #F8F9FC; }
             <div class="action-banner info">
               <div class="action-banner-icon">⏳</div>
               <div class="action-banner-content">
-                <div class="action-banner-title">等待 LP 创建合同 / Awaiting Contract Creation</div>
-                <div class="action-banner-desc">询报价已达成，LP 正在前往 Contract 管理创建 Settlement Contract。合同创建后你将收到通知，届时请在 Cobo Guard App 完成签署。</div>
+                <div class="action-banner-title" data-i18n="room.awaiting_title">等待 LP 创建合同 / Awaiting Contract Creation</div>
+                <div class="action-banner-desc" data-i18n="room.awaiting_desc">询报价已达成，LP 正在前往 Contract 管理创建 Settlement Contract。合同创建后你将收到通知，届时请在 Cobo Guard App 完成签署。</div>
               </div>
             </div>
           </div>
@@ -611,8 +607,8 @@ tr:hover td { background: #F8F9FC; }
             <div class="action-banner info">
               <div class="action-banner-icon">🛡</div>
               <div class="action-banner-content">
-                <div class="action-banner-title">合同待双方签署 / Pending Guard Approval</div>
-                <div class="action-banner-desc">合同已创建，请打开手机上的 <strong>Cobo Guard App</strong> 完成审批签署。对手方签署完成后合同正式生效。</div>
+                <div class="action-banner-title" data-i18n="room.pending_conf_title">合同待双方签署 / Pending Guard Approval</div>
+                <div class="action-banner-desc" data-i18n="room.pending_conf_desc">合同已创建，请打开手机上的 <strong>Cobo Guard App</strong> 完成审批签署。对手方签署完成后合同正式生效。</div>
               </div>
             </div>
           </div>
@@ -620,14 +616,14 @@ tr:hover td { background: #F8F9FC; }
           <!-- pending_dvp -->
           <div id="rs-pending_dvp">
             <div class="countdown-box">
-              <div class="countdown-label">⏱ 合同有效期剩余 / Contract Validity</div>
+              <div class="countdown-label" data-i18n="room.countdown_label">⏱ 合同有效期剩余 / Contract Validity</div>
               <div class="countdown-value">47:32:18</div>
             </div>
             <div class="action-banner info">
               <div class="action-banner-icon">⏱</div>
               <div class="action-banner-content">
-                <div class="action-banner-title">合同已生效，待 DVP 自动执行 / Pending DVP</div>
-                <div class="action-banner-desc">系统正在轮询你的 VA 余额和 LP 的 SN Org 余额。余额充足时将自动扣款执行 DVP，无需在本页面发起任何操作。</div>
+                <div class="action-banner-title" data-i18n="room.pending_dvp_title">合同已生效，待 DVP 自动执行 / Pending DVP</div>
+                <div class="action-banner-desc" data-i18n="room.pending_dvp_desc">系统正在轮询你的 VA 余额和 LP 的 SN Org 余额。余额充足时将自动扣款执行 DVP，无需在本页面发起任何操作。</div>
               </div>
             </div>
           </div>
@@ -637,8 +633,8 @@ tr:hover td { background: #F8F9FC; }
             <div class="result-box completed">
               <div style="font-size:20px">✅</div>
               <div>
-                <div class="rb-title">结算完成 / Settlement Completed</div>
-                <div class="rb-desc">完成时间：2026-05-13 18:42:07 · USDT 已到账至 Payments App Balance</div>
+                <div class="rb-title" data-i18n="room.completed_title">结算完成 / Settlement Completed</div>
+                <div class="rb-desc" data-i18n="room.completed_desc">完成时间：2026-05-13 18:42:07 · USDT 已到账至 Payments App Balance</div>
               </div>
             </div>
           </div>
@@ -648,8 +644,8 @@ tr:hover td { background: #F8F9FC; }
             <div class="result-box terminated">
               <div style="font-size:20px">✕</div>
               <div>
-                <div class="rb-title">Room 已终止 / Room Terminated</div>
-                <div class="rb-desc">终止原因：合同有效期内未能执行 DVP · 终止时间：2026-05-14 10:00:00</div>
+                <div class="rb-title" data-i18n="room.terminated_title">Room 已终止 / Room Terminated</div>
+                <div class="rb-desc" data-i18n="room.terminated_desc">终止原因：合同有效期内未能执行 DVP · 终止时间：2026-05-14 10:00:00</div>
               </div>
             </div>
           </div>
@@ -668,16 +664,16 @@ tr:hover td { background: #F8F9FC; }
           <div class="section-body">
             <div class="placeholder-box">
               <div class="placeholder-icon">📄</div>
-              <div class="placeholder-title">合同尚未创建</div>
-              <div class="placeholder-desc">LP 确认后将创建 Settlement Contract，届时你将收到通知</div>
+              <div class="placeholder-title" data-i18n="contract.placeholder_title">合同尚未创建</div>
+              <div class="placeholder-desc" data-i18n="contract.placeholder_desc">LP 确认后将创建 Settlement Contract，届时你将收到通知</div>
             </div>
           </div>
         </div>
 
         <div id="contract-content" style="display:none">
           <div class="contract-tab-bar">
-            <div class="contract-tab active" onclick="switchContractTab(this,0)">合同信息</div>
-            <div class="contract-tab" onclick="switchContractTab(this,1)">Guard 审批</div>
+            <div class="contract-tab active" onclick="switchContractTab(this,0)" data-i18n="contract.tab_info">合同信息</div>
+            <div class="contract-tab" onclick="switchContractTab(this,1)" data-i18n="contract.tab_guard">Guard 审批</div>
           </div>
           <div class="section-body">
 
@@ -685,27 +681,27 @@ tr:hover td { background: #F8F9FC; }
             <div id="ctab-0">
               <div class="kv-list">
                 <div class="kv-row">
-                  <span class="kv-label">合同 ID / Contract ID</span>
+                  <span class="kv-label" data-i18n="contract.id">合同 ID / Contract ID</span>
                   <span class="kv-value">f6976085-fdf2-405a <button class="copy-btn">⎘</button></span>
                 </div>
                 <div class="kv-row">
-                  <span class="kv-label">法币金额 / Fiat Amount</span>
+                  <span class="kv-label" data-i18n="contract.fiat">法币金额 / Fiat Amount</span>
                   <span class="kv-value num">1,000,000 USD</span>
                 </div>
                 <div class="kv-row">
-                  <span class="kv-label">稳定币金额 / Crypto Amount</span>
+                  <span class="kv-label" data-i18n="contract.stable">稳定币金额 / Crypto Amount</span>
                   <span class="kv-value num">999,500 USDT</span>
                 </div>
                 <div class="kv-row">
-                  <span class="kv-label">汇率 / Exchange Rate</span>
+                  <span class="kv-label" data-i18n="contract.rate">汇率 / Exchange Rate</span>
                   <span class="kv-value num">1 USD = 0.9995 USDT</span>
                 </div>
                 <div class="kv-row">
-                  <span class="kv-label">合同有效期 / Contract Validity</span>
+                  <span class="kv-label" data-i18n="contract.validity">合同有效期 / Contract Validity</span>
                   <span class="kv-value">2026-05-14 18:00:00 <span style="color:#FA8C16;margin-left:8px">⏱ 剩余 47:32:18</span></span>
                 </div>
                 <div class="kv-row">
-                  <span class="kv-label">创建时间 / Created At</span>
+                  <span class="kv-label" data-i18n="contract.created">创建时间 / Created At</span>
                   <span class="kv-value">2026-05-13 10:30:00</span>
                 </div>
               </div>
@@ -717,7 +713,7 @@ tr:hover td { background: #F8F9FC; }
                 <div class="approval-left">
                   <div class="approval-avatar">👤</div>
                   <div>
-                    <div class="approval-name">客户审批 / Client</div>
+                    <div class="approval-name" data-i18n="guard.client">客户审批 / Client</div>
                     <div class="approval-org">Acme Capital Ltd.</div>
                   </div>
                 </div>
@@ -730,7 +726,7 @@ tr:hover td { background: #F8F9FC; }
                 <div class="approval-left">
                   <div class="approval-avatar">🏢</div>
                   <div>
-                    <div class="approval-name">LP 审批 / Liquidity Provider</div>
+                    <div class="approval-name" data-i18n="guard.lp">LP 审批 / Liquidity Provider</div>
                     <div class="approval-org">anthony_org_test3</div>
                   </div>
                 </div>
@@ -750,32 +746,28 @@ tr:hover td { background: #F8F9FC; }
     <!-- ══ NETWORK MEMBERS PAGE ══ -->
     <div id="page-network" class="page">
       <div class="page-title-row">
-        <div class="page-title">Network Members</div>
-        <div class="lang-toggle">
-          <button class="lang-btn active">中文</button>
-          <button class="lang-btn">EN</button>
-        </div>
+        <div class="page-title" data-i18n="page.title.network">Network Members</div>
       </div>
 
       <!-- Compliance notice -->
       <div class="nm-compliance">
         <div class="nm-compliance-icon">⚠</div>
-        <div class="nm-compliance-text">
+        <div class="nm-compliance-text" data-i18n="nm.compliance">
           <strong>合规说明：</strong>Cobo 不对以下成员的报价、服务质量或商业适配性作任何推荐或背书。所有成员均已完成 KYB 并签署 SN Master Agreement。在发起询价前，你须已与目标成员建立独立的商业关系。
         </div>
       </div>
 
       <!-- Recent contacts -->
-      <div class="nm-section-label">最近联系 / RECENTLY CONTACTED</div>
+      <div class="nm-section-label" data-i18n="nm.recent_label">最近联系 / RECENTLY CONTACTED</div>
       <div class="nm-card" style="margin-bottom:24px">
         <table class="nm-table">
           <thead>
             <tr>
-              <th>法人实体名称</th>
-              <th>成员编号</th>
-              <th>支持币对</th>
-              <th>最近询价</th>
-              <th>操作</th>
+              <th data-i18n="nm.table.entity">法人实体名称</th>
+              <th data-i18n="nm.table.code">成员编号</th>
+              <th data-i18n="nm.table.pairs">支持币对</th>
+              <th data-i18n="nm.table.recent">最近询价</th>
+              <th data-i18n="nm.table.actions">操作</th>
             </tr>
           </thead>
           <tbody>
@@ -790,7 +782,7 @@ tr:hover td { background: #F8F9FC; }
               </td>
               <td><div class="nm-recent-time">2026-05-13 10:28</div></td>
               <td>
-                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('anthony_org_test3','LP-SG-001')">发起询价</button>
+                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('anthony_org_test3','LP-SG-001')" data-i18n="nm.btn.inquiry">发起询价</button>
               </td>
             </tr>
             <tr>
@@ -803,7 +795,7 @@ tr:hover td { background: #F8F9FC; }
               </td>
               <td><div class="nm-recent-time">2026-05-12 09:15</div></td>
               <td>
-                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('wintermute_lp','LP-HK-003')">发起询价</button>
+                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('wintermute_lp','LP-HK-003')" data-i18n="nm.btn.inquiry">发起询价</button>
               </td>
             </tr>
           </tbody>
@@ -811,21 +803,21 @@ tr:hover td { background: #F8F9FC; }
       </div>
 
       <!-- All members -->
-      <div class="nm-section-label">全部成员 / ALL MEMBERS</div>
+      <div class="nm-section-label" data-i18n="nm.all_label">全部成员 / ALL MEMBERS</div>
       <div class="nm-card">
         <div class="nm-search-bar">
           <div class="nm-search-wrap">
             <span class="nm-search-icon">🔍</span>
-            <input placeholder="按成员名称或编号搜索">
+            <input data-i18n-placeholder="nm.search.placeholder" placeholder="按成员名称或编号搜索">
           </div>
         </div>
         <table class="nm-table">
           <thead>
             <tr>
-              <th>法人实体名称</th>
-              <th>成员编号</th>
-              <th>支持币对</th>
-              <th>操作</th>
+              <th data-i18n="nm.table.entity">法人实体名称</th>
+              <th data-i18n="nm.table.code">成员编号</th>
+              <th data-i18n="nm.table.pairs">支持币对</th>
+              <th data-i18n="nm.table.actions">操作</th>
             </tr>
           </thead>
           <tbody>
@@ -837,7 +829,7 @@ tr:hover td { background: #F8F9FC; }
                 <span class="nm-pair-tag">USD / USDC</span>
               </td>
               <td>
-                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('anthony_org_test3','LP-SG-001')">发起询价</button>
+                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('anthony_org_test3','LP-SG-001')" data-i18n="nm.btn.inquiry">发起询价</button>
               </td>
             </tr>
             <tr>
@@ -845,7 +837,7 @@ tr:hover td { background: #F8F9FC; }
               <td><div class="nm-member-code">LP-HK-003</div></td>
               <td><span class="nm-pair-tag">USD / USDT</span></td>
               <td>
-                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('wintermute_lp','LP-HK-003')">发起询价</button>
+                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('wintermute_lp','LP-HK-003')" data-i18n="nm.btn.inquiry">发起询价</button>
               </td>
             </tr>
             <tr>
@@ -856,7 +848,7 @@ tr:hover td { background: #F8F9FC; }
                 <span class="nm-pair-tag">USD / USDC</span>
               </td>
               <td>
-                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('b2c2_lp_sg','LP-SG-003')">发起询价</button>
+                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('b2c2_lp_sg','LP-SG-003')" data-i18n="nm.btn.inquiry">发起询价</button>
               </td>
             </tr>
             <tr>
@@ -864,12 +856,12 @@ tr:hover td { background: #F8F9FC; }
               <td><div class="nm-member-code">LP-HK-007</div></td>
               <td><span class="nm-pair-tag">USD / USDT</span></td>
               <td>
-                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('cumberland_drw','LP-HK-007')">发起询价</button>
+                <button class="btn btn-primary" style="height:32px;font-size:13px" onclick="openInquiryModal('cumberland_drw','LP-HK-007')" data-i18n="nm.btn.inquiry">发起询价</button>
               </td>
             </tr>
           </tbody>
         </table>
-        <div style="padding:12px 20px;font-size:12px;color:#73798B;border-top:1px solid #EDEEF3">
+        <div style="padding:12px 20px;font-size:12px;color:#73798B;border-top:1px solid #EDEEF3" data-i18n="nm.footer">
           ⓘ 以上成员均已完成 KYB/KYC 并签署 SN Master Agreement，不代表 Cobo 对其商业能力的任何背书。
         </div>
       </div>
@@ -879,6 +871,234 @@ tr:hover td { background: #F8F9FC; }
 </div>
 
 <script>
+// ── i18n ──
+const T = {
+  zh: {
+    'nav.funds': '资金管理',
+    'nav.balance': '[◎] 余额',
+    'nav.batch': '[≡] 批量下发',
+    'nav.destination': '[→] 转出目的地',
+    'nav.activity': '[◷] 活动记录',
+    'nav.members': '[◉] Network Members',
+    'nav.rooms': '[▣] Settlement Rooms',
+    'page.title.list': 'Settlement Rooms',
+    'page.title.network': 'Network Members',
+    'alert.compliance': '<strong>合规说明：</strong>Settlement Room 由 TG 询价完成后通过 Cobo Bot 发起创建。交易对手方须由你在平台外独立识别，Cobo 不提供撮合、介绍或推荐服务。',
+    'table.counterparty_lp': '交易对手方（LP）',
+    'table.fiat_amount': '法币金额',
+    'table.stable_amount': '稳定币金额',
+    'table.pair': '币对',
+    'table.status': '状态',
+    'table.recent': '最近活动',
+    'table.actions': '操作',
+    'search.placeholder': '搜索 Room ID 或对手方',
+    'action.enter': '进入 →',
+    'action.view': '查看 →',
+    'footer.note': 'ⓘ Settlement Room 由客户主动创建，仅限一对一双边结算，不可广播。',
+    'demo.label': '演示状态:',
+    'detail.counterparty': '交易对手方（LP）',
+    'detail.fiat': '法币金额 / Fiat',
+    'detail.stable': '稳定币金额 / Crypto',
+    'detail.tg': 'TG 群 / TG Group',
+    'detail.tg_open': '📨 打开群组',
+    'detail.role': 'Client 视角',
+    'quote.section': '💬 询报价记录 / Quote Record',
+    'quote.confirmed_terms': 'CONFIRMED CARD 条款',
+    'quote.fiat_amount': '法币金额 / Fiat Amount',
+    'quote.stable_amount': '稳定币金额 / Stablecoin Amount',
+    'quote.rate': '汇率 / Exchange Rate',
+    'quote.window': '结算窗口 / Settlement Window',
+    'quote.confirmed_at': '询价确认时间 / Confirmed At',
+    'quote.tg_group': '来源 TG 群 / Source TG Group',
+    'room.section': '🏠 Room 状态 / Room Status',
+    'room.awaiting_title': '等待 LP 创建合同 / Awaiting Contract Creation',
+    'room.awaiting_desc': '询报价已达成，LP 正在前往 Contract 管理创建 Settlement Contract。合同创建后你将收到通知，届时请在 Cobo Guard App 完成签署。',
+    'room.pending_conf_title': '合同待双方签署 / Pending Guard Approval',
+    'room.pending_conf_desc': '合同已创建，请打开手机上的 <strong>Cobo Guard App</strong> 完成审批签署。对手方签署完成后合同正式生效。',
+    'room.countdown_label': '⏱ 合同有效期剩余 / Contract Validity',
+    'room.pending_dvp_title': '合同已生效，待 DVP 自动执行 / Pending DVP',
+    'room.pending_dvp_desc': '系统正在轮询你的 VA 余额和 LP 的 SN Org 余额。余额充足时将自动扣款执行 DVP，无需在本页面发起任何操作。',
+    'room.completed_title': '结算完成 / Settlement Completed',
+    'room.completed_desc': '完成时间：2026-05-13 18:42:07 · USDT 已到账至 Payments App Balance',
+    'room.terminated_title': 'Room 已终止 / Room Terminated',
+    'room.terminated_desc': '终止原因：合同有效期内未能执行 DVP · 终止时间：2026-05-14 10:00:00',
+    'contract.section': '📋 Settlement Contract',
+    'contract.placeholder_title': '合同尚未创建',
+    'contract.placeholder_desc': 'LP 确认后将创建 Settlement Contract，届时你将收到通知',
+    'contract.tab_info': '合同信息',
+    'contract.tab_guard': 'Guard 审批',
+    'contract.id': '合同 ID / Contract ID',
+    'contract.fiat': '法币金额 / Fiat Amount',
+    'contract.stable': '稳定币金额 / Crypto Amount',
+    'contract.rate': '汇率 / Exchange Rate',
+    'contract.validity': '合同有效期 / Contract Validity',
+    'contract.created': '创建时间 / Created At',
+    'guard.client': '客户审批 / Client',
+    'guard.lp': 'LP 审批 / Liquidity Provider',
+    'guard.approved': '✓ 已通过',
+    'guard.pending': '⏳ 待审批',
+    'contract.chip.pending': '待签署',
+    'contract.chip.active': '已生效',
+    'contract.chip.completed': '已完成',
+    'contract.chip.terminated': '已终止',
+    'nm.compliance': '<strong>合规说明：</strong>Cobo 不对以下成员的报价、服务质量或商业适配性作任何推荐或背书。所有成员均已完成 KYB 并签署 SN Master Agreement。在发起询价前，你须已与目标成员建立独立的商业关系。',
+    'nm.recent_label': '最近联系 / RECENTLY CONTACTED',
+    'nm.all_label': '全部成员 / ALL MEMBERS',
+    'nm.table.entity': '法人实体名称',
+    'nm.table.code': '成员编号',
+    'nm.table.pairs': '支持币对',
+    'nm.table.recent': '最近询价',
+    'nm.table.actions': '操作',
+    'nm.search.placeholder': '按成员名称或编号搜索',
+    'nm.btn.inquiry': '发起询价',
+    'nm.footer': 'ⓘ 以上成员均已完成 KYB/KYC 并签署 SN Master Agreement，不代表 Cobo 对其商业能力的任何背书。',
+    'inquiry.title': '发起 TG 询价',
+    'inquiry.id_label': '编号：',
+    'inquiry.step1': '点击确认后，将在 Telegram 为你与 <strong id="inquiry-name-notice">anthony_org_test3</strong> 创建一对一询价群组。',
+    'inquiry.step2': 'Cobo Bot 将作为<strong>观察员</strong>自动加入群组，结构化记录双方商定的条款，不介入定价。',
+    'inquiry.step3': '询价完成后，Settlement Room 将由 Cobo Bot 在群内发起创建。',
+    'inquiry.warn': 'Cobo 不对该成员的报价或服务质量作任何推荐或背书。询价群组由你主动发起，Cobo 不参与双方的商业谈判。',
+    'inquiry.cancel': '取消',
+    'inquiry.confirm': '前往 Telegram →',
+  },
+  en: {
+    'nav.funds': 'Fund Management',
+    'nav.balance': '[◎] Balance',
+    'nav.batch': '[≡] Batch Payout',
+    'nav.destination': '[→] Payout Destinations',
+    'nav.activity': '[◷] Activity Log',
+    'nav.members': '[◉] Network Members',
+    'nav.rooms': '[▣] Settlement Rooms',
+    'page.title.list': 'Settlement Rooms',
+    'page.title.network': 'Network Members',
+    'alert.compliance': '<strong>Compliance Notice:</strong> Settlement Rooms are created via Cobo Bot after TG inquiry completion. Counterparties must be independently identified by you outside the platform. Cobo does not provide matching, introduction, or recommendation services.',
+    'table.counterparty_lp': 'Counterparty (LP)',
+    'table.fiat_amount': 'Fiat Amount',
+    'table.stable_amount': 'Stablecoin Amount',
+    'table.pair': 'Pair',
+    'table.status': 'Status',
+    'table.recent': 'Last Activity',
+    'table.actions': 'Actions',
+    'search.placeholder': 'Search Room ID or counterparty',
+    'action.enter': 'Enter →',
+    'action.view': 'View →',
+    'footer.note': 'ⓘ Settlement Rooms are created by clients and limited to one-to-one bilateral settlement only.',
+    'demo.label': 'Demo State:',
+    'detail.counterparty': 'Counterparty (LP)',
+    'detail.fiat': 'Fiat Amount',
+    'detail.stable': 'Stablecoin Amount',
+    'detail.tg': 'TG Group',
+    'detail.tg_open': '📨 Open Group',
+    'detail.role': 'Client View',
+    'quote.section': '💬 Quote Record',
+    'quote.confirmed_terms': 'CONFIRMED CARD TERMS',
+    'quote.fiat_amount': 'Fiat Amount',
+    'quote.stable_amount': 'Stablecoin Amount',
+    'quote.rate': 'Exchange Rate',
+    'quote.window': 'Settlement Window',
+    'quote.confirmed_at': 'Confirmed At',
+    'quote.tg_group': 'Source TG Group',
+    'room.section': '🏠 Room Status',
+    'room.awaiting_title': 'Awaiting Contract Creation',
+    'room.awaiting_desc': 'Inquiry terms agreed. LP is creating a Settlement Contract. You will be notified when it is ready — please approve in the Cobo Guard App.',
+    'room.pending_conf_title': 'Pending Guard Approval',
+    'room.pending_conf_desc': 'Contract created. Please open the <strong>Cobo Guard App</strong> on your phone to sign and approve. The contract takes effect once both parties have signed.',
+    'room.countdown_label': '⏱ Contract Validity Remaining',
+    'room.pending_dvp_title': 'Contract Active — Pending DVP Execution',
+    'room.pending_dvp_desc': 'The system is polling your VA balance and the LP\'s SN Org balance. DVP will execute automatically when balances are sufficient. No action required on this page.',
+    'room.completed_title': 'Settlement Completed',
+    'room.completed_desc': 'Completed at: 2026-05-13 18:42:07 · USDT credited to Payments App Balance',
+    'room.terminated_title': 'Room Terminated',
+    'room.terminated_desc': 'Reason: DVP could not be executed within contract validity · Terminated: 2026-05-14 10:00:00',
+    'contract.section': '📋 Settlement Contract',
+    'contract.placeholder_title': 'No Contract Yet',
+    'contract.placeholder_desc': 'A Settlement Contract will be created after LP confirmation. You will be notified.',
+    'contract.tab_info': 'Contract Info',
+    'contract.tab_guard': 'Guard Approval',
+    'contract.id': 'Contract ID',
+    'contract.fiat': 'Fiat Amount',
+    'contract.stable': 'Stablecoin Amount',
+    'contract.rate': 'Exchange Rate',
+    'contract.validity': 'Contract Validity',
+    'contract.created': 'Created At',
+    'guard.client': 'Client Approval',
+    'guard.lp': 'LP Approval',
+    'guard.approved': '✓ Approved',
+    'guard.pending': '⏳ Pending',
+    'contract.chip.pending': 'Awaiting Signatures',
+    'contract.chip.active': 'Active',
+    'contract.chip.completed': 'Completed',
+    'contract.chip.terminated': 'Terminated',
+    'nm.compliance': '<strong>Compliance Notice:</strong> Cobo does not endorse any member\'s quotes, service quality, or commercial suitability. All members have completed KYB and signed the SN Master Agreement. You must have independently established a commercial relationship with any member before initiating an inquiry.',
+    'nm.recent_label': 'RECENTLY CONTACTED',
+    'nm.all_label': 'ALL MEMBERS',
+    'nm.table.entity': 'Legal Entity Name',
+    'nm.table.code': 'Member Code',
+    'nm.table.pairs': 'Supported Pairs',
+    'nm.table.recent': 'Last Inquiry',
+    'nm.table.actions': 'Actions',
+    'nm.search.placeholder': 'Search by member name or code',
+    'nm.btn.inquiry': 'Send Inquiry',
+    'nm.footer': 'ⓘ All members have completed KYB/KYC and signed the SN Master Agreement. This does not constitute any endorsement of their commercial capabilities by Cobo.',
+    'inquiry.title': 'Send TG Inquiry',
+    'inquiry.id_label': 'Code: ',
+    'inquiry.step1': 'After confirmation, a one-to-one inquiry group will be created in Telegram between you and <strong id="inquiry-name-notice">anthony_org_test3</strong>.',
+    'inquiry.step2': 'Cobo Bot will join as an <strong>observer</strong>, structurally recording the agreed terms without influencing pricing.',
+    'inquiry.step3': 'Once the inquiry is complete, Cobo Bot will initiate Settlement Room creation within the group.',
+    'inquiry.warn': 'Cobo does not endorse this member\'s quotes or service quality. The inquiry group is initiated by you — Cobo does not participate in commercial negotiations.',
+    'inquiry.cancel': 'Cancel',
+    'inquiry.confirm': 'Go to Telegram →',
+  }
+};
+
+let currentLang = localStorage.getItem('sn_lang') || 'zh';
+
+const HTML_KEYS = new Set(['alert.compliance','nm.compliance','inquiry.step1','inquiry.step2','inquiry.step3','inquiry.warn','room.awaiting_desc','room.pending_conf_desc']);
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('sn_lang', lang);
+  const t = T[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      if (HTML_KEYS.has(key)) {
+        el.innerHTML = t[key];
+      } else {
+        el.textContent = t[key];
+      }
+    }
+  });
+  // Handle placeholder attributes
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+  // Re-set inquiry name in step1 if modal is open
+  const nameEl = document.getElementById('inquiry-name-notice');
+  if (nameEl) {
+    const nameFrom = document.getElementById('inquiry-name');
+    if (nameFrom) nameEl.textContent = nameFrom.textContent;
+  }
+  // Re-sync state-dependent text
+  if (typeof switchState === 'function') {
+    const sel = document.querySelector('#page-detail select');
+    if (sel) switchState(sel.value);
+  }
+}
+
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'lang') {
+    setLang(e.data.lang);
+  }
+});
+
+// Apply lang on load
+(function() {
+  const saved = localStorage.getItem('sn_lang');
+  if (saved && saved !== 'zh') setLang(saved);
+})();
+
 const stateConfig = {
   awaiting_contract:   { cls: 'badge-awaiting-contract',  txt: 'Awaiting Contract',    contract: { show: false } },
   pending_confirmation:{ cls: 'badge-pending-confirm',     txt: 'Pending Confirmation', contract: { show: true, txt: '待签署', bg: '#EFF8FF', col: '#175CD3' } },
@@ -887,6 +1107,13 @@ const stateConfig = {
   terminated:          { cls: 'badge-terminated',          txt: 'Terminated',           contract: { show: true, txt: '已终止', bg: '#F1F1F5', col: '#363F72' } },
 };
 const allStates = Object.keys(stateConfig);
+
+const contractChipKeys = {
+  pending_confirmation: 'contract.chip.pending',
+  pending_dvp: 'contract.chip.active',
+  completed: 'contract.chip.completed',
+  terminated: 'contract.chip.terminated',
+};
 
 function showPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -952,16 +1179,18 @@ function switchState(val) {
   } else {
     placeholder.style.display = 'none';
     content.style.display = '';
-    chip.textContent = '● ' + cfg.contract.txt;
+    const chipKey = contractChipKeys[val] || 'contract.chip.active';
+    chip.textContent = '● ' + T[currentLang][chipKey];
     chip.style.background = cfg.contract.bg;
     chip.style.color = cfg.contract.col;
   }
 
   // Client guard status for pending state
+  const t = T[currentLang];
   if (val === 'pending_confirmation') {
-    document.getElementById('client-guard-status').innerHTML = '<div class="approval-label status-pending">⏳ 待审批</div><div class="approval-time">—</div>';
+    document.getElementById('client-guard-status').innerHTML = `<div class="approval-label status-pending">${t['guard.pending']}</div><div class="approval-time">—</div>`;
   } else {
-    document.getElementById('client-guard-status').innerHTML = '<div class="approval-label status-approved">✓ 已通过</div><div class="approval-time">2026-05-13 10:45:00</div>';
+    document.getElementById('client-guard-status').innerHTML = `<div class="approval-label status-approved">${t['guard.approved']}</div><div class="approval-time">2026-05-13 10:45:00</div>`;
   }
 }
 
@@ -980,7 +1209,7 @@ switchState('pending_dvp');
 <div id="inquiryModal" class="modal-overlay hidden">
   <div class="inquiry-modal">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
-      <div class="inquiry-modal-title">发起 TG 询价</div>
+      <div class="inquiry-modal-title" data-i18n="inquiry.title">发起 TG 询价</div>
       <button onclick="closeInquiryModal()" style="width:32px;height:32px;background:none;border:none;cursor:pointer;font-size:20px;color:#73798B;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0">×</button>
     </div>
 
@@ -988,7 +1217,7 @@ switchState('pending_dvp');
       <div id="inquiry-avatar" style="width:48px;height:48px;border-radius:50%;background:#1F32D6;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0">AN</div>
       <div>
         <div class="inquiry-target-name" id="inquiry-name">anthony_org_test3</div>
-        <div class="inquiry-target-code">编号：<span id="inquiry-code">LP-SG-001</span></div>
+        <div class="inquiry-target-code"><span data-i18n="inquiry.id_label">编号：</span><span id="inquiry-code">LP-SG-001</span></div>
         <div style="display:flex;gap:8px;margin-top:6px">
           <span style="font-size:11px;font-weight:600;color:#067647;background:#E4F5EB;padding:2px 8px;border-radius:4px">✓ KYB 已验证</span>
           <span style="font-size:11px;font-weight:600;color:#067647;background:#E4F5EB;padding:2px 8px;border-radius:4px">✓ NPA 已签署</span>
@@ -999,25 +1228,25 @@ switchState('pending_dvp');
     <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px">
       <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#1C1C1C;line-height:1.6">
         <span style="font-size:16px;flex-shrink:0;margin-top:1px">✈</span>
-        <span>点击确认后，将在 Telegram 为你与 <strong id="inquiry-name-notice">anthony_org_test3</strong> 创建一对一询价群组。</span>
+        <span data-i18n="inquiry.step1">点击确认后，将在 Telegram 为你与 <strong id="inquiry-name-notice">anthony_org_test3</strong> 创建一对一询价群组。</span>
       </div>
       <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#1C1C1C;line-height:1.6">
         <span style="font-size:16px;flex-shrink:0;margin-top:1px">🤖</span>
-        <span>Cobo Bot 将作为<strong>观察员</strong>自动加入群组，结构化记录双方商定的条款，不介入定价。</span>
+        <span data-i18n="inquiry.step2">Cobo Bot 将作为<strong>观察员</strong>自动加入群组，结构化记录双方商定的条款，不介入定价。</span>
       </div>
       <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#1C1C1C;line-height:1.6">
         <span style="font-size:16px;flex-shrink:0;margin-top:1px">ℹ</span>
-        <span>询价完成后，Settlement Room 将由 Cobo Bot 在群内发起创建。</span>
+        <span data-i18n="inquiry.step3">询价完成后，Settlement Room 将由 Cobo Bot 在群内发起创建。</span>
       </div>
     </div>
 
-    <div style="background:#FFF8E6;border:1px solid #FEC84B;border-radius:6px;padding:12px 14px;font-size:13px;color:#B54708;line-height:1.6;margin-bottom:24px">
+    <div style="background:#FFF8E6;border:1px solid #FEC84B;border-radius:6px;padding:12px 14px;font-size:13px;color:#B54708;line-height:1.6;margin-bottom:24px" data-i18n="inquiry.warn">
       Cobo 不对该成员的报价或服务质量作任何推荐或背书。询价群组由你主动发起，Cobo 不参与双方的商业谈判。
     </div>
 
     <div style="display:flex;justify-content:flex-end;gap:8px">
-      <button class="btn btn-tertiary" onclick="closeInquiryModal()">取消</button>
-      <button class="btn btn-primary" onclick="confirmInquiry()">前往 Telegram →</button>
+      <button class="btn btn-tertiary" onclick="closeInquiryModal()" data-i18n="inquiry.cancel">取消</button>
+      <button class="btn btn-primary" onclick="confirmInquiry()" data-i18n="inquiry.confirm">前往 Telegram →</button>
     </div>
   </div>
 </div>

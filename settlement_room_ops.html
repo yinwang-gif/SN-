@@ -288,7 +288,7 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
 <div class="topbar">
   <div class="topbar-left">
     <div class="topbar-app-icon">C</div>
-    <div class="topbar-app-name">Cobo OTC 运营后台</div>
+    <div class="topbar-app-name" data-i18n="topbar.app">Cobo OTC 运营后台</div>
     <div style="width:1px;height:20px;background:#EDEEF3;margin:0 4px"></div>
     <div class="topbar-org">
       <div class="topbar-org-dot"></div>
@@ -308,22 +308,22 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
 <div class="layout">
   <!-- Sidebar -->
   <div class="sidebar">
-    <div class="sidebar-item" onclick="showPage('orders')">订单</div>
-    <div class="sidebar-item">出金收款银行审核</div>
-    <div class="sidebar-item">报价管理</div>
-    <div class="sidebar-item">交易管理</div>
-    <div class="sidebar-item">合约管理</div>
-    <div class="sidebar-item">VA 账户</div>
-    <div class="sidebar-item">KGI 白名单</div>
-    <div class="sidebar-item">运营通知</div>
+    <div class="sidebar-item" onclick="showPage('orders')" data-i18n="sidebar.orders">订单</div>
+    <div class="sidebar-item" data-i18n="sidebar.bank">出金收款银行审核</div>
+    <div class="sidebar-item" data-i18n="sidebar.quote">报价管理</div>
+    <div class="sidebar-item" data-i18n="sidebar.trade">交易管理</div>
+    <div class="sidebar-item" data-i18n="sidebar.contract">合约管理</div>
+    <div class="sidebar-item" data-i18n="sidebar.va">VA 账户</div>
+    <div class="sidebar-item" data-i18n="sidebar.kgi">KGI 白名单</div>
+    <div class="sidebar-item" data-i18n="sidebar.notify">运营通知</div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section-label">Settlement Network</div>
     <div class="sidebar-item active" onclick="showPage('sn-rooms')">
-      Settlement Rooms
+      <span data-i18n="sidebar.rooms">Settlement Rooms</span>
       <span class="new-badge">NEW</span>
     </div>
     <div class="sidebar-item" onclick="showPage('sn-members')">
-      SN 成员管理
+      <span data-i18n="sidebar.members">SN 成员管理</span>
       <span class="new-badge">NEW</span>
     </div>
   </div>
@@ -334,8 +334,8 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
     <!-- ══ SETTLEMENT ROOMS LIST ══ -->
     <div id="page-sn-rooms" class="page active">
       <div class="page-header">
-        <div class="page-title">Settlement Rooms</div>
-        <div class="page-subtitle">所有 SN 结算房间，含待审批事项</div>
+        <div class="page-title" data-i18n="page.title.rooms">Settlement Rooms</div>
+        <div class="page-subtitle" data-i18n="page.subtitle.rooms">所有 SN 结算房间，含待审批事项</div>
       </div>
 
       <div class="table-card">
@@ -347,10 +347,10 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
                 <option>Client</option>
                 <option>LP</option>
               </select>
-              <input class="search-combo-input" placeholder="搜索...">
+              <input class="search-combo-input" data-i18n-placeholder="search.placeholder" placeholder="搜索...">
             </div>
-            <button class="btn btn-tertiary btn-sm">过滤器 ▼</button>
-            <button class="btn btn-tertiary btn-sm">排序 ↕</button>
+            <button class="btn btn-tertiary btn-sm" data-i18n="filter.btn">过滤器 ▼</button>
+            <button class="btn btn-tertiary btn-sm" data-i18n="sort.btn">排序 ↕</button>
           </div>
         </div>
 
@@ -360,13 +360,13 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
               <th>Room ID</th>
               <th>Client</th>
               <th>LP</th>
-              <th>法币金额</th>
-              <th>稳定币金额</th>
+              <th data-i18n="table.fiat_amount">法币金额</th>
+              <th data-i18n="table.stable_amount">稳定币金额</th>
               <th>Cobo Fee</th>
-              <th>状态</th>
-              
-              <th>最近活动</th>
-              <th>操作</th>
+              <th data-i18n="table.status">状态</th>
+
+              <th data-i18n="table.recent">最近活动</th>
+              <th data-i18n="table.actions">操作</th>
             </tr>
           </thead>
           <tbody>
@@ -418,7 +418,7 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
         </div>
         <div style="display:flex;align-items:center;gap:12px">
           <div class="demo-switcher">
-            <label>演示状态:</label>
+            <label data-i18n="demo.label">演示状态:</label>
             <select onchange="switchOpsState(this.value)">
               <option value="awaiting_contract">Awaiting Contract</option>
               <option value="pending_confirmation">Pending Confirmation</option>
@@ -438,7 +438,7 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
             <span class="dot"></span>
             <span id="ops-status-text">Pending DVP</span>
           </div>
-          <div class="ops-role-chip">🔧 Cobo 运营视角</div>
+          <div class="ops-role-chip" data-i18n="detail.role">🔧 Cobo 运营视角</div>
 
         </div>
         <div class="detail-meta-grid">
@@ -451,11 +451,11 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
             <div class="val">anthony_org_test3</div>
           </div>
           <div class="meta-item">
-            <label>法币金额</label>
+            <label data-i18n="detail.fiat">法币金额</label>
             <div class="val num">1,000,000 USD</div>
           </div>
           <div class="meta-item">
-            <label>稳定币金额</label>
+            <label data-i18n="detail.stable">稳定币金额</label>
             <div class="val num">999,500 USDT</div>
           </div>
           <div class="meta-item">
@@ -473,25 +473,25 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
       <!-- Quote record -->
       <div class="section-card">
         <div class="section-header">
-          <div class="section-title">💬 询报价记录</div>
+          <div class="section-title" data-i18n="quote.section">💬 询报价记录</div>
         </div>
         <div class="section-body">
-          <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:12px;letter-spacing:0.04em">CONFIRMED CARD 条款</div>
+          <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:12px;letter-spacing:0.04em" data-i18n="quote.confirmed_terms">CONFIRMED CARD 条款</div>
           <div class="kv-list">
             <div class="kv-row">
-              <span class="kv-label">法币金额</span>
+              <span class="kv-label" data-i18n="quote.fiat">法币金额</span>
               <span class="kv-value num">1,000,000 USD</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">稳定币金额</span>
+              <span class="kv-label" data-i18n="quote.stable">稳定币金额</span>
               <span class="kv-value num">999,500 USDT</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">汇率</span>
+              <span class="kv-label" data-i18n="quote.rate">汇率</span>
               <span class="kv-value num">1 USD = 0.9995 USDT</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">结算窗口</span>
+              <span class="kv-label" data-i18n="quote.window">结算窗口</span>
               <span class="kv-value">2026-05-14 18:00</span>
             </div>
             <div class="kv-row">
@@ -499,11 +499,11 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
               <span class="kv-value fee">500 USD（0.05%）</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">询价确认时间</span>
+              <span class="kv-label" data-i18n="quote.confirmed_at">询价确认时间</span>
               <span class="kv-value">2026-05-13 10:28:00</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">来源 TG 群</span>
+              <span class="kv-label" data-i18n="quote.tg_group">来源 TG 群</span>
               <span class="kv-value" style="color:#1F32D6;cursor:pointer">View Telegram Group →</span>
             </div>
           </div>
@@ -513,21 +513,21 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
       <!-- Contract info -->
       <div class="section-card">
         <div class="section-header">
-          <div class="section-title">📋 合同信息</div>
-          <div id="ops-contract-chip" style="padding:3px 10px;border-radius:4px;font-size:12px;font-weight:600;background:#E4F5EB;color:#067647">● 已生效</div>
+          <div class="section-title" data-i18n="contract.section">📋 合同信息</div>
+          <div id="ops-contract-chip" style="padding:3px 10px;border-radius:4px;font-size:12px;font-weight:600;background:#E4F5EB;color:#067647">● <span data-i18n="contract.chip.active">已生效</span></div>
         </div>
         <div class="section-body">
           <div class="kv-list">
             <div class="kv-row">
-              <span class="kv-label">合同 ID</span>
+              <span class="kv-label" data-i18n="contract.id">合同 ID</span>
               <span class="kv-value">f6976085-fdf2 <button class="copy-btn">⎘</button></span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">汇率</span>
+              <span class="kv-label" data-i18n="contract.rate">汇率</span>
               <span class="kv-value num">1 USD = 0.9995 USDT</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">LP 利差</span>
+              <span class="kv-label" data-i18n="contract.lp_spread">LP 利差</span>
               <span class="kv-value num">0.05%（约 500 USD）</span>
             </div>
             <div class="kv-row">
@@ -535,14 +535,14 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
               <span class="kv-value fee">500 USD（0.05%）</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">合同有效期</span>
+              <span class="kv-label" data-i18n="contract.validity">合同有效期</span>
               <span class="kv-value">2026-05-14 18:00:00 <span style="color:#FA8C16;margin-left:8px">⏱ 剩余 4 小时 32 分钟</span></span>
             </div>
           </div>
         </div>
         <!-- Guard approval -->
         <div style="padding: 0 24px 20px">
-          <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:10px">Guard 审批</div>
+          <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:10px" data-i18n="contract.guard">Guard 审批</div>
           <div class="approval-card">
             <div class="approval-left">
               <div class="approval-avatar">👤</div>
@@ -552,7 +552,7 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
               </div>
             </div>
             <div class="approval-right">
-              <div class="approval-label status-approved">✓ 已通过</div>
+              <div class="approval-label status-approved" data-i18n="guard.approved">✓ 已通过</div>
               <div class="approval-time">2026-05-13 10:45</div>
             </div>
           </div>
@@ -565,7 +565,7 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
               </div>
             </div>
             <div class="approval-right">
-              <div class="approval-label status-approved">✓ 已通过</div>
+              <div class="approval-label status-approved" data-i18n="guard.approved">✓ 已通过</div>
               <div class="approval-time">2026-05-13 11:00</div>
             </div>
           </div>
@@ -575,42 +575,42 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
       <!-- Audit log -->
       <div class="section-card">
         <div class="section-header">
-          <div class="section-title">📝 审批操作记录</div>
+          <div class="section-title" data-i18n="audit.section">📝 审批操作记录</div>
         </div>
         <div class="section-body">
           <div class="audit-row">
             <div class="audit-dot"></div>
             <div class="audit-content">
-              <div class="audit-action">Room 创建</div>
-              <div class="audit-meta">系统自动 · 2026-05-13 10:28:00</div>
+              <div class="audit-action" data-i18n="audit.room_created">Room 创建</div>
+              <div class="audit-meta" data-i18n="audit.room_created_meta">系统自动 · 2026-05-13 10:28:00</div>
             </div>
           </div>
           <div class="audit-row">
             <div class="audit-dot"></div>
             <div class="audit-content">
-              <div class="audit-action">Settlement Contract 创建</div>
-              <div class="audit-meta">LP: anthony_org_test3 · 2026-05-13 10:30:00</div>
+              <div class="audit-action" data-i18n="audit.contract_created">Settlement Contract 创建</div>
+              <div class="audit-meta" data-i18n="audit.contract_created_meta">LP: anthony_org_test3 · 2026-05-13 10:30:00</div>
             </div>
           </div>
           <div class="audit-row">
             <div class="audit-dot"></div>
             <div class="audit-content">
-              <div class="audit-action">Guard 审批通过（Client）</div>
-              <div class="audit-meta">Acme Capital Ltd. · 2026-05-13 10:45:00</div>
+              <div class="audit-action" data-i18n="audit.guard_client">Guard 审批通过（Client）</div>
+              <div class="audit-meta" data-i18n="audit.guard_client_meta">Acme Capital Ltd. · 2026-05-13 10:45:00</div>
             </div>
           </div>
           <div class="audit-row">
             <div class="audit-dot"></div>
             <div class="audit-content">
-              <div class="audit-action">Guard 审批通过（LP）</div>
-              <div class="audit-meta">anthony_org_test3 · 2026-05-13 11:00:00</div>
+              <div class="audit-action" data-i18n="audit.guard_lp">Guard 审批通过（LP）</div>
+              <div class="audit-meta" data-i18n="audit.guard_lp_meta">anthony_org_test3 · 2026-05-13 11:00:00</div>
             </div>
           </div>
           <div class="audit-row">
             <div class="audit-dot"></div>
             <div class="audit-content">
-              <div class="audit-action">合同生效，系统开始轮询账户余额</div>
-              <div class="audit-meta">系统自动 · 2026-05-13 11:00:00</div>
+              <div class="audit-action" data-i18n="audit.contract_active">合同生效，系统开始轮询账户余额</div>
+              <div class="audit-meta" data-i18n="audit.contract_active_meta">系统自动 · 2026-05-13 11:00:00</div>
             </div>
           </div>
         </div>
@@ -621,16 +621,16 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
     <div id="page-sn-members" class="page">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
         <div>
-          <div class="page-title">SN 成员管理</div>
-          <div class="page-subtitle">管理 Settlement Network 成员的 Org 信息、角色对应关系及 TG 账号</div>
+          <div class="page-title" data-i18n="members.title">SN 成员管理</div>
+          <div class="page-subtitle" data-i18n="members.subtitle">管理 Settlement Network 成员的 Org 信息、角色对应关系及 TG 账号</div>
         </div>
-        <button class="btn btn-primary" onclick="openAddMemberModal()">＋ 新增成员</button>
+        <button class="btn btn-primary" onclick="openAddMemberModal()" data-i18n="members.add">＋ 新增成员</button>
       </div>
 
       <div class="member-type-tab">
-        <button class="member-type-btn active" onclick="switchMemberTab(this,'all')">全部成员</button>
-        <button class="member-type-btn" onclick="switchMemberTab(this,'client')">Client</button>
-        <button class="member-type-btn" onclick="switchMemberTab(this,'lp')">LP</button>
+        <button class="member-type-btn active" onclick="switchMemberTab(this,'all')" data-i18n="members.tab.all">全部成员</button>
+        <button class="member-type-btn" onclick="switchMemberTab(this,'client')" data-i18n="members.tab.client">Client</button>
+        <button class="member-type-btn" onclick="switchMemberTab(this,'lp')" data-i18n="members.tab.lp">LP</button>
       </div>
 
       <!-- Member cards -->
@@ -642,9 +642,9 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
               <div class="member-card-title">
                 Acme Capital Ltd.
                 <span class="tag" style="background:#EFF8FF;color:#175CD3;font-size:11px">Client</span>
-                <span class="kyb-badge">✓ KYB 通过</span>
+                <span class="kyb-badge" data-i18n="member.kyb.passed">✓ KYB 通过</span>
               </div>
-              <div class="member-card-meta">ACM-HK-001 · 加入时间：2026-04-01</div>
+              <div class="member-card-meta">ACM-HK-001 · <span data-i18n="member.info.joined">加入时间：</span>2026-04-01</div>
             </div>
             <span style="color:#73798B">▾</span>
           </div>
@@ -655,20 +655,20 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
                 <div class="val">52e10b15-6091-4211 <button class="copy-btn">⎘</button></div>
               </div>
               <div class="member-info-item">
-                <label>法人实体名称</label>
+                <label data-i18n="member.info.entity">法人实体名称</label>
                 <div class="val">Acme Capital Ltd.</div>
               </div>
               <div class="member-info-item">
-                <label>TG 账号</label>
+                <label data-i18n="member.info.tg">TG 账号</label>
                 <div class="val"><span class="tg-badge">@acme_capital_ops</span></div>
               </div>
               <div class="member-info-item">
-                <label>TG Chat ID</label>
+                <label data-i18n="member.info.tg_chat">TG Chat ID</label>
                 <div class="val">1234567890 <button class="copy-btn">⎘</button></div>
               </div>
               <div class="member-info-item">
-                <label>SN Master Agreement</label>
-                <div class="val"><span class="kyb-badge">✓ 已签署</span></div>
+                <label data-i18n="member.info.agreement">SN Master Agreement</label>
+                <div class="val"><span class="kyb-badge" data-i18n="member.agreement.signed">✓ 已签署</span></div>
               </div>
               <div class="member-info-item">
                 <label>Settlement Code</label>
@@ -680,8 +680,8 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
               </div>
             </div>
             <div style="margin-top:12px;display:flex;gap:8px">
-              <button class="btn btn-secondary btn-sm" onclick="openEditModal('Acme Capital Ltd.','client','52e10b15-6091-4211','@acme_capital_ops','1234567890','ACM-HK-001',3)">编辑</button>
-              
+              <button class="btn btn-secondary btn-sm" onclick="openEditModal('Acme Capital Ltd.','client','52e10b15-6091-4211','@acme_capital_ops','1234567890','ACM-HK-001',3)" data-i18n="member.edit">编辑</button>
+
             </div>
           </div>
         </div>
@@ -692,9 +692,9 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
               <div class="member-card-title">
                 anthony_org_test3
                 <span class="tag" style="background:#E4F5EB;color:#067647;font-size:11px">LP</span>
-                <span class="kyb-badge">✓ KYB 通过</span>
+                <span class="kyb-badge" data-i18n="member.kyb.passed">✓ KYB 通过</span>
               </div>
-              <div class="member-card-meta">LP-SG-001 · 加入时间：2026-03-15</div>
+              <div class="member-card-meta">LP-SG-001 · <span data-i18n="member.info.joined">加入时间：</span>2026-03-15</div>
             </div>
             <span style="color:#73798B">▾</span>
           </div>
@@ -705,20 +705,20 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
                 <div class="val">5990f8c6-6fae-4091 <button class="copy-btn">⎘</button></div>
               </div>
               <div class="member-info-item">
-                <label>法人实体名称</label>
+                <label data-i18n="member.info.entity">法人实体名称</label>
                 <div class="val">anthony_org_test3_增量用户</div>
               </div>
               <div class="member-info-item">
-                <label>TG 账号</label>
+                <label data-i18n="member.info.tg">TG 账号</label>
                 <div class="val"><span class="tg-badge">@anthony_lp_ops</span></div>
               </div>
               <div class="member-info-item">
-                <label>TG Chat ID</label>
+                <label data-i18n="member.info.tg_chat">TG Chat ID</label>
                 <div class="val">9876543210 <button class="copy-btn">⎘</button></div>
               </div>
               <div class="member-info-item">
-                <label>SN Master Agreement</label>
-                <div class="val"><span class="kyb-badge">✓ 已签署</span></div>
+                <label data-i18n="member.info.agreement">SN Master Agreement</label>
+                <div class="val"><span class="kyb-badge" data-i18n="member.agreement.signed">✓ 已签署</span></div>
               </div>
               <div class="member-info-item">
                 <label>Settlement Code</label>
@@ -726,8 +726,8 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
               </div>
             </div>
             <div style="margin-top:12px;display:flex;gap:8px">
-              <button class="btn btn-secondary btn-sm" onclick="openEditModal('anthony_org_test3','lp','5990f8c6-6fae-4091','@anthony_lp_ops','9876543210','LP-SG-001')">编辑</button>
-              
+              <button class="btn btn-secondary btn-sm" onclick="openEditModal('anthony_org_test3','lp','5990f8c6-6fae-4091','@anthony_lp_ops','9876543210','LP-SG-001')" data-i18n="member.edit">编辑</button>
+
             </div>
           </div>
         </div>
@@ -738,9 +738,9 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
               <div class="member-card-title">
                 B2C2 Ltd
                 <span class="tag" style="background:#EFF8FF;color:#175CD3;font-size:11px">Client</span>
-                <span class="kyb-badge">✓ KYB 通过</span>
+                <span class="kyb-badge" data-i18n="member.kyb.passed">✓ KYB 通过</span>
               </div>
-              <div class="member-card-meta">B2C2-SG-003 · 加入时间：2026-04-10</div>
+              <div class="member-card-meta">B2C2-SG-003 · <span data-i18n="member.info.joined">加入时间：</span>2026-04-10</div>
             </div>
             <span style="color:#73798B">▾</span>
           </div>
@@ -751,20 +751,20 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
                 <div class="val">a1b2c3d4-e5f6-7890 <button class="copy-btn">⎘</button></div>
               </div>
               <div class="member-info-item">
-                <label>法人实体名称</label>
+                <label data-i18n="member.info.entity">法人实体名称</label>
                 <div class="val">B2C2 Ltd</div>
               </div>
               <div class="member-info-item">
-                <label>TG 账号</label>
+                <label data-i18n="member.info.tg">TG 账号</label>
                 <div class="val"><span class="tg-badge">@b2c2_settlement</span></div>
               </div>
               <div class="member-info-item">
-                <label>TG Chat ID</label>
+                <label data-i18n="member.info.tg_chat">TG Chat ID</label>
                 <div class="val">1122334455 <button class="copy-btn">⎘</button></div>
               </div>
               <div class="member-info-item">
-                <label>SN Master Agreement</label>
-                <div class="val"><span class="kyb-badge">✓ 已签署</span></div>
+                <label data-i18n="member.info.agreement">SN Master Agreement</label>
+                <div class="val"><span class="kyb-badge" data-i18n="member.agreement.signed">✓ 已签署</span></div>
               </div>
               <div class="member-info-item">
                 <label>Settlement Code</label>
@@ -776,8 +776,8 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
               </div>
             </div>
             <div style="margin-top:12px;display:flex;gap:8px">
-              <button class="btn btn-secondary btn-sm" onclick="openEditModal('B2C2 Ltd','client','a1b2c3d4-e5f6-7890','@b2c2_settlement','1122334455','B2C2-SG-003',5)">编辑</button>
-              
+              <button class="btn btn-secondary btn-sm" onclick="openEditModal('B2C2 Ltd','client','a1b2c3d4-e5f6-7890','@b2c2_settlement','1122334455','B2C2-SG-003',5)" data-i18n="member.edit">编辑</button>
+
             </div>
           </div>
         </div>
@@ -792,10 +792,10 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
 <div id="addMemberModal" class="modal-overlay hidden">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('addMemberModal')">✕</button>
-    <div class="modal-title">新增 SN 成员</div>
-    <div class="modal-subtitle">请填写成员信息并确认 KYB 状态</div>
+    <div class="modal-title" data-i18n="modal.add_title">新增 SN 成员</div>
+    <div class="modal-subtitle" data-i18n="modal.add_subtitle">请填写成员信息并确认 KYB 状态</div>
     <div class="form-group">
-      <div class="form-label">角色 <span class="req">*</span></div>
+      <div class="form-label"><span data-i18n="modal.role_label">角色</span> <span class="req">*</span></div>
       <div style="display:flex;gap:12px;margin-top:4px">
         <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer">
           <input type="checkbox" id="role-client" style="width:16px;height:16px;cursor:pointer"> Client
@@ -804,11 +804,11 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
           <input type="checkbox" id="role-lp" style="width:16px;height:16px;cursor:pointer"> LP
         </label>
       </div>
-      <div style="font-size:11px;color:#73798B;margin-top:6px">可同时勾选，支持双重身份</div>
+      <div style="font-size:11px;color:#73798B;margin-top:6px" data-i18n="modal.role_hint">可同时勾选，支持双重身份</div>
     </div>
     <div class="form-group" style="position:relative">
-      <div class="form-label">法人实体名称 / Org ID <span class="req">*</span></div>
-      <input class="form-input" id="add-org-search" placeholder="搜索法人实体名称" autocomplete="off"
+      <div class="form-label"><span data-i18n="modal.entity_label">法人实体名称 / Org ID</span> <span class="req">*</span></div>
+      <input class="form-input" id="add-org-search" placeholder="搜索法人实体名称" data-i18n-placeholder="modal.entity_placeholder" autocomplete="off"
         oninput="filterOrgDropdown(this.value)" onfocus="showOrgDropdown()" style="padding-right:36px">
       <span style="position:absolute;right:12px;top:34px;color:#73798B;font-size:14px;pointer-events:none">▾</span>
       <div id="add-org-dropdown" style="display:none;position:absolute;top:62px;left:0;right:0;background:#fff;border:1px solid #EDEEF3;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.08);z-index:100;max-height:200px;overflow-y:auto">
@@ -834,31 +834,273 @@ tr:hover td { background: #F8F9FC; cursor: pointer; }
       </div>
     </div>
     <div class="form-group">
-      <div class="form-label">TG 账号</div>
+      <div class="form-label" data-i18n="modal.tg_label">TG 账号</div>
       <input class="form-input" placeholder="@username">
     </div>
 
     <div class="form-group" id="add-fee-rate-group" style="display:none">
       <div class="form-label">
-        Cobo Settlement Service Fee Rate
-        <span style="font-size:11px;font-weight:400;color:#73798B;margin-left:4px">（仅 Client 适用）</span>
+        <span data-i18n="modal.fee_label">Cobo Settlement Service Fee Rate</span>
+        <span style="font-size:11px;font-weight:400;color:#73798B;margin-left:4px" data-i18n="modal.fee_client_only">（仅 Client 适用）</span>
       </div>
       <div style="display:flex;align-items:center;gap:8px">
         <input id="add-fee-rate" class="form-input" type="number" min="0" step="0.1" value="3"
           style="width:100px;text-align:right">
         <span style="font-size:14px;color:#1C1C1C;white-space:nowrap">bps</span>
       </div>
-      <div style="font-size:11px;color:#73798B;margin-top:4px">写入 Master Agreement，后续可在编辑成员中修改</div>
+      <div style="font-size:11px;color:#73798B;margin-top:4px" data-i18n="modal.fee_hint">写入 Master Agreement，后续可在编辑成员中修改</div>
     </div>
 
     <div class="modal-footer">
-      <button class="btn btn-tertiary" onclick="closeModal('addMemberModal')">取消</button>
-      <button class="btn btn-primary">确认新增</button>
+      <button class="btn btn-tertiary" onclick="closeModal('addMemberModal')" data-i18n="modal.cancel">取消</button>
+      <button class="btn btn-primary" data-i18n="modal.confirm_add">确认新增</button>
     </div>
   </div>
 </div>
 
 <script>
+// ── i18n ──
+const T = {
+  zh: {
+    'sidebar.orders': '订单',
+    'sidebar.bank': '出金收款银行审核',
+    'sidebar.quote': '报价管理',
+    'sidebar.trade': '交易管理',
+    'sidebar.contract': '合约管理',
+    'sidebar.va': 'VA 账户',
+    'sidebar.kgi': 'KGI 白名单',
+    'sidebar.notify': '运营通知',
+    'sidebar.rooms': 'Settlement Rooms',
+    'sidebar.members': 'SN 成员管理',
+    'topbar.app': 'Cobo OTC 运营后台',
+    'page.title.rooms': 'Settlement Rooms',
+    'page.subtitle.rooms': '所有 SN 结算房间，含待审批事项',
+    'table.fiat_amount': '法币金额',
+    'table.stable_amount': '稳定币金额',
+    'table.status': '状态',
+    'table.recent': '最近活动',
+    'table.actions': '操作',
+    'search.placeholder': '搜索...',
+    'filter.btn': '过滤器 ▼',
+    'sort.btn': '排序 ↕',
+    'demo.label': '演示状态:',
+    'detail.role': '🔧 Cobo 运营视角',
+    'detail.fiat': '法币金额',
+    'detail.stable': '稳定币金额',
+    'quote.section': '💬 询报价记录',
+    'quote.confirmed_terms': 'CONFIRMED CARD 条款',
+    'quote.fiat': '法币金额',
+    'quote.stable': '稳定币金额',
+    'quote.rate': '汇率',
+    'quote.window': '结算窗口',
+    'quote.confirmed_at': '询价确认时间',
+    'quote.tg_group': '来源 TG 群',
+    'contract.section': '📋 合同信息',
+    'contract.id': '合同 ID',
+    'contract.rate': '汇率',
+    'contract.lp_spread': 'LP 利差',
+    'contract.validity': '合同有效期',
+    'contract.guard': 'Guard 审批',
+    'guard.approved': '✓ 已通过',
+    'contract.chip.active': '已生效',
+    'contract.chip.pending': '待签署',
+    'contract.chip.completed': '已完成',
+    'contract.chip.terminated': '已终止',
+    'audit.section': '📝 审批操作记录',
+    'audit.room_created': 'Room 创建',
+    'audit.room_created_meta': '系统自动 · 2026-05-13 10:28:00',
+    'audit.contract_created': 'Settlement Contract 创建',
+    'audit.contract_created_meta': 'LP: anthony_org_test3 · 2026-05-13 10:30:00',
+    'audit.guard_client': 'Guard 审批通过（Client）',
+    'audit.guard_client_meta': 'Acme Capital Ltd. · 2026-05-13 10:45:00',
+    'audit.guard_lp': 'Guard 审批通过（LP）',
+    'audit.guard_lp_meta': 'anthony_org_test3 · 2026-05-13 11:00:00',
+    'audit.contract_active': '合同生效，系统开始轮询账户余额',
+    'audit.contract_active_meta': '系统自动 · 2026-05-13 11:00:00',
+    'ops.polling': '<strong>⏱ 系统轮询中</strong><br>合同已生效，系统正在轮询双方账户余额。余额充足时将自动执行 DVP。',
+    'ops.completed_title': '结算完成',
+    'ops.completed_desc': 'DVP 执行完成 · 2026-05-13 18:42:07',
+    'ops.terminated_title': 'Room 已终止',
+    'ops.terminated_desc': '合同有效期内未能执行 DVP',
+    'members.title': 'SN 成员管理',
+    'members.subtitle': '管理 Settlement Network 成员的 Org 信息、角色对应关系及 TG 账号',
+    'members.add': '＋ 新增成员',
+    'members.tab.all': '全部成员',
+    'members.tab.client': 'Client',
+    'members.tab.lp': 'LP',
+    'member.info.entity': '法人实体名称',
+    'member.info.joined': '加入时间：',
+    'member.edit': '编辑',
+    'member.info.tg': 'TG 账号',
+    'member.info.tg_chat': 'TG Chat ID',
+    'member.info.agreement': 'SN Master Agreement',
+    'member.agreement.signed': '✓ 已签署',
+    'member.kyb.passed': '✓ KYB 通过',
+    'modal.add_title': '新增 SN 成员',
+    'modal.add_subtitle': '请填写成员信息并确认 KYB 状态',
+    'modal.role_label': '角色',
+    'modal.role_hint': '可同时勾选，支持双重身份',
+    'modal.entity_label': '法人实体名称 / Org ID',
+    'modal.entity_placeholder': '搜索法人实体名称',
+    'modal.tg_label': 'TG 账号',
+    'modal.fee_label': 'Cobo Settlement Service Fee Rate',
+    'modal.fee_hint': '写入 Master Agreement，后续可在编辑成员中修改',
+    'modal.fee_client_only': '（仅 Client 适用）',
+    'modal.cancel': '取消',
+    'modal.confirm_add': '确认新增',
+    'modal.edit_title': '编辑成员信息',
+    'modal.edit_subtitle': '修改后点击保存，Settlement Code 不可修改',
+    'modal.edit_role': '角色',
+    'modal.edit_entity': '法人实体名称',
+    'modal.edit_tg': 'TG 账号',
+    'modal.edit_tg_status': 'TG Bot 绑定状态',
+    'modal.edit_code': 'Settlement Code',
+    'modal.edit_code_hint': 'Settlement Code 由系统分配，不可修改',
+    'modal.edit_fee': 'Cobo Settlement Service Fee Rate',
+    'modal.edit_fee_hint': '修改后将同步更新 Master Agreement',
+    'modal.save': '保存修改',
+  },
+  en: {
+    'sidebar.orders': 'Orders',
+    'sidebar.bank': 'Bank Account Review',
+    'sidebar.quote': 'Quote Management',
+    'sidebar.trade': 'Trade Management',
+    'sidebar.contract': 'Contract Management',
+    'sidebar.va': 'VA Accounts',
+    'sidebar.kgi': 'KGI Whitelist',
+    'sidebar.notify': 'Operations Notifications',
+    'sidebar.rooms': 'Settlement Rooms',
+    'sidebar.members': 'SN Member Management',
+    'topbar.app': 'Cobo OTC Operations',
+    'page.title.rooms': 'Settlement Rooms',
+    'page.subtitle.rooms': 'All SN settlement rooms, including items pending approval',
+    'table.fiat_amount': 'Fiat Amount',
+    'table.stable_amount': 'Stablecoin Amount',
+    'table.status': 'Status',
+    'table.recent': 'Last Activity',
+    'table.actions': 'Actions',
+    'search.placeholder': 'Search...',
+    'filter.btn': 'Filter ▼',
+    'sort.btn': 'Sort ↕',
+    'demo.label': 'Demo State:',
+    'detail.role': '🔧 Cobo Ops View',
+    'detail.fiat': 'Fiat Amount',
+    'detail.stable': 'Stablecoin Amount',
+    'quote.section': '💬 Quote Record',
+    'quote.confirmed_terms': 'CONFIRMED CARD TERMS',
+    'quote.fiat': 'Fiat Amount',
+    'quote.stable': 'Stablecoin Amount',
+    'quote.rate': 'Exchange Rate',
+    'quote.window': 'Settlement Window',
+    'quote.confirmed_at': 'Confirmed At',
+    'quote.tg_group': 'Source TG Group',
+    'contract.section': '📋 Contract Info',
+    'contract.id': 'Contract ID',
+    'contract.rate': 'Exchange Rate',
+    'contract.lp_spread': 'LP Spread',
+    'contract.validity': 'Contract Validity',
+    'contract.guard': 'Guard Approval',
+    'guard.approved': '✓ Approved',
+    'contract.chip.active': 'Active',
+    'contract.chip.pending': 'Awaiting Signatures',
+    'contract.chip.completed': 'Completed',
+    'contract.chip.terminated': 'Terminated',
+    'audit.section': '📝 Audit Log',
+    'audit.room_created': 'Room Created',
+    'audit.room_created_meta': 'System · 2026-05-13 10:28:00',
+    'audit.contract_created': 'Settlement Contract Created',
+    'audit.contract_created_meta': 'LP: anthony_org_test3 · 2026-05-13 10:30:00',
+    'audit.guard_client': 'Guard Approved (Client)',
+    'audit.guard_client_meta': 'Acme Capital Ltd. · 2026-05-13 10:45:00',
+    'audit.guard_lp': 'Guard Approved (LP)',
+    'audit.guard_lp_meta': 'anthony_org_test3 · 2026-05-13 11:00:00',
+    'audit.contract_active': 'Contract active, system started polling account balances',
+    'audit.contract_active_meta': 'System · 2026-05-13 11:00:00',
+    'ops.polling': '<strong>⏱ System Polling</strong><br>Contract is active. The system is polling both parties\' account balances. DVP will execute automatically when balances are sufficient.',
+    'ops.completed_title': 'Settlement Completed',
+    'ops.completed_desc': 'DVP executed · 2026-05-13 18:42:07',
+    'ops.terminated_title': 'Room Terminated',
+    'ops.terminated_desc': 'DVP could not be executed within contract validity',
+    'members.title': 'SN Member Management',
+    'members.subtitle': 'Manage Org info, role assignments, and TG accounts for Settlement Network members',
+    'members.add': '＋ Add Member',
+    'members.tab.all': 'All Members',
+    'members.tab.client': 'Client',
+    'members.tab.lp': 'LP',
+    'member.info.entity': 'Legal Entity Name',
+    'member.info.joined': 'Joined: ',
+    'member.edit': 'Edit',
+    'member.info.tg': 'TG Account',
+    'member.info.tg_chat': 'TG Chat ID',
+    'member.info.agreement': 'SN Master Agreement',
+    'member.agreement.signed': '✓ Signed',
+    'member.kyb.passed': '✓ KYB Passed',
+    'modal.add_title': 'Add SN Member',
+    'modal.add_subtitle': 'Please fill in member information and confirm KYB status',
+    'modal.role_label': 'Role',
+    'modal.role_hint': 'Multiple roles can be selected',
+    'modal.entity_label': 'Legal Entity Name / Org ID',
+    'modal.entity_placeholder': 'Search legal entity name',
+    'modal.tg_label': 'TG Account',
+    'modal.fee_label': 'Cobo Settlement Service Fee Rate',
+    'modal.fee_hint': 'Written into Master Agreement; can be modified later in member edit',
+    'modal.fee_client_only': '(Client only)',
+    'modal.cancel': 'Cancel',
+    'modal.confirm_add': 'Confirm Add',
+    'modal.edit_title': 'Edit Member Info',
+    'modal.edit_subtitle': 'Save changes after editing. Settlement Code cannot be modified.',
+    'modal.edit_role': 'Role',
+    'modal.edit_entity': 'Legal Entity Name',
+    'modal.edit_tg': 'TG Account',
+    'modal.edit_tg_status': 'TG Bot Binding Status',
+    'modal.edit_code': 'Settlement Code',
+    'modal.edit_code_hint': 'Settlement Code is assigned by the system and cannot be modified',
+    'modal.edit_fee': 'Cobo Settlement Service Fee Rate',
+    'modal.edit_fee_hint': 'Changes will be synced to Master Agreement',
+    'modal.save': 'Save Changes',
+  }
+};
+
+let currentLang = localStorage.getItem('sn_lang') || 'zh';
+
+const HTML_KEYS = new Set(['ops.polling']);
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('sn_lang', lang);
+  const t = T[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      if (HTML_KEYS.has(key)) {
+        el.innerHTML = t[key];
+      } else {
+        el.textContent = t[key];
+      }
+    }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+  // Re-sync ops state panels
+  if (typeof switchOpsState === 'function') {
+    const sel = document.querySelector('#page-room-detail select');
+    if (sel) switchOpsState(sel.value);
+  }
+}
+
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'lang') {
+    setLang(e.data.lang);
+  }
+});
+
+(function() {
+  const saved = localStorage.getItem('sn_lang');
+  if (saved && saved !== 'zh') setLang(saved);
+})();
+
 // Page navigation
 function showPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -888,14 +1130,30 @@ function switchOpsState(val) {
   const badge = document.getElementById('ops-status-badge');
   badge.className = 'badge ' + cfg.cls;
   document.getElementById('ops-status-text').textContent = cfg.txt;
+  // Update contract chip
+  const chip = document.getElementById('ops-contract-chip');
+  const t = T[currentLang];
+  const chipMap = {
+    awaiting_contract: { key: 'contract.chip.pending', bg: '#F1F1F5', col: '#363F72' },
+    pending_confirmation: { key: 'contract.chip.pending', bg: '#EFF8FF', col: '#175CD3' },
+    pending_dvp: { key: 'contract.chip.active', bg: '#E4F5EB', col: '#067647' },
+    completed: { key: 'contract.chip.completed', bg: '#E4F5EB', col: '#067647' },
+    terminated: { key: 'contract.chip.terminated', bg: '#F1F1F5', col: '#363F72' },
+  };
+  if (chip && chipMap[val]) {
+    const cm = chipMap[val];
+    chip.style.background = cm.bg;
+    chip.style.color = cm.col;
+    chip.textContent = '● ' + t[cm.key];
+  }
   // Render action panel
   const panel = document.getElementById('ops-action-panel');
   if (val === 'pending_dvp') {
-    panel.innerHTML = '<div style="background:#EDF4F8;border-radius:6px;padding:16px;margin-bottom:16px;font-size:13px;color:#026AA2"><strong>⏱ 系统轮询中</strong><br>合同已生效，系统正在轮询双方账户余额。余额充足时将自动执行 DVP。</div>';
+    panel.innerHTML = `<div style="background:#EDF4F8;border-radius:6px;padding:16px;margin-bottom:16px;font-size:13px;color:#026AA2">${t['ops.polling']}</div>`;
   } else if (val === 'completed') {
-    panel.innerHTML = `<div class="result-box completed" style="margin-bottom:16px"><div style="font-size:20px">✅</div><div><div class="rb-title">结算完成</div><div class="rb-desc">DVP 执行完成 · 2026-05-13 18:42:07</div></div></div>`;
+    panel.innerHTML = `<div class="result-box completed" style="margin-bottom:16px"><div style="font-size:20px">✅</div><div><div class="rb-title">${t['ops.completed_title']}</div><div class="rb-desc">${t['ops.completed_desc']}</div></div></div>`;
   } else if (val === 'terminated') {
-    panel.innerHTML = '<div class="result-box terminated" style="margin-bottom:16px"><div style="font-size:20px">⚠️</div><div><div class="rb-title">Room 已终止</div><div class="rb-desc">合同有效期内未能执行 DVP</div></div></div>';
+    panel.innerHTML = `<div class="result-box terminated" style="margin-bottom:16px"><div style="font-size:20px">⚠️</div><div><div class="rb-title">${t['ops.terminated_title']}</div><div class="rb-desc">${t['ops.terminated_desc']}</div></div></div>`;
   } else {
     panel.innerHTML = '';
   }
@@ -999,10 +1257,10 @@ document.addEventListener('click', function(e) {
 <div id="editMemberModal" class="modal-overlay hidden">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('editMemberModal')">✕</button>
-    <div class="modal-title">编辑成员信息</div>
-    <div class="modal-subtitle">修改后点击保存，Settlement Code 不可修改</div>
+    <div class="modal-title" data-i18n="modal.edit_title">编辑成员信息</div>
+    <div class="modal-subtitle" data-i18n="modal.edit_subtitle">修改后点击保存，Settlement Code 不可修改</div>
     <div class="form-group">
-      <div class="form-label">角色</div>
+      <div class="form-label" data-i18n="modal.edit_role">角色</div>
       <div style="display:flex;gap:12px;margin-top:4px">
         <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer">
           <input type="checkbox" id="edit-role-client" style="width:16px;height:16px"> Client
@@ -1011,44 +1269,44 @@ document.addEventListener('click', function(e) {
           <input type="checkbox" id="edit-role-lp" style="width:16px;height:16px"> LP
         </label>
       </div>
-      <div style="font-size:11px;color:#73798B;margin-top:6px">可同时勾选，支持双重身份</div>
+      <div style="font-size:11px;color:#73798B;margin-top:6px" data-i18n="modal.role_hint">可同时勾选，支持双重身份</div>
     </div>
     <div class="form-group">
-      <div class="form-label">法人实体名称 <span class="req">*</span></div>
-      <input id="edit-name" class="form-input" placeholder="法人实体名称">
+      <div class="form-label"><span data-i18n="modal.edit_entity">法人实体名称</span> <span class="req">*</span></div>
+      <input id="edit-name" class="form-input" placeholder="法人实体名称" data-i18n-placeholder="modal.edit_entity">
     </div>
     <div class="form-group">
       <div class="form-label">Org ID</div>
       <input id="edit-org-id" class="form-input" disabled style="background:#F8F9FC;color:#73798B">
     </div>
     <div class="form-group">
-      <div class="form-label">TG 账号</div>
+      <div class="form-label" data-i18n="modal.edit_tg">TG 账号</div>
       <input id="edit-tg" class="form-input" placeholder="@username">
     </div>
     <div class="form-group">
-      <div class="form-label">TG Bot 绑定状态</div>
+      <div class="form-label" data-i18n="modal.edit_tg_status">TG Bot 绑定状态</div>
       <input id="edit-tg-status" class="form-input" disabled style="background:#F8F9FC;color:#067647">
     </div>
     <div class="form-group">
-      <div class="form-label">Settlement Code</div>
+      <div class="form-label" data-i18n="modal.edit_code">Settlement Code</div>
       <input id="edit-code" class="form-input" disabled style="background:#F8F9FC;color:#73798B">
-      <div style="font-size:11px;color:#B9BCC5;margin-top:4px">Settlement Code 由系统分配，不可修改</div>
+      <div style="font-size:11px;color:#B9BCC5;margin-top:4px" data-i18n="modal.edit_code_hint">Settlement Code 由系统分配，不可修改</div>
     </div>
     <div class="form-group" id="edit-fee-rate-group" style="display:none">
       <div class="form-label">
-        Cobo Settlement Service Fee Rate
-        <span style="font-size:11px;font-weight:400;color:#73798B;margin-left:4px">（仅 Client 适用）</span>
+        <span data-i18n="modal.edit_fee">Cobo Settlement Service Fee Rate</span>
+        <span style="font-size:11px;font-weight:400;color:#73798B;margin-left:4px" data-i18n="modal.fee_client_only">（仅 Client 适用）</span>
       </div>
       <div style="display:flex;align-items:center;gap:8px">
         <input id="edit-fee-rate" class="form-input" type="number" min="0" step="0.1" value="3"
           style="width:100px;text-align:right">
         <span style="font-size:14px;color:#1C1C1C;white-space:nowrap">bps</span>
       </div>
-      <div style="font-size:11px;color:#73798B;margin-top:4px">修改后将同步更新 Master Agreement</div>
+      <div style="font-size:11px;color:#73798B;margin-top:4px" data-i18n="modal.edit_fee_hint">修改后将同步更新 Master Agreement</div>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-tertiary" onclick="closeModal('editMemberModal')">取消</button>
-      <button class="btn btn-primary" onclick="closeModal('editMemberModal')">保存修改</button>
+      <button class="btn btn-tertiary" onclick="closeModal('editMemberModal')" data-i18n="modal.cancel">取消</button>
+      <button class="btn btn-primary" onclick="closeModal('editMemberModal')" data-i18n="modal.save">保存修改</button>
     </div>
   </div>
 </div>

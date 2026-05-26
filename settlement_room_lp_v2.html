@@ -431,20 +431,20 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
       <div class="sidebar-app-name">Payments</div>
     </div>
     <div class="sidebar-section">
-      <div class="sidebar-section-title">资金管理</div>
-      <div class="sidebar-item">[◎] 余额</div>
-      <div class="sidebar-item">[≡] 批量下发</div>
-      <div class="sidebar-item">[→] 转出目的地</div>
-      <div class="sidebar-item">[◷] 活动记录</div>
+      <div class="sidebar-section-title" data-i18n="nav.funds">资金管理</div>
+      <div class="sidebar-item" data-i18n="nav.balance">[◎] 余额</div>
+      <div class="sidebar-item" data-i18n="nav.batch">[≡] 批量下发</div>
+      <div class="sidebar-item" data-i18n="nav.destination">[→] 转出目的地</div>
+      <div class="sidebar-item" data-i18n="nav.activity">[◷] 活动记录</div>
     </div>
     <div class="sidebar-section">
       <div class="sidebar-section-title">
         Settlement Network
         <span class="sidebar-new-badge">NEW</span>
       </div>
-      <div class="sidebar-item" onclick="showPage('list')">[◉] Network Members</div>
-      <div class="sidebar-item active" onclick="showPage('list')">[▣] Settlement Rooms</div>
-      <div class="sidebar-item" onclick="showPage('contract')">[📄] Contract 管理</div>
+      <div class="sidebar-item" onclick="showPage('list')" data-i18n="nav.members">[◉] Network Members</div>
+      <div class="sidebar-item active" onclick="showPage('list')" data-i18n="nav.rooms">[▣] Settlement Rooms</div>
+      <div class="sidebar-item" onclick="showPage('contract')" data-i18n="nav.contract">[📄] Contract 管理</div>
     </div>
   </div>
 
@@ -454,16 +454,12 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
     <!-- ══ LIST PAGE ══ -->
     <div id="page-list" class="page active">
       <div class="page-title-row">
-        <div class="page-title">Settlement Rooms</div>
-        <div class="lang-toggle">
-          <button class="lang-btn active">中文</button>
-          <button class="lang-btn">EN</button>
-        </div>
+        <div class="page-title" data-i18n="page.title.list">Settlement Rooms</div>
       </div>
 
       <div class="alert-banner">
         <div class="alert-banner-icon">⚠</div>
-        <div class="alert-banner-text">
+        <div class="alert-banner-text" data-i18n="alert.compliance">
           <strong>合规说明：</strong>Settlement Room 由 TG 询价完成后通过 Cobo Bot 发起创建。交易对手方须由你在平台外独立识别，Cobo 不提供撮合、介绍或推荐服务。
         </div>
       </div>
@@ -484,7 +480,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
         <div class="table-toolbar">
           <div class="search-input-wrap">
             <span class="search-icon">🔍</span>
-            <input placeholder="搜索 Room ID 或对手方">
+            <input data-i18n-placeholder="search.placeholder" placeholder="搜索 Room ID 或对手方">
           </div>
         </div>
 
@@ -494,13 +490,13 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
             <thead>
               <tr>
                 <th>Room ID</th>
-                <th>交易对手方</th>
-                <th>法币金额</th>
-                <th>稳定币金额</th>
-                <th>币对</th>
-                <th>状态</th>
-                <th>最近活动</th>
-                <th>操作</th>
+                <th data-i18n="table.counterparty">交易对手方</th>
+                <th data-i18n="table.fiat_amount">法币金额</th>
+                <th data-i18n="table.stable_amount">稳定币金额</th>
+                <th data-i18n="table.pair">币对</th>
+                <th data-i18n="table.status">状态</th>
+                <th data-i18n="table.recent">最近活动</th>
+                <th data-i18n="table.actions">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -520,7 +516,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
                 </td>
                 <td><div class="time-cell">2026-05-13 10:30</div></td>
                 <td>
-                  <div class="action-link" onclick="showDetail('awaiting_contract')">
+                  <div class="action-link" onclick="showDetail('awaiting_contract')" data-i18n="action.enter">
                     进入 →
                   </div>
                 </td>
@@ -541,7 +537,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
                 </td>
                 <td><div class="time-cell">2026-05-12 15:20</div></td>
                 <td>
-                  <div class="action-link" onclick="showDetail('pending_confirmation')">
+                  <div class="action-link" onclick="showDetail('pending_confirmation')" data-i18n="action.enter">
                     进入 →
                   </div>
                 </td>
@@ -556,13 +552,13 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
             <thead>
               <tr>
                 <th>Room ID</th>
-                <th>交易对手方</th>
-                <th>法币金额</th>
-                <th>稳定币金额</th>
-                <th>币对</th>
-                <th>状态</th>
-                <th>最近活动</th>
-                <th>操作</th>
+                <th data-i18n="table.counterparty">交易对手方</th>
+                <th data-i18n="table.fiat_amount">法币金额</th>
+                <th data-i18n="table.stable_amount">稳定币金额</th>
+                <th data-i18n="table.pair">币对</th>
+                <th data-i18n="table.status">状态</th>
+                <th data-i18n="table.recent">最近活动</th>
+                <th data-i18n="table.actions">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -582,7 +578,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
                 </td>
                 <td><div class="time-cell">2026-05-11 09:45</div></td>
                 <td>
-                  <div class="action-link" onclick="showDetail('pending_dvp')">
+                  <div class="action-link" onclick="showDetail('pending_dvp')" data-i18n="action.enter">
                     进入 →
                   </div>
                 </td>
@@ -597,13 +593,13 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
             <thead>
               <tr>
                 <th>Room ID</th>
-                <th>交易对手方</th>
-                <th>法币金额</th>
-                <th>稳定币金额</th>
-                <th>币对</th>
-                <th>状态</th>
-                <th>最近活动</th>
-                <th>操作</th>
+                <th data-i18n="table.counterparty">交易对手方</th>
+                <th data-i18n="table.fiat_amount">法币金额</th>
+                <th data-i18n="table.stable_amount">稳定币金额</th>
+                <th data-i18n="table.pair">币对</th>
+                <th data-i18n="table.status">状态</th>
+                <th data-i18n="table.recent">最近活动</th>
+                <th data-i18n="table.actions">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -622,7 +618,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
                   </span>
                 </td>
                 <td><div class="time-cell">2026-05-10 18:32</div></td>
-                <td><div class="action-link" onclick="showDetail('completed')">查看 →</div></td>
+                <td><div class="action-link" onclick="showDetail('completed')" data-i18n="action.view">查看 →</div></td>
               </tr>
               <tr>
                 <td><div class="room-id">SR-20260508-0028</div></td>
@@ -639,13 +635,13 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
                   </span>
                 </td>
                 <td><div class="time-cell">2026-05-09 10:00</div></td>
-                <td><div class="action-link" onclick="showDetail('terminated')">查看 →</div></td>
+                <td><div class="action-link" onclick="showDetail('terminated')" data-i18n="action.view">查看 →</div></td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="footer-note">
+        <div class="footer-note" data-i18n="footer.note">
           ⓘ Settlement Room 由客户主动创建，仅限一对一双边结算，不可广播。
         </div>
       </div>
@@ -663,7 +659,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
         </div>
         <div style="display:flex;align-items:center;gap:12px">
           <div class="demo-switcher">
-            <label>演示状态:</label>
+            <label data-i18n="demo.label">演示状态:</label>
             <select onchange="switchDetailState(this.value)">
               <option value="awaiting_contract">Awaiting Contract</option>
               <option value="pending_confirmation">Pending Confirmation</option>
@@ -671,10 +667,6 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
               <option value="completed">Completed</option>
               <option value="terminated">Terminated</option>
             </select>
-          </div>
-          <div class="lang-toggle">
-            <button class="lang-btn active">中文</button>
-            <button class="lang-btn">EN</button>
           </div>
         </div>
       </div>
@@ -688,25 +680,25 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
               <span class="dot"></span>
               <span id="detail-status-text">Pending DVP</span>
             </div>
-            <div class="role-chip">LP 视角</div>
+            <div class="role-chip" data-i18n="detail.role">LP 视角</div>
           </div>
         </div>
         <div class="detail-meta-grid">
           <div class="meta-item">
-            <label>对手方 / Counterparty</label>
+            <label data-i18n="detail.counterparty">对手方 / Counterparty</label>
             <div class="val">Acme Capital Ltd.</div>
           </div>
           <div class="meta-item">
-            <label>法币金额 / Fiat</label>
+            <label data-i18n="detail.fiat">法币金额 / Fiat</label>
             <div class="val num">1,000,000 USD</div>
           </div>
           <div class="meta-item">
-            <label>稳定币金额 / Crypto</label>
+            <label data-i18n="detail.stable">稳定币金额 / Crypto</label>
             <div class="val num">999,500 USDT</div>
           </div>
           <div class="meta-item">
-            <label>TG 群 / TG Group</label>
-            <div class="val link">📨 打开群组</div>
+            <label data-i18n="detail.tg">TG 群 / TG Group</label>
+            <div class="val link" data-i18n="detail.tg_open">📨 打开群组</div>
           </div>
         </div>
       </div>
@@ -714,25 +706,25 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
       <!-- Quote record -->
       <div class="section-card">
         <div class="section-header">
-          <div class="section-title">💬 询报价记录 / Quote Record</div>
+          <div class="section-title" data-i18n="quote.section">💬 询报价记录 / Quote Record</div>
         </div>
         <div class="section-body">
-          <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:12px;letter-spacing:0.04em">CONFIRMED CARD 条款</div>
+          <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:12px;letter-spacing:0.04em" data-i18n="quote.confirmed_terms">CONFIRMED CARD 条款</div>
           <div class="kv-list">
             <div class="kv-row">
-              <span class="kv-label">法币金额 / Fiat Amount</span>
+              <span class="kv-label" data-i18n="quote.fiat_amount">法币金额 / Fiat Amount</span>
               <span class="kv-value num">1,000,000 USD</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">稳定币金额 / Stablecoin Amount</span>
+              <span class="kv-label" data-i18n="quote.stable_amount">稳定币金额 / Stablecoin Amount</span>
               <span class="kv-value num">999,500 USDT</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">汇率 / Exchange Rate</span>
+              <span class="kv-label" data-i18n="quote.rate">汇率 / Exchange Rate</span>
               <span class="kv-value num">1 USD = 0.9995 USDT</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">结算窗口 / Settlement Window</span>
+              <span class="kv-label" data-i18n="quote.window">结算窗口 / Settlement Window</span>
               <span class="kv-value">2026-05-14 18:00</span>
             </div>
             <div class="kv-row">
@@ -740,11 +732,11 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
               <span class="kv-value num">500 USD（0.05%）</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">询价确认时间 / Confirmed At</span>
+              <span class="kv-label" data-i18n="quote.confirmed_at">询价确认时间 / Confirmed At</span>
               <span class="kv-value">2026-05-13 10:28:00</span>
             </div>
             <div class="kv-row">
-              <span class="kv-label">来源 TG 群 / Source TG Group</span>
+              <span class="kv-label" data-i18n="quote.tg_group">来源 TG 群 / Source TG Group</span>
               <span class="kv-value" style="color:#1F32D6;cursor:pointer">View Telegram Group →</span>
             </div>
           </div>
@@ -754,7 +746,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
       <!-- Room status section -->
       <div class="section-card">
         <div class="section-header">
-          <div class="section-title">🏠 Room 状态 / Room Status</div>
+          <div class="section-title" data-i18n="room.section">🏠 Room 状态 / Room Status</div>
         </div>
         <div class="section-body">
 
@@ -763,11 +755,11 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
             <div class="action-banner warning">
               <div class="action-banner-icon">📄</div>
               <div class="action-banner-content">
-                <div class="action-banner-title">请创建结算合同 / Create Settlement Contract</div>
-                <div class="action-banner-desc">询报价已达成，请填写合同条款完成创建。系统将自动校验与 Confirmed Card 数据一致性。</div>
+                <div class="action-banner-title" data-i18n="room.awaiting_title">请创建结算合同 / Create Settlement Contract</div>
+                <div class="action-banner-desc" data-i18n="room.awaiting_desc">询报价已达成，请填写合同条款完成创建。系统将自动校验与 Confirmed Card 数据一致性。</div>
                 <div class="action-banner-actions">
-                  <button class="btn btn-primary" onclick="openContractDialog()">＋ 创建合同</button>
-                  <button class="btn btn-secondary" onclick="showPage('contract')">↗ 前往 Contract 管理</button>
+                  <button class="btn btn-primary" onclick="openContractDialog()" data-i18n="room.awaiting_btn_create">＋ 创建合同</button>
+                  <button class="btn btn-secondary" onclick="showPage('contract')" data-i18n="room.awaiting_btn_goto">↗ 前往 Contract 管理</button>
                 </div>
               </div>
             </div>
@@ -778,8 +770,8 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
             <div class="action-banner info">
               <div class="action-banner-icon">🛡</div>
               <div class="action-banner-content">
-                <div class="action-banner-title">合同待双方签署 / Pending Guard Approval</div>
-                <div class="action-banner-desc">合同已创建，请打开手机上的 <strong>Cobo Guard App</strong> 完成审批签署。对手方签署完成后合同正式生效。</div>
+                <div class="action-banner-title" data-i18n="room.pending_conf_title">合同待双方签署 / Pending Guard Approval</div>
+                <div class="action-banner-desc" data-i18n="room.pending_conf_desc">合同已创建，请打开手机上的 <strong>Cobo Guard App</strong> 完成审批签署。对手方签署完成后合同正式生效。</div>
               </div>
             </div>
           </div>
@@ -787,14 +779,14 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
           <!-- pending_dvp -->
           <div id="rs-pending_dvp">
             <div class="countdown-box">
-              <div class="countdown-label">⏱ 合同有效期剩余 / Contract Validity</div>
+              <div class="countdown-label" data-i18n="room.countdown_label">⏱ 合同有效期剩余 / Contract Validity</div>
               <div class="countdown-value">47:32:18</div>
             </div>
             <div class="action-banner info">
               <div class="action-banner-icon">⏱</div>
               <div class="action-banner-content">
-                <div class="action-banner-title">合同已生效，待 DVP 自动执行 / Pending DVP</div>
-                <div class="action-banner-desc">系统正在轮询 Client VA 余额和你的 SN Org USDT 余额。余额充足时将自动扣款执行 DVP，无需在本页面发起任何操作。</div>
+                <div class="action-banner-title" data-i18n="room.pending_dvp_title">合同已生效，待 DVP 自动执行 / Pending DVP</div>
+                <div class="action-banner-desc" data-i18n="room.pending_dvp_desc">系统正在轮询 Client VA 余额和你的 SN Org USDT 余额。余额充足时将自动扣款执行 DVP，无需在本页面发起任何操作。</div>
               </div>
             </div>
           </div>
@@ -804,8 +796,8 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
             <div class="result-box completed">
               <div style="font-size:20px">✅</div>
               <div>
-                <div class="rb-title">结算完成 / Settlement Completed</div>
-                <div class="rb-desc">完成时间：2026-05-13 18:42:07 · 法币已到账至 VA 账户余额</div>
+                <div class="rb-title" data-i18n="room.completed_title">结算完成 / Settlement Completed</div>
+                <div class="rb-desc" data-i18n="room.completed_desc">完成时间：2026-05-13 18:42:07 · 法币已到账至 VA 账户余额</div>
               </div>
             </div>
           </div>
@@ -815,8 +807,8 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
             <div class="result-box terminated">
               <div style="font-size:20px">✕</div>
               <div>
-                <div class="rb-title">Room 已终止 / Room Terminated</div>
-                <div class="rb-desc">终止原因：合同有效期内未能执行 DVP · 终止时间：2026-05-14 10:00:00</div>
+                <div class="rb-title" data-i18n="room.terminated_title">Room 已终止 / Room Terminated</div>
+                <div class="rb-desc" data-i18n="room.terminated_desc">终止原因：合同有效期内未能执行 DVP · 终止时间：2026-05-14 10:00:00</div>
               </div>
             </div>
           </div>
@@ -836,8 +828,8 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
           <div class="section-body">
             <div class="placeholder-box">
               <div class="placeholder-icon">📄</div>
-              <div class="placeholder-title">合同尚未创建</div>
-              <div class="placeholder-desc">询报价达成后请前往创建 Settlement Contract</div>
+              <div class="placeholder-title" data-i18n="contract.placeholder_title">合同尚未创建</div>
+              <div class="placeholder-desc" data-i18n="contract.placeholder_desc">询报价达成后请前往创建 Settlement Contract</div>
             </div>
           </div>
         </div>
@@ -845,8 +837,8 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
         <!-- Content -->
         <div id="contract-content" style="display:none">
           <div class="contract-tab-bar">
-            <div class="contract-tab active" onclick="switchContractTab(this,0)">合同信息</div>
-            <div class="contract-tab" onclick="switchContractTab(this,1)">Guard 审批</div>
+            <div class="contract-tab active" onclick="switchContractTab(this,0)" data-i18n="contract.tab_info">合同信息</div>
+            <div class="contract-tab" onclick="switchContractTab(this,1)" data-i18n="contract.tab_guard">Guard 审批</div>
           </div>
           <div class="section-body">
 
@@ -854,27 +846,27 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
             <div id="ctab-content-0">
               <div class="kv-list">
                 <div class="kv-row">
-                  <span class="kv-label">合同 ID / Contract ID</span>
+                  <span class="kv-label" data-i18n="contract.id">合同 ID / Contract ID</span>
                   <span class="kv-value">f6976085-fdf2-405a <button class="copy-btn">⎘</button></span>
                 </div>
                 <div class="kv-row">
-                  <span class="kv-label">法币金额 / Fiat Amount</span>
+                  <span class="kv-label" data-i18n="contract.fiat">法币金额 / Fiat Amount</span>
                   <span class="kv-value num">1,000,000 USD</span>
                 </div>
                 <div class="kv-row">
-                  <span class="kv-label">稳定币金额 / Crypto Amount</span>
+                  <span class="kv-label" data-i18n="contract.stable">稳定币金额 / Crypto Amount</span>
                   <span class="kv-value num">999,500 USDT</span>
                 </div>
                 <div class="kv-row">
-                  <span class="kv-label">汇率 / Exchange Rate</span>
+                  <span class="kv-label" data-i18n="contract.rate">汇率 / Exchange Rate</span>
                   <span class="kv-value num">1 USD = 0.9995 USDT</span>
                 </div>
                 <div class="kv-row">
-                  <span class="kv-label">合同有效期 / Contract Validity</span>
+                  <span class="kv-label" data-i18n="contract.validity">合同有效期 / Contract Validity</span>
                   <span class="kv-value">2026-05-14 18:00:00 <span style="color:#FA8C16;margin-left:8px">⏱ 剩余 47:32:18</span></span>
                 </div>
                 <div class="kv-row">
-                  <span class="kv-label">创建时间 / Created At</span>
+                  <span class="kv-label" data-i18n="contract.created">创建时间 / Created At</span>
                   <span class="kv-value">2026-05-13 10:30:00</span>
                 </div>
               </div>
@@ -886,7 +878,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
                 <div class="approval-left">
                   <div class="approval-avatar">👤</div>
                   <div>
-                    <div class="approval-name">客户审批 / Client</div>
+                    <div class="approval-name" data-i18n="guard.client">客户审批 / Client</div>
                     <div class="approval-org">Acme Capital Ltd.</div>
                   </div>
                 </div>
@@ -899,7 +891,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
                 <div class="approval-left">
                   <div class="approval-avatar">🏢</div>
                   <div>
-                    <div class="approval-name">LP 审批 / Liquidity Provider</div>
+                    <div class="approval-name" data-i18n="guard.lp">LP 审批 / Liquidity Provider</div>
                     <div class="approval-org">anthony_org_test3</div>
                   </div>
                 </div>
@@ -921,14 +913,10 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
     <div id="page-contract" class="page">
       <div class="page-title-row">
         <div>
-          <div class="page-title">合约管理</div>
-          <div style="font-size:13px;color:#73798B;margin-top:4px">您作为流动性提供者参与的合约</div>
+          <div class="page-title" data-i18n="page.title.contract">合约管理</div>
+          <div style="font-size:13px;color:#73798B;margin-top:4px" data-i18n="page.subtitle.contract">您作为流动性提供者参与的合约</div>
         </div>
         <div style="display:flex;align-items:center;gap:12px">
-          <div class="lang-toggle">
-            <button class="lang-btn active">中文</button>
-            <button class="lang-btn">EN</button>
-          </div>
         </div>
       </div>
 
@@ -936,28 +924,28 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
         <div class="table-toolbar">
           <div style="display:flex;align-items:center;gap:12px">
             <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #EDEEF3;border-radius:6px;padding:0 12px;height:36px">
-              <span style="font-size:13px;color:#73798B">合约 ID</span>
+              <span style="font-size:13px;color:#73798B" data-i18n="contract_mgmt.search_label">合约 ID</span>
               <span style="color:#EDEEF3">|</span>
-              <input style="border:none;outline:none;font-family:Poppins,sans-serif;font-size:13px;color:#1C1C1C;width:200px" placeholder="按合约 ID 搜索">
+              <input style="border:none;outline:none;font-family:Poppins,sans-serif;font-size:13px;color:#1C1C1C;width:200px" data-i18n-placeholder="contract_mgmt.search_placeholder" placeholder="按合约 ID 搜索">
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:8px">
-            <button class="btn btn-tertiary btn-sm" style="gap:4px;height:36px">过滤器 ▼</button>
-            <button class="btn btn-tertiary btn-sm" style="gap:4px;height:36px">排序 ↕</button>
-            <button class="btn btn-primary" onclick="openContractDialog()" style="height:36px">＋ 创建合约</button>
+            <button class="btn btn-tertiary btn-sm" style="gap:4px;height:36px" data-i18n="contract_mgmt.filter">过滤器 ▼</button>
+            <button class="btn btn-tertiary btn-sm" style="gap:4px;height:36px" data-i18n="contract_mgmt.sort">排序 ↕</button>
+            <button class="btn btn-primary" onclick="openContractDialog()" style="height:36px" data-i18n="contract_mgmt.create">＋ 创建合约</button>
           </div>
         </div>
 
         <table>
           <thead>
             <tr>
-              <th>合约 ID</th>
-              <th>客户</th>
-              <th>法币流入</th>
-              <th>加密货币流出</th>
-              <th>合约状态</th>
-              <th>过期时间</th>
-              <th>操作</th>
+              <th data-i18n="table.contract_id">合约 ID</th>
+              <th data-i18n="table.client">客户</th>
+              <th data-i18n="table.fiat_in">法币流入</th>
+              <th data-i18n="table.crypto_out">加密货币流出</th>
+              <th data-i18n="table.contract_status">合约状态</th>
+              <th data-i18n="table.expiry">过期时间</th>
+              <th data-i18n="table.actions">操作</th>
             </tr>
           </thead>
           <tbody>
@@ -983,7 +971,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
                   <span class="amount-cell">3 TRON_USDT</span>
                 </div>
               </td>
-              <td><span class="badge badge-completed"><span class="dot"></span>成功</span></td>
+              <td><span class="badge badge-completed"><span class="dot"></span><span data-i18n="status.success">成功</span></span></td>
               <td><div style="font-size:13px;color:#73798B">2026-05-14 11:50:34</div></td>
               <td><span style="font-size:18px;color:#73798B;cursor:pointer">👁</span></td>
             </tr>
@@ -1009,7 +997,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
                   <span class="amount-cell">2 TRON_USDT</span>
                 </div>
               </td>
-              <td><span class="badge badge-completed"><span class="dot"></span>成功</span></td>
+              <td><span class="badge badge-completed"><span class="dot"></span><span data-i18n="status.success">成功</span></span></td>
               <td><div style="font-size:13px;color:#73798B">2026-05-13 16:09:54</div></td>
               <td><span style="font-size:18px;color:#73798B;cursor:pointer">👁</span></td>
             </tr>
@@ -1038,7 +1026,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
               <td>
                 <div style="display:flex;align-items:center;gap:6px">
                   <span style="width:8px;height:8px;background:#FA8C16;border-radius:50%;display:inline-block"></span>
-                  <span style="font-size:13px;font-weight:600;color:#FA8C16">结算中</span>
+                  <span style="font-size:13px;font-weight:600;color:#FA8C16" data-i18n="status.settling">结算中</span>
                 </div>
               </td>
               <td><div style="font-size:13px;color:#73798B">2026-05-11 17:14:44</div></td>
@@ -1047,7 +1035,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
             <tr>
               <td>
                 <div style="font-size:13px;font-weight:500;color:#1C1C1C">SR-20260513-0042</div>
-                <div style="font-size:11px;color:#B54708;margin-top:2px;font-weight:500">← 当前 Room</div>
+                <div style="font-size:11px;color:#B54708;margin-top:2px;font-weight:500" data-i18n="contract_row.current">← 当前 Room</div>
               </td>
               <td>
                 <div style="font-size:14px;font-weight:500">Acme Capital Ltd.</div>
@@ -1066,11 +1054,11 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
                 </div>
               </td>
               <td>
-                <span class="badge badge-awaiting-contract"><span class="dot"></span>待创建</span>
+                <span class="badge badge-awaiting-contract"><span class="dot"></span><span data-i18n="status.pending_create">待创建</span></span>
               </td>
               <td><div style="font-size:13px;color:#73798B">2026-05-13 10:30</div></td>
               <td>
-                <span style="font-size:13px;font-weight:600;color:#1F32D6;cursor:pointer" onclick="openContractDialog()">创建合约</span>
+                <span style="font-size:13px;font-weight:600;color:#1F32D6;cursor:pointer" onclick="openContractDialog()" data-i18n="contract_row.create">创建合约</span>
               </td>
             </tr>
           </tbody>
@@ -1078,7 +1066,7 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
       </div>
 
       <div style="margin-top:16px;text-align:center">
-        <button class="btn btn-secondary" onclick="showPage('detail')">← 返回 Settlement Room</button>
+        <button class="btn btn-secondary" onclick="showPage('detail')" data-i18n="back.to_room">← 返回 Settlement Room</button>
       </div>
     </div>
 
@@ -1089,28 +1077,28 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
 <div id="contractDialog" class="modal-overlay hidden">
   <div class="modal">
     <button class="modal-close" onclick="closeDialog()">✕</button>
-    <div class="modal-title">创建结算合同</div>
-    <div class="modal-subtitle">以下信息来自 Confirmed Card，请核对后补充剩余字段</div>
+    <div class="modal-title" data-i18n="modal.create_title">创建结算合同</div>
+    <div class="modal-subtitle" data-i18n="modal.create_subtitle">以下信息来自 Confirmed Card，请核对后补充剩余字段</div>
 
     <div class="auto-fill-box">
-      <div class="auto-fill-label">
+      <div class="auto-fill-label" data-i18n="modal.autofill_label">
         ✓ 来自 Confirmed Card（自动填入，不可修改）
       </div>
       <div class="form-grid">
         <div>
-          <div class="form-label">法币金额</div>
+          <div class="form-label" data-i18n="modal.form.fiat">法币金额</div>
           <input class="form-input" value="1,000,000 USD" disabled>
         </div>
         <div>
-          <div class="form-label">稳定币金额</div>
+          <div class="form-label" data-i18n="modal.form.stable">稳定币金额</div>
           <input class="form-input" value="999,500 USDT" disabled>
         </div>
         <div>
-          <div class="form-label">汇率</div>
+          <div class="form-label" data-i18n="modal.form.rate">汇率</div>
           <input class="form-input" value="1 USD = 0.9995 USDT" disabled>
         </div>
         <div>
-          <div class="form-label">结算窗口</div>
+          <div class="form-label" data-i18n="modal.form.window">结算窗口</div>
           <input class="form-input" value="2026-05-14 18:00" disabled>
         </div>
       </div>
@@ -1126,36 +1114,296 @@ textarea.form-input { height: 72px; padding: 8px 12px; resize: none; }
     </div>
 
     <div class="modal-divider"></div>
-    <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:16px">✏ 请填写以下字段</div>
+    <div style="font-size:12px;font-weight:600;color:#73798B;margin-bottom:16px" data-i18n="modal.fill_fields">✏ 请填写以下字段</div>
 
     <div class="form-group">
-      <div class="form-label">合同有效期 / Contract Validity <span class="req">*</span></div>
+      <div class="form-label" data-i18n="modal.form.validity">合同有效期 / Contract Validity <span class="req">*</span></div>
       <div class="validity-row">
         <div class="validity-wrap">
-          <input class="form-input" type="number" placeholder="天数" style="padding-right:36px">
-          <span class="validity-unit">天</span>
+          <input class="form-input" type="number" data-i18n-placeholder="modal.form.days_placeholder" placeholder="天数" style="padding-right:36px">
+          <span class="validity-unit" data-i18n="modal.form.days_unit">天</span>
         </div>
         <div class="validity-wrap">
-          <input class="form-input" type="number" placeholder="小时" style="padding-right:36px">
-          <span class="validity-unit">时</span>
+          <input class="form-input" type="number" data-i18n-placeholder="modal.form.hours_placeholder" placeholder="小时" style="padding-right:36px">
+          <span class="validity-unit" data-i18n="modal.form.hours_unit">时</span>
         </div>
       </div>
-      <div class="form-hint">合同生效后开始计时，双方须在有效期内保证账户余额充足，系统轮询自动执行 DVP</div>
+      <div class="form-hint" data-i18n="modal.form.validity_hint">合同生效后开始计时，双方须在有效期内保证账户余额充足，系统轮询自动执行 DVP</div>
     </div>
 
     <div class="form-group">
-      <div class="form-label">备注 / Remarks</div>
-      <textarea class="form-input" placeholder="可选备注"></textarea>
+      <div class="form-label" data-i18n="modal.form.remarks">备注 / Remarks</div>
+      <textarea class="form-input" data-i18n-placeholder="modal.form.remarks_placeholder" placeholder="可选备注"></textarea>
     </div>
 
     <div class="modal-footer">
-      <button class="btn btn-tertiary" onclick="closeDialog()">取消</button>
-      <button class="btn btn-primary" onclick="submitContract()">✓ 提交合同</button>
+      <button class="btn btn-tertiary" onclick="closeDialog()" data-i18n="modal.cancel">取消</button>
+      <button class="btn btn-primary" onclick="submitContract()" data-i18n="modal.submit">✓ 提交合同</button>
     </div>
   </div>
 </div>
 
 <script>
+// ── i18n ──
+const T = {
+  zh: {
+    'nav.funds': '资金管理',
+    'nav.balance': '[◎] 余额',
+    'nav.batch': '[≡] 批量下发',
+    'nav.destination': '[→] 转出目的地',
+    'nav.activity': '[◷] 活动记录',
+    'nav.members': '[◉] Network Members',
+    'nav.rooms': '[▣] Settlement Rooms',
+    'nav.contract': '[📄] Contract 管理',
+    'page.title.list': 'Settlement Rooms',
+    'page.title.contract': '合约管理',
+    'page.subtitle.contract': '您作为流动性提供者参与的合约',
+    'alert.compliance': '<strong>合规说明：</strong>Settlement Room 由 TG 询价完成后通过 Cobo Bot 发起创建。交易对手方须由你在平台外独立识别，Cobo 不提供撮合、介绍或推荐服务。',
+    'table.counterparty': '交易对手方',
+    'table.fiat_amount': '法币金额',
+    'table.stable_amount': '稳定币金额',
+    'table.pair': '币对',
+    'table.status': '状态',
+    'table.recent': '最近活动',
+    'table.actions': '操作',
+    'table.contract_id': '合约 ID',
+    'table.client': '客户',
+    'table.fiat_in': '法币流入',
+    'table.crypto_out': '加密货币流出',
+    'table.contract_status': '合约状态',
+    'table.expiry': '过期时间',
+    'search.placeholder': '搜索 Room ID 或对手方',
+    'action.enter': '进入 →',
+    'action.view': '查看 →',
+    'footer.note': 'ⓘ Settlement Room 由客户主动创建，仅限一对一双边结算，不可广播。',
+    'demo.label': '演示状态:',
+    'detail.counterparty': '对手方 / Counterparty',
+    'detail.fiat': '法币金额 / Fiat',
+    'detail.stable': '稳定币金额 / Crypto',
+    'detail.tg': 'TG 群 / TG Group',
+    'detail.tg_open': '📨 打开群组',
+    'detail.role': 'LP 视角',
+    'quote.section': '💬 询报价记录 / Quote Record',
+    'quote.confirmed_terms': 'CONFIRMED CARD 条款',
+    'quote.fiat_amount': '法币金额 / Fiat Amount',
+    'quote.stable_amount': '稳定币金额 / Stablecoin Amount',
+    'quote.rate': '汇率 / Exchange Rate',
+    'quote.window': '结算窗口 / Settlement Window',
+    'quote.confirmed_at': '询价确认时间 / Confirmed At',
+    'quote.tg_group': '来源 TG 群 / Source TG Group',
+    'room.section': '🏠 Room 状态 / Room Status',
+    'room.awaiting_title': '请创建结算合同 / Create Settlement Contract',
+    'room.awaiting_desc': '询报价已达成，请填写合同条款完成创建。系统将自动校验与 Confirmed Card 数据一致性。',
+    'room.awaiting_btn_create': '＋ 创建合同',
+    'room.awaiting_btn_goto': '↗ 前往 Contract 管理',
+    'room.pending_conf_title': '合同待双方签署 / Pending Guard Approval',
+    'room.pending_conf_desc': '合同已创建，请打开手机上的 <strong>Cobo Guard App</strong> 完成审批签署。对手方签署完成后合同正式生效。',
+    'room.countdown_label': '⏱ 合同有效期剩余 / Contract Validity',
+    'room.pending_dvp_title': '合同已生效，待 DVP 自动执行 / Pending DVP',
+    'room.pending_dvp_desc': '系统正在轮询 Client VA 余额和你的 SN Org USDT 余额。余额充足时将自动扣款执行 DVP，无需在本页面发起任何操作。',
+    'room.completed_title': '结算完成 / Settlement Completed',
+    'room.completed_desc': '完成时间：2026-05-13 18:42:07 · 法币已到账至 VA 账户余额',
+    'room.terminated_title': 'Room 已终止 / Room Terminated',
+    'room.terminated_desc': '终止原因：合同有效期内未能执行 DVP · 终止时间：2026-05-14 10:00:00',
+    'contract.section': '📋 Settlement Contract',
+    'contract.placeholder_title': '合同尚未创建',
+    'contract.placeholder_desc': '询报价达成后请前往创建 Settlement Contract',
+    'contract.tab_info': '合同信息',
+    'contract.tab_guard': 'Guard 审批',
+    'contract.id': '合同 ID / Contract ID',
+    'contract.fiat': '法币金额 / Fiat Amount',
+    'contract.stable': '稳定币金额 / Crypto Amount',
+    'contract.rate': '汇率 / Exchange Rate',
+    'contract.validity': '合同有效期 / Contract Validity',
+    'contract.created': '创建时间 / Created At',
+    'guard.client': '客户审批 / Client',
+    'guard.lp': 'LP 审批 / Liquidity Provider',
+    'guard.approved': '✓ 已通过',
+    'guard.pending': '⏳ 待审批',
+    'contract.chip.pending': '待签署',
+    'contract.chip.active': '已生效',
+    'contract.chip.completed': '已完成',
+    'contract.chip.terminated': '已终止',
+    'contract_mgmt.filter': '过滤器 ▼',
+    'contract_mgmt.sort': '排序 ↕',
+    'contract_mgmt.create': '＋ 创建合约',
+    'contract_mgmt.search_label': '合约 ID',
+    'contract_mgmt.search_placeholder': '按合约 ID 搜索',
+    'back.to_room': '← 返回 Settlement Room',
+    'modal.create_title': '创建结算合同',
+    'modal.create_subtitle': '以下信息来自 Confirmed Card，请核对后补充剩余字段',
+    'modal.autofill_label': '✓ 来自 Confirmed Card（自动填入，不可修改）',
+    'modal.form.fiat': '法币金额',
+    'modal.form.stable': '稳定币金额',
+    'modal.form.rate': '汇率',
+    'modal.form.window': '结算窗口',
+    'modal.form.validity': '合同有效期 / Contract Validity',
+    'modal.form.validity_hint': '合同生效后开始计时，双方须在有效期内保证账户余额充足，系统轮询自动执行 DVP',
+    'modal.form.remarks': '备注 / Remarks',
+    'modal.form.remarks_placeholder': '可选备注',
+    'modal.form.days_placeholder': '天数',
+    'modal.form.hours_placeholder': '小时',
+    'modal.form.days_unit': '天',
+    'modal.form.hours_unit': '时',
+    'modal.fill_fields': '✏ 请填写以下字段',
+    'modal.cancel': '取消',
+    'modal.submit': '✓ 提交合同',
+    'status.settling': '结算中',
+    'status.success': '成功',
+    'status.pending_create': '待创建',
+    'contract_row.create': '创建合约',
+    'contract_row.current': '← 当前 Room',
+  },
+  en: {
+    'nav.funds': 'Fund Management',
+    'nav.balance': '[◎] Balance',
+    'nav.batch': '[≡] Batch Payout',
+    'nav.destination': '[→] Payout Destinations',
+    'nav.activity': '[◷] Activity Log',
+    'nav.members': '[◉] Network Members',
+    'nav.rooms': '[▣] Settlement Rooms',
+    'nav.contract': '[📄] Contract Management',
+    'page.title.list': 'Settlement Rooms',
+    'page.title.contract': 'Contract Management',
+    'page.subtitle.contract': 'Contracts you participate in as a liquidity provider',
+    'alert.compliance': '<strong>Compliance Notice:</strong> Settlement Rooms are created via Cobo Bot after TG inquiry completion. Counterparties must be independently identified by you outside the platform. Cobo does not provide matching, introduction, or recommendation services.',
+    'table.counterparty': 'Counterparty',
+    'table.fiat_amount': 'Fiat Amount',
+    'table.stable_amount': 'Stablecoin Amount',
+    'table.pair': 'Pair',
+    'table.status': 'Status',
+    'table.recent': 'Last Activity',
+    'table.actions': 'Actions',
+    'table.contract_id': 'Contract ID',
+    'table.client': 'Client',
+    'table.fiat_in': 'Fiat In',
+    'table.crypto_out': 'Crypto Out',
+    'table.contract_status': 'Contract Status',
+    'table.expiry': 'Expiry',
+    'search.placeholder': 'Search Room ID or counterparty',
+    'action.enter': 'Enter →',
+    'action.view': 'View →',
+    'footer.note': 'ⓘ Settlement Rooms are created by clients and limited to one-to-one bilateral settlement only.',
+    'demo.label': 'Demo State:',
+    'detail.counterparty': 'Counterparty',
+    'detail.fiat': 'Fiat Amount',
+    'detail.stable': 'Stablecoin Amount',
+    'detail.tg': 'TG Group',
+    'detail.tg_open': '📨 Open Group',
+    'detail.role': 'LP View',
+    'quote.section': '💬 Quote Record',
+    'quote.confirmed_terms': 'CONFIRMED CARD TERMS',
+    'quote.fiat_amount': 'Fiat Amount',
+    'quote.stable_amount': 'Stablecoin Amount',
+    'quote.rate': 'Exchange Rate',
+    'quote.window': 'Settlement Window',
+    'quote.confirmed_at': 'Confirmed At',
+    'quote.tg_group': 'Source TG Group',
+    'room.section': '🏠 Room Status',
+    'room.awaiting_title': 'Create Settlement Contract',
+    'room.awaiting_desc': 'Inquiry terms agreed. Please fill in contract terms to complete creation. The system will automatically validate consistency with the Confirmed Card.',
+    'room.awaiting_btn_create': '＋ Create Contract',
+    'room.awaiting_btn_goto': '↗ Go to Contract Management',
+    'room.pending_conf_title': 'Pending Guard Approval',
+    'room.pending_conf_desc': 'Contract created. Please open the <strong>Cobo Guard App</strong> on your phone to sign and approve. The contract takes effect once both parties have signed.',
+    'room.countdown_label': '⏱ Contract Validity Remaining',
+    'room.pending_dvp_title': 'Contract Active — Pending DVP Execution',
+    'room.pending_dvp_desc': 'The system is polling the Client\'s VA balance and your SN Org USDT balance. DVP will execute automatically when balances are sufficient. No action required.',
+    'room.completed_title': 'Settlement Completed',
+    'room.completed_desc': 'Completed at: 2026-05-13 18:42:07 · Fiat credited to VA account balance',
+    'room.terminated_title': 'Room Terminated',
+    'room.terminated_desc': 'Reason: DVP could not be executed within contract validity · Terminated: 2026-05-14 10:00:00',
+    'contract.section': '📋 Settlement Contract',
+    'contract.placeholder_title': 'No Contract Yet',
+    'contract.placeholder_desc': 'Please create a Settlement Contract after inquiry terms are agreed',
+    'contract.tab_info': 'Contract Info',
+    'contract.tab_guard': 'Guard Approval',
+    'contract.id': 'Contract ID',
+    'contract.fiat': 'Fiat Amount',
+    'contract.stable': 'Stablecoin Amount',
+    'contract.rate': 'Exchange Rate',
+    'contract.validity': 'Contract Validity',
+    'contract.created': 'Created At',
+    'guard.client': 'Client Approval',
+    'guard.lp': 'LP Approval',
+    'guard.approved': '✓ Approved',
+    'guard.pending': '⏳ Pending',
+    'contract.chip.pending': 'Awaiting Signatures',
+    'contract.chip.active': 'Active',
+    'contract.chip.completed': 'Completed',
+    'contract.chip.terminated': 'Terminated',
+    'contract_mgmt.filter': 'Filter ▼',
+    'contract_mgmt.sort': 'Sort ↕',
+    'contract_mgmt.create': '＋ Create Contract',
+    'contract_mgmt.search_label': 'Contract ID',
+    'contract_mgmt.search_placeholder': 'Search by contract ID',
+    'back.to_room': '← Back to Settlement Room',
+    'modal.create_title': 'Create Settlement Contract',
+    'modal.create_subtitle': 'The following fields are from the Confirmed Card. Please review and complete the remaining fields.',
+    'modal.autofill_label': '✓ From Confirmed Card (auto-filled, read-only)',
+    'modal.form.fiat': 'Fiat Amount',
+    'modal.form.stable': 'Stablecoin Amount',
+    'modal.form.rate': 'Exchange Rate',
+    'modal.form.window': 'Settlement Window',
+    'modal.form.validity': 'Contract Validity',
+    'modal.form.validity_hint': 'Timer starts when contract takes effect. Both parties must maintain sufficient balances. DVP executes automatically when balances are met.',
+    'modal.form.remarks': 'Remarks',
+    'modal.form.remarks_placeholder': 'Optional remarks',
+    'modal.form.days_placeholder': 'Days',
+    'modal.form.hours_placeholder': 'Hours',
+    'modal.form.days_unit': 'd',
+    'modal.form.hours_unit': 'h',
+    'modal.fill_fields': '✏ Please complete the following fields',
+    'modal.cancel': 'Cancel',
+    'modal.submit': '✓ Submit Contract',
+    'status.settling': 'Settling',
+    'status.success': 'Success',
+    'status.pending_create': 'Pending',
+    'contract_row.create': 'Create Contract',
+    'contract_row.current': '← Current Room',
+  }
+};
+
+let currentLang = localStorage.getItem('sn_lang') || 'zh';
+
+const HTML_KEYS = new Set(['alert.compliance','room.awaiting_desc','room.pending_conf_desc','modal.create_subtitle','modal.autofill_label','modal.form.validity_hint']);
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('sn_lang', lang);
+  const t = T[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      if (HTML_KEYS.has(key)) {
+        el.innerHTML = t[key];
+      } else {
+        el.textContent = t[key];
+      }
+    }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+  // Re-sync state-dependent text
+  if (typeof switchDetailState === 'function') {
+    const sel = document.querySelector('#page-detail select');
+    if (sel) switchDetailState(sel.value);
+  }
+}
+
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'lang') {
+    setLang(e.data.lang);
+  }
+});
+
+(function() {
+  const saved = localStorage.getItem('sn_lang');
+  if (saved && saved !== 'zh') setLang(saved);
+})();
+
 // ── Page navigation ──
 function showPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1185,10 +1433,10 @@ function switchListTab(el, tab) {
 // ── Detail state switching ──
 const stateConfig = {
   awaiting_contract:   { cls: 'badge-awaiting-contract',   txt: 'Awaiting Contract',    contract: { show: false } },
-  pending_confirmation:{ cls: 'badge-pending-confirm',      txt: 'Pending Confirmation', contract: { show: true, txt: '待签署', bg: '#EFF8FF', col: '#175CD3' } },
-  pending_dvp:         { cls: 'badge-pending-dvp',          txt: 'Pending DVP',          contract: { show: true, txt: '已生效', bg: '#E4F5EB', col: '#067647' } },
-  completed:           { cls: 'badge-completed',            txt: 'Completed',            contract: { show: true, txt: '已完成', bg: '#E4F5EB', col: '#067647' } },
-  terminated:          { cls: 'badge-terminated',           txt: 'Terminated',           contract: { show: true, txt: '已终止', bg: '#F1F1F5', col: '#363F72' } },
+  pending_confirmation:{ cls: 'badge-pending-confirm',      txt: 'Pending Confirmation', contract: { show: true, chipKey: 'contract.chip.pending', bg: '#EFF8FF', col: '#175CD3' } },
+  pending_dvp:         { cls: 'badge-pending-dvp',          txt: 'Pending DVP',          contract: { show: true, chipKey: 'contract.chip.active',  bg: '#E4F5EB', col: '#067647' } },
+  completed:           { cls: 'badge-completed',            txt: 'Completed',            contract: { show: true, chipKey: 'contract.chip.completed', bg: '#E4F5EB', col: '#067647' } },
+  terminated:          { cls: 'badge-terminated',           txt: 'Terminated',           contract: { show: true, chipKey: 'contract.chip.terminated', bg: '#F1F1F5', col: '#363F72' } },
 };
 
 const allStates = Object.keys(stateConfig);
@@ -1218,16 +1466,17 @@ function switchDetailState(val) {
   } else {
     placeholder.style.display = 'none';
     content.style.display = '';
-    chip.textContent = '● ' + cfg.contract.txt;
+    chip.textContent = '● ' + T[currentLang][cfg.contract.chipKey];
     chip.style.background = cfg.contract.bg;
     chip.style.color = cfg.contract.col;
   }
 
   // LP guard status for pending state
+  const t = T[currentLang];
   if (val === 'pending_confirmation') {
-    document.getElementById('lp-guard-status').innerHTML = '<div class="approval-status-label status-pending">⏳ 待审批</div><div class="approval-time">—</div>';
+    document.getElementById('lp-guard-status').innerHTML = `<div class="approval-status-label status-pending">${t['guard.pending']}</div><div class="approval-time">—</div>`;
   } else {
-    document.getElementById('lp-guard-status').innerHTML = '<div class="approval-status-label status-approved">✓ 已通过</div><div class="approval-time">2026-05-13 11:00:00</div>';
+    document.getElementById('lp-guard-status').innerHTML = `<div class="approval-status-label status-approved">${t['guard.approved']}</div><div class="approval-time">2026-05-13 11:00:00</div>`;
   }
 }
 
